@@ -1,0 +1,20 @@
+(* Model Identifiers
+     Component (Number): 'Diverter' (800)
+         Class (Number): 'Diverter Bay' (006)
+              Operation: 'Initialize'
+         Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Diverter Bay'
+   
+Description: All actions required to initialize an instance of class 'Diverter Bay'.
+             This subroutine must be called whenever a new instance is created.
+
+Signature: JSR( _800_006_opDiverterBay_Init );
+*)
+
+SBR(  );
+
+(* Clear the global and local event mailbox structures. *)
+CPS(empty_event_struct, _events.event_diverter_bay_800_006.evt_lst, 1);
+CPS(empty_event_struct, _obj.diverter_bay_800_006.events.evt_lst, 1);
+
+(* TODO: Add all initialization code here *)
+

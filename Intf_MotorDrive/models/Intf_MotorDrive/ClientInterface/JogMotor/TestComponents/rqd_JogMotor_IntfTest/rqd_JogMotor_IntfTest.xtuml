@@ -1,0 +1,282 @@
+-- BP 7.1.6 content: Component syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_C
+	VALUES ("4d5ee997-cc0f-49f4-a00b-4d6cb361d8c9",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'rqd_JogMotor_IntfTest',
+	'',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'');
+INSERT INTO GD_MD
+	VALUES ("42549ee1-3dfc-4596-b49e-5970b05bce89",
+	111,
+	"4d5ee997-cc0f-49f4-a00b-4d6cb361d8c9",
+	98,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'Intf_MotorDrive::ClientInterface::JogMotor::TestComponents::rqd_JogMotor_IntfTest');
+INSERT INTO GD_GE
+	VALUES ("db08f5ed-9074-426b-9c38-77b7575a4377",
+	"42549ee1-3dfc-4596-b49e-5970b05bce89",
+	"4d5ee997-cc0f-49f4-a00b-4d6cb361d8c9",
+	103,
+	0,
+	'Intf_MotorDrive::ClientInterface::JogMotor::TestComponents::rqd_JogMotor_IntfTest');
+INSERT INTO GD_SHP
+	VALUES ("db08f5ed-9074-426b-9c38-77b7575a4377");
+INSERT INTO GD_CTR
+	VALUES ("db08f5ed-9074-426b-9c38-77b7575a4377");
+INSERT INTO DIM_ND
+	VALUES (1169.000000,
+	504.000000,
+	"db08f5ed-9074-426b-9c38-77b7575a4377");
+INSERT INTO DIM_GE
+	VALUES (4100.000000,
+	3100.000000,
+	"db08f5ed-9074-426b-9c38-77b7575a4377",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("db08f5ed-9074-426b-9c38-77b7575a4377",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_CON
+	VALUES ("21164700-9eb7-4040-a72b-8a014be329ef",
+	4734.000000,
+	3604.000000,
+	"db08f5ed-9074-426b-9c38-77b7575a4377");
+INSERT INTO GD_GE
+	VALUES ("464a34f7-60a5-433d-9831-6445e61d5f97",
+	"42549ee1-3dfc-4596-b49e-5970b05bce89",
+	"b6cb1603-7fc9-4064-9e41-26ad91d8089d",
+	93,
+	0,
+	'Intf_MotorDrive::ClientInterface::JogMotor::TestComponents::rqd_JogMotor_IntfTest::Port1::JogMotor');
+INSERT INTO GD_CON
+	VALUES ("464a34f7-60a5-433d-9831-6445e61d5f97",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("c32a618f-4afe-4ecd-91f2-cb990130c083",
+	"464a34f7-60a5-433d-9831-6445e61d5f97",
+	1,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"c32a618f-4afe-4ecd-91f2-cb990130c083");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"c32a618f-4afe-4ecd-91f2-cb990130c083",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("c32a618f-4afe-4ecd-91f2-cb990130c083",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("3abcd5f8-5552-44c7-8cc6-bb98a6654d94",
+	"464a34f7-60a5-433d-9831-6445e61d5f97",
+	3,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"3abcd5f8-5552-44c7-8cc6-bb98a6654d94");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"3abcd5f8-5552-44c7-8cc6-bb98a6654d94",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("3abcd5f8-5552-44c7-8cc6-bb98a6654d94",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("2a081a37-f1ec-41cf-b94e-6cac6db39808",
+	"464a34f7-60a5-433d-9831-6445e61d5f97",
+	2,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"2a081a37-f1ec-41cf-b94e-6cac6db39808");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"2a081a37-f1ec-41cf-b94e-6cac6db39808",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("2a081a37-f1ec-41cf-b94e-6cac6db39808",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_LS
+	VALUES ("7542beff-7a2e-472e-acd6-0bb2545c2405",
+	"464a34f7-60a5-433d-9831-6445e61d5f97",
+	"00000000-0000-0000-0000-000000000000",
+	"0214f671-b2ca-449b-9b4a-4d3d67e85bae",
+	"97ce40d8-bdd5-47ff-ad79-bb25aa500e15");
+INSERT INTO DIM_WAY
+	VALUES ("0214f671-b2ca-449b-9b4a-4d3d67e85bae",
+	4734.000000,
+	3604.000000,
+	"464a34f7-60a5-433d-9831-6445e61d5f97",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_WAY
+	VALUES ("97ce40d8-bdd5-47ff-ad79-bb25aa500e15",
+	4731.000000,
+	3672.000000,
+	"464a34f7-60a5-433d-9831-6445e61d5f97",
+	"00000000-0000-0000-0000-000000000000",
+	"0214f671-b2ca-449b-9b4a-4d3d67e85bae");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"464a34f7-60a5-433d-9831-6445e61d5f97",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("464a34f7-60a5-433d-9831-6445e61d5f97",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ED
+	VALUES ("21164700-9eb7-4040-a72b-8a014be329ef",
+	"00000000-0000-0000-0000-000000000000",
+	"464a34f7-60a5-433d-9831-6445e61d5f97");
+INSERT INTO DIM_DIA
+	VALUES ("42549ee1-3dfc-4596-b49e-5970b05bce89",
+	'',
+	1.000000,
+	4000.000000,
+	3000.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PO
+	VALUES ("b831f7a9-be6f-4e27-b68b-8c550db0df3b",
+	"4d5ee997-cc0f-49f4-a00b-4d6cb361d8c9",
+	'Port1',
+	0,
+	0);
+INSERT INTO C_IR
+	VALUES ("b6cb1603-7fc9-4064-9e41-26ad91d8089d",
+	"52db6895-1faf-4f37-903b-e183212300aa",
+	"00000000-0000-0000-0000-000000000000",
+	"b831f7a9-be6f-4e27-b68b-8c550db0df3b");
+INSERT INTO C_R
+	VALUES ("b6cb1603-7fc9-4064-9e41-26ad91d8089d",
+	'JogMotor',
+	'',
+	'Unnamed Interface',
+	'rqd_JogMotor_IntfTest::Port1::JogMotor');
+INSERT INTO SPR_REP
+	VALUES ("7199c521-0cb8-4e13-b42c-94d549e4c1a9",
+	"5088c18b-e00f-4dd3-b4a9-4f3e6167a4e1",
+	"b6cb1603-7fc9-4064-9e41-26ad91d8089d");
+INSERT INTO SPR_RS
+	VALUES ("7199c521-0cb8-4e13-b42c-94d549e4c1a9",
+	'jog',
+	'',
+	'',
+	3);
+INSERT INTO C_EP_PROXY
+	VALUES ("5088c18b-e00f-4dd3-b4a9-4f3e6167a4e1",
+	"52db6895-1faf-4f37-903b-e183212300aa",
+	-1,
+	'jog',
+	'',
+	'../../JogMotor/JogMotor.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("9de97f58-607c-443b-bc2d-230528068d0b",
+	"9241cf5d-2f11-4b22-9139-4bd3137ca986",
+	"b6cb1603-7fc9-4064-9e41-26ad91d8089d");
+INSERT INTO SPR_RS
+	VALUES ("9de97f58-607c-443b-bc2d-230528068d0b",
+	'stop',
+	'',
+	'',
+	3);
+INSERT INTO C_EP_PROXY
+	VALUES ("9241cf5d-2f11-4b22-9139-4bd3137ca986",
+	"52db6895-1faf-4f37-903b-e183212300aa",
+	-1,
+	'stop',
+	'',
+	'../../JogMotor/JogMotor.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("3fa90f50-06b9-430c-9167-efd0c19bbe97",
+	"6959782d-b94d-4525-9720-fcb3ab20776f",
+	"b6cb1603-7fc9-4064-9e41-26ad91d8089d");
+INSERT INTO SPR_RS
+	VALUES ("3fa90f50-06b9-430c-9167-efd0c19bbe97",
+	'motion_initiated',
+	'This signal is an indicator to the client of the interface that the last motion
+instruction has been executed.  A new motion instruction can now be send from 
+the client.',
+	'',
+	3);
+INSERT INTO C_EP_PROXY
+	VALUES ("6959782d-b94d-4525-9720-fcb3ab20776f",
+	"52db6895-1faf-4f37-903b-e183212300aa",
+	-1,
+	'motion_initiated',
+	'This signal is an indicator to the client of the interface that the last motion
+instruction has been executed.  A new motion instruction can now be send from 
+the client.',
+	'../../JogMotor/JogMotor.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("0c717220-9194-43b8-aca1-ec64df32271d",
+	"7830f4a2-ff94-4ac8-a5d1-fd897ee6bfaf",
+	"b6cb1603-7fc9-4064-9e41-26ad91d8089d");
+INSERT INTO SPR_RS
+	VALUES ("0c717220-9194-43b8-aca1-ec64df32271d",
+	'motion_complete',
+	'This signal informs the client that the motor is no longer rotating and the 
+drive is about to be disabled.  This signal will only occur after a stop has
+been issued by the client of the interface or after a timed velocity move is
+finished.',
+	'',
+	3);
+INSERT INTO C_EP_PROXY
+	VALUES ("7830f4a2-ff94-4ac8-a5d1-fd897ee6bfaf",
+	"52db6895-1faf-4f37-903b-e183212300aa",
+	-1,
+	'motion_complete',
+	'This signal informs the client that the motor is no longer rotating and the 
+drive is about to be disabled.  This signal will only occur after a stop has
+been issued by the client of the interface or after a timed velocity move is
+finished.',
+	'../../JogMotor/JogMotor.xtuml');
+INSERT INTO C_I_PROXY
+	VALUES ("52db6895-1faf-4f37-903b-e183212300aa",
+	"00000000-0000-0000-0000-000000000000",
+	'JogMotor',
+	'',
+	'../../JogMotor/JogMotor.xtuml');
+INSERT INTO PE_PE
+	VALUES ("4d5ee997-cc0f-49f4-a00b-4d6cb361d8c9",
+	1,
+	"7de4dc63-313b-4158-a305-4fd76a3198bb",
+	"00000000-0000-0000-0000-000000000000",
+	2);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("7de4dc63-313b-4158-a305-4fd76a3198bb",
+	"00000000-0000-0000-0000-000000000000",
+	"b6a5fceb-2ea9-495a-9b5b-6b1439da1cae",
+	'TestComponents',
+	'',
+	0,
+	'../TestComponents.xtuml');

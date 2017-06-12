@@ -1,0 +1,46 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("8dbd2d73-5427-42e3-92c3-634941fd44d6",
+	"96493490-05b1-4840-ab78-5af4de985c2e",
+	"96493490-05b1-4840-ab78-5af4de985c2e",
+	'Analysis',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("9ee5a40e-76b4-436c-a5b4-f215025536d7",
+	112,
+	"8dbd2d73-5427-42e3-92c3-634941fd44d6",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'VelocityControlDrive::Analysis');
+INSERT INTO DIM_DIA
+	VALUES ("9ee5a40e-76b4-436c-a5b4-f215025536d7",
+	'',
+	1.000000,
+	4000.000000,
+	3000.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO PE_PE
+	VALUES ("8dbd2d73-5427-42e3-92c3-634941fd44d6",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	7);
+INSERT INTO S_SYS_PROXY
+	VALUES ("96493490-05b1-4840-ab78-5af4de985c2e",
+	'VelocityControlDrive',
+	1,
+	'../VelocityControlDrive.xtuml');

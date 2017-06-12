@@ -1,0 +1,37 @@
+(* Model Identifiers
+     Component (Number): 'Diverter' (800)
+         Class (Number): 'Divert Packet' (001)
+              Operation: 'UpdatePosition'
+         Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Divert Packet'
+   
+Description: 
+
+Signature: JSR( _800_001_opUpdatePosition, 2, INTEGER, INTEGER );
+*)
+
+SBR( web_travel_dist, sheet_travel_dist );
+
+(*	Action:
+
+	// Update the position of the divert packet and the divert sheets. 
+	if (self.trailing_edge_position < 0);
+	   self.leading_edge_position = self.leading_edge_position + param.web_travel_dist;
+	   if (self.leading_edge_position > 0);
+	      self.leading_edge_position = 0;
+	   end if;
+	   
+	   self.trailing_edge_position = self.trailing_edge_position + param.web_travel_dist;
+	   if (self.trailing_edge_position > 0);
+	      self.trailing_edge_position = 0;
+	   end if;
+	end if;
+	
+	// Update the position of the tracked divert sheets
+	select many divert_sheets related by self->DVRTSHT[R2];
+	for each divert_sheet in divert_sheets;
+	   divert_sheet.UpdatePosition(web_travel_dist: param.web_travel_dist, sheet_travel_dist: param.sheet_travel_dist);
+	end for;
+*)
+
+(* TODO: Implement operation action code here *)
+

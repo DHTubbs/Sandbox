@@ -1,0 +1,57 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("f3d6d58c-a021-4932-bfb0-5a136cccaed6",
+	'xtfr_jog_switch',
+	1,
+	'JS',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("44ba4f69-7a31-4cdf-b1e6-a2aa33884130",
+	"f3d6d58c-a021-4932-bfb0-5a136cccaed6");
+INSERT INTO O_BATTR
+	VALUES ("44ba4f69-7a31-4cdf-b1e6-a2aa33884130",
+	"f3d6d58c-a021-4932-bfb0-5a136cccaed6");
+INSERT INTO O_ATTR
+	VALUES ("44ba4f69-7a31-4cdf-b1e6-a2aa33884130",
+	"f3d6d58c-a021-4932-bfb0-5a136cccaed6",
+	"00000000-0000-0000-0000-000000000000",
+	'position',
+	'',
+	'',
+	'position',
+	0,
+	"f69263cd-bbf1-4447-ab8c-6ca928791356",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("f69263cd-bbf1-4447-ab8c-6ca928791356",
+	"00000000-0000-0000-0000-000000000000",
+	'Jog Switch Position',
+	'',
+	'',
+	'../../../../../../../Intf_Diverter/models/Intf_Diverter/DataTypes/DataTypes.xtuml');
+INSERT INTO O_ID
+	VALUES (0,
+	"f3d6d58c-a021-4932-bfb0-5a136cccaed6");
+INSERT INTO O_ID
+	VALUES (1,
+	"f3d6d58c-a021-4932-bfb0-5a136cccaed6");
+INSERT INTO O_ID
+	VALUES (2,
+	"f3d6d58c-a021-4932-bfb0-5a136cccaed6");
+INSERT INTO PE_PE
+	VALUES ("f3d6d58c-a021-4932-bfb0-5a136cccaed6",
+	1,
+	"40c3d968-f16e-40ec-bb04-e4b18d930be1",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("40c3d968-f16e-40ec-bb04-e4b18d930be1",
+	"00000000-0000-0000-0000-000000000000",
+	"4024ccdc-bf32-4565-a289-284f1403b484",
+	'Test',
+	'',
+	0,
+	'../Test.xtuml');

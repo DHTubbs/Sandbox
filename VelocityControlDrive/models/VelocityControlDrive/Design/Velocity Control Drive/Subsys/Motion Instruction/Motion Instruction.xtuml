@@ -1,0 +1,129 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("dfe1b5b3-3a0f-480b-a325-b52cfcb0fe8c",
+	'Motion Instruction',
+	1,
+	'MI',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("51922a8e-bc27-4d40-b936-376a41a55a77",
+	"dfe1b5b3-3a0f-480b-a325-b52cfcb0fe8c");
+INSERT INTO O_BATTR
+	VALUES ("51922a8e-bc27-4d40-b936-376a41a55a77",
+	"dfe1b5b3-3a0f-480b-a325-b52cfcb0fe8c");
+INSERT INTO O_ATTR
+	VALUES ("51922a8e-bc27-4d40-b936-376a41a55a77",
+	"dfe1b5b3-3a0f-480b-a325-b52cfcb0fe8c",
+	"00000000-0000-0000-0000-000000000000",
+	'direction',
+	'',
+	'',
+	'direction',
+	0,
+	"10a457d6-e25e-4dbe-a48f-0682e976c4bf",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("10a457d6-e25e-4dbe-a48f-0682e976c4bf",
+	"00000000-0000-0000-0000-000000000000",
+	'Motor_Direction',
+	'',
+	'',
+	'../../../../../../../Intf_MotorDrive/models/Intf_MotorDrive/DataTypes/DataTypes.xtuml');
+INSERT INTO O_NBATTR
+	VALUES ("0347a964-930e-4f38-b259-f0af67e98b96",
+	"dfe1b5b3-3a0f-480b-a325-b52cfcb0fe8c");
+INSERT INTO O_BATTR
+	VALUES ("0347a964-930e-4f38-b259-f0af67e98b96",
+	"dfe1b5b3-3a0f-480b-a325-b52cfcb0fe8c");
+INSERT INTO O_ATTR
+	VALUES ("0347a964-930e-4f38-b259-f0af67e98b96",
+	"dfe1b5b3-3a0f-480b-a325-b52cfcb0fe8c",
+	"51922a8e-bc27-4d40-b936-376a41a55a77",
+	'velocity',
+	'',
+	'',
+	'velocity',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("4acd581b-66cd-4e6b-9ac4-27e3a90db145",
+	"dfe1b5b3-3a0f-480b-a325-b52cfcb0fe8c");
+INSERT INTO O_BATTR
+	VALUES ("4acd581b-66cd-4e6b-9ac4-27e3a90db145",
+	"dfe1b5b3-3a0f-480b-a325-b52cfcb0fe8c");
+INSERT INTO O_ATTR
+	VALUES ("4acd581b-66cd-4e6b-9ac4-27e3a90db145",
+	"dfe1b5b3-3a0f-480b-a325-b52cfcb0fe8c",
+	"0347a964-930e-4f38-b259-f0af67e98b96",
+	'acceleration',
+	'',
+	'',
+	'acceleration',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("f6922939-f335-4305-b37c-c2c6f6164fcf",
+	"dfe1b5b3-3a0f-480b-a325-b52cfcb0fe8c");
+INSERT INTO O_BATTR
+	VALUES ("f6922939-f335-4305-b37c-c2c6f6164fcf",
+	"dfe1b5b3-3a0f-480b-a325-b52cfcb0fe8c");
+INSERT INTO O_ATTR
+	VALUES ("f6922939-f335-4305-b37c-c2c6f6164fcf",
+	"dfe1b5b3-3a0f-480b-a325-b52cfcb0fe8c",
+	"4acd581b-66cd-4e6b-9ac4-27e3a90db145",
+	'duration',
+	'',
+	'',
+	'duration',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("6bf67c1a-6e28-4395-b8ac-fa0318bf2983",
+	"dfe1b5b3-3a0f-480b-a325-b52cfcb0fe8c");
+INSERT INTO O_BATTR
+	VALUES ("6bf67c1a-6e28-4395-b8ac-fa0318bf2983",
+	"dfe1b5b3-3a0f-480b-a325-b52cfcb0fe8c");
+INSERT INTO O_ATTR
+	VALUES ("6bf67c1a-6e28-4395-b8ac-fa0318bf2983",
+	"dfe1b5b3-3a0f-480b-a325-b52cfcb0fe8c",
+	"f6922939-f335-4305-b37c-c2c6f6164fcf",
+	'stop1',
+	'',
+	'',
+	'stop1',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"dfe1b5b3-3a0f-480b-a325-b52cfcb0fe8c");
+INSERT INTO O_ID
+	VALUES (1,
+	"dfe1b5b3-3a0f-480b-a325-b52cfcb0fe8c");
+INSERT INTO O_ID
+	VALUES (2,
+	"dfe1b5b3-3a0f-480b-a325-b52cfcb0fe8c");
+INSERT INTO PE_PE
+	VALUES ("dfe1b5b3-3a0f-480b-a325-b52cfcb0fe8c",
+	1,
+	"c817c574-2133-4f0d-a669-d4ef72db35fd",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("c817c574-2133-4f0d-a669-d4ef72db35fd",
+	"00000000-0000-0000-0000-000000000000",
+	"96493490-05b1-4840-ab78-5af4de985c2e",
+	'Subsys',
+	'',
+	0,
+	'../Subsys.xtuml');

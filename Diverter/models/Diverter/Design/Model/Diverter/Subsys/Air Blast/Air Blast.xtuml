@@ -1,0 +1,111 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("95d2013c-6717-4cbf-be40-8631761a882d",
+	'Air Blast',
+	10,
+	'ARBLST',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("7c00dfd7-642b-4ef2-ac56-dc6575741a0a",
+	"95d2013c-6717-4cbf-be40-8631761a882d");
+INSERT INTO O_BATTR
+	VALUES ("7c00dfd7-642b-4ef2-ac56-dc6575741a0a",
+	"95d2013c-6717-4cbf-be40-8631761a882d");
+INSERT INTO O_ATTR
+	VALUES ("7c00dfd7-642b-4ef2-ac56-dc6575741a0a",
+	"95d2013c-6717-4cbf-be40-8631761a882d",
+	"00000000-0000-0000-0000-000000000000",
+	'position',
+	'',
+	'',
+	'position',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("bb4b34f0-3456-416c-8fcf-9edd3ef53052",
+	"95d2013c-6717-4cbf-be40-8631761a882d");
+INSERT INTO O_BATTR
+	VALUES ("bb4b34f0-3456-416c-8fcf-9edd3ef53052",
+	"95d2013c-6717-4cbf-be40-8631761a882d");
+INSERT INTO O_ATTR
+	VALUES ("bb4b34f0-3456-416c-8fcf-9edd3ef53052",
+	"95d2013c-6717-4cbf-be40-8631761a882d",
+	"bf78a0d5-1b99-47db-9e0f-77a34734df15",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("bf78a0d5-1b99-47db-9e0f-77a34734df15",
+	"95d2013c-6717-4cbf-be40-8631761a882d");
+INSERT INTO O_BATTR
+	VALUES ("bf78a0d5-1b99-47db-9e0f-77a34734df15",
+	"95d2013c-6717-4cbf-be40-8631761a882d");
+INSERT INTO O_ATTR
+	VALUES ("bf78a0d5-1b99-47db-9e0f-77a34734df15",
+	"95d2013c-6717-4cbf-be40-8631761a882d",
+	"7c00dfd7-642b-4ef2-ac56-dc6575741a0a",
+	'blast_duration',
+	'',
+	'',
+	'blast_duration',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"95d2013c-6717-4cbf-be40-8631761a882d");
+INSERT INTO O_ID
+	VALUES (1,
+	"95d2013c-6717-4cbf-be40-8631761a882d");
+INSERT INTO O_ID
+	VALUES (2,
+	"95d2013c-6717-4cbf-be40-8631761a882d");
+INSERT INTO PE_PE
+	VALUES ("95d2013c-6717-4cbf-be40-8631761a882d",
+	1,
+	"dc4131cd-6623-4946-bae6-3107b2be2c64",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("dc4131cd-6623-4946-bae6-3107b2be2c64",
+	"00000000-0000-0000-0000-000000000000",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	'Subsys',
+	'The class diagram for the diverter may appear to be more abstract than necessary,
+but there are characteristics of the diverter operation that make the abstraction
+necessary.  
+
+Establishing relationships between the diverted sheets (product) and the actuated 
+components would have been the logical choice.  Thestate machines to control the 
+actuators would have resided within the product.  As the product flows along the 
+board path, it''s state machine would trigger actions on the machine.  This model 
+fails because the actuation time delays of the actuators are configurable and 
+therefore does not guarantee the sequence of events generated.  Using product 
+state machines to control the actuators is non-deterministic.
+
+The approach taken in this model is to use a tracking point class to establish the
+relationship between the product and the actuators.  The tracking points are in 
+no particular order and trigger an action only when the divert sheet reaches a 
+calculated position along the board path.  The tracking points have no 
+understanding of what actions occurred before them or will occur after them.
+
+The key point of this model is the sequence of actions of the diverter is not set
+in a state machine, but is dynamic and therefore easily changed. 
+
+The cross transfer conveyor is different.  It receives a tracking event near the 
+beginning of the divert sequence to stop the conveyor prior to the first divert
+sheet entering the diverter bay.  The conveyor may be moving from a user activity.
+After that point, the cross transfer conveyor actions are driven by the diverter 
+bay and ultimately the diverted stack, whether it is scrap or inspection. ',
+	0,
+	'../Subsys.xtuml');

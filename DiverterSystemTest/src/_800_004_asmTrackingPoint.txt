@@ -1,0 +1,77 @@
+(* Model Identifiers
+     Component (Number): 'Diverter' (800)
+         Class (Number): 'Tracking Point' (004)
+         Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Tracking Point'
+   
+Description: Assigner (class) state machine for class Tracking Point_800_004
+
+Signature: JSR( _800_004_asmTrackingPoint );
+*)
+
+SBR(  );
+
+_obj.tracking_point_800_004_a.asm.b_done := b_FALSE;
+
+while (Not _obj.tracking_point_800_004_a.asm.b_done) do
+	_obj.tracking_point_800_004_a.asm.b_done := b_TRUE;
+	case (_obj.tracking_point_800_004_a.d_current_state) of
+	0:  (* Not Created *)
+	
+		(* Exit Conditions *)
+		if (_obj.tracking_point_800_004_a.events.evt_lst.b_creation_event) then
+			(* Consume the Event *)
+			_obj.tracking_point_800_004_a.events.evt_lst.b_creation_event := b_FALSE;
+
+			_obj.tracking_point_800_004_a.d_current_state := 1;
+			_obj.tracking_point_800_004_a.asm.b_txn := b_FALSE;  (* Technically not a state change.  No entry action. *)
+			_obj.tracking_point_800_004_a.asm.b_done := b_FALSE;
+		end_if;
+
+	1:  (* State: 'CorrectForVelocity' *)
+		(* Entry Action *)
+		if (_obj.tracking_point_800_004_a.asm.b_txn) then
+			_obj.tracking_point_800_004_a.asm.b_txn := b_FALSE;
+			
+			(*  Action:
+				
+				// Update the position of all tracking points
+				
+				// Obtain the current velocity of the sheet handling system
+				sheet_handler_velocity = 0; // velocity from required interface
+				   
+				select many tracking_points from TRKPT;
+				for each tracking_point in tracking_points;
+				   // x0 = x1 - (v0 * t) : Not accounting for acceleration changes
+				   tracking_point.effective_position = tracking_point.actual_position - (sheet_handler_velocity * tracking_point.offset_time); // * scaling for proper units; 
+				   
+				end for;
+			*)
+
+			(* TODO: Implement state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (_obj.tracking_point_800_004_a.events.evt_lst.b_correct_position) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			_obj.tracking_point_800_004_a.events.evt_lst.b_correct_position := b_FALSE;
+
+			_obj.tracking_point_800_004_a.d_current_state := 1;
+			_obj.tracking_point_800_004_a.asm.b_txn := b_TRUE;
+			_obj.tracking_point_800_004_a.asm.b_done := b_FALSE;
+			
+		end_if;
+
+	else (* Invalid State - End of 'case' *)
+		(* The state machine was directed to an invalid state.  Either a programming
+		   error was made or a hardware failure has occurred in the PLC. *)
+		
+		(* TODO: Add a Diagnostic here. *)
+		
+		_obj.tracking_point_800_004_a.d_current_state := 1;
+		_obj.tracking_point_800_004_a.asm.b_txn := b_FALSE;
+		_obj.tracking_point_800_004_a.asm.b_done := b_FALSE;
+	end_case;
+end_while;

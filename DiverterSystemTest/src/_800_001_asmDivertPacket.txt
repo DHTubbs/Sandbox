@@ -1,0 +1,86 @@
+(* Model Identifiers
+     Component (Number): 'Diverter' (800)
+         Class (Number): 'Divert Packet' (001)
+         Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Divert Packet'
+   
+Description: Assigner (class) state machine for class Divert Packet_800_001
+
+Signature: JSR( _800_001_asmDivertPacket );
+*)
+
+SBR(  );
+
+_obj.divert_packet_800_001_a.asm.b_done := b_FALSE;
+
+while (Not _obj.divert_packet_800_001_a.asm.b_done) do
+	_obj.divert_packet_800_001_a.asm.b_done := b_TRUE;
+	case (_obj.divert_packet_800_001_a.d_current_state) of
+	0:  (* Not Created *)
+	
+		(* Exit Conditions *)
+		if (_obj.divert_packet_800_001_a.events.evt_lst.b_creation_event) then
+			(* Consume the Event *)
+			_obj.divert_packet_800_001_a.events.evt_lst.b_creation_event := b_FALSE;
+
+			_obj.divert_packet_800_001_a.d_current_state := 1;
+			_obj.divert_packet_800_001_a.asm.b_txn := b_FALSE;  (* Technically not a state change.  No entry action. *)
+			_obj.divert_packet_800_001_a.asm.b_done := b_FALSE;
+		end_if;
+
+	1:  (* State: 'Tracking' *)
+		(* Entry Action *)
+		if (_obj.divert_packet_800_001_a.asm.b_txn) then
+			_obj.divert_packet_800_001_a.asm.b_txn := b_FALSE;
+			
+			(*  Action:
+				
+				// Calculate how far the web has moved and how far the sheets in the sheet
+				//    handling system have moved.
+				// 
+				
+				
+				// Obtain the speeds from required interface
+				web_speed = 100;           // Units = Meter / Minute
+				sheet_handler_speed = 105; // Units = Meter / Minute
+				
+				// Determine how far the web has moved relative to the last calculation.
+				
+				// x1 = x0 + (v0 * t) + (0.5 * a * t^2);  x0 = 0, a = 0, t = 1 mSec
+				web_dist = web_speed / 60;              // Units = mm / mSec
+				sheet_dist = sheet_handler_speed / 60;  // Units = mm / mSec
+				
+				// Update the position of the divert packets
+				select many divert_packets from DVRTPKT;
+				for each divert_packet in divert_packets;
+				   divert_packet.UpdatePosition(web_travel_dist: web_dist, sheet_travel_dist: sheet_dist);
+				end for;
+			*)
+
+			(* TODO: Implement state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (_obj.divert_packet_800_001_a.events.evt_lst.b_calc_new_position) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			_obj.divert_packet_800_001_a.events.evt_lst.b_calc_new_position := b_FALSE;
+
+			_obj.divert_packet_800_001_a.d_current_state := 1;
+			_obj.divert_packet_800_001_a.asm.b_txn := b_TRUE;
+			_obj.divert_packet_800_001_a.asm.b_done := b_FALSE;
+			
+		end_if;
+
+	else (* Invalid State - End of 'case' *)
+		(* The state machine was directed to an invalid state.  Either a programming
+		   error was made or a hardware failure has occurred in the PLC. *)
+		
+		(* TODO: Add a Diagnostic here. *)
+		
+		_obj.divert_packet_800_001_a.d_current_state := 1;
+		_obj.divert_packet_800_001_a.asm.b_txn := b_FALSE;
+		_obj.divert_packet_800_001_a.asm.b_done := b_FALSE;
+	end_case;
+end_while;

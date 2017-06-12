@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="28.00" TargetName="Fault" TargetType="DataType" ContainsContext="true" Owner="Ronald Schmidt, Barry-Wehmiller" ExportDate="Wed May 11 10:07:01 2016" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="KnifeStacker">
+<DataTypes Use="Context">
+<DataType Use="Target" Name="Fault" Family="NoFamily" Class="User">
+<Members>
+</Members>
+</DataType>
+</DataTypes>
+</Controller>
+</RSLogix5000Content>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--This class controls the enable function of the drive.-->
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="28.00" TargetName="Drive Enable" TargetType="DataType" ContainsContext="true" Owner="Ronald Schmidt, Barry-Wehmiller" ExportDate="Wed May 11 10:07:01 2016" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="KnifeStacker">
+<DataTypes Use="Context">
+<DataType Name="EVENTS_RECEIVED" Family="NoFamily" Class="User">
+<Members>
+<Member Name="ZZZZZZZZZZCLASSEVENTS" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>      
+<Member Name="b_enable_drive" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZCLASSEVENTS" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="b_disable_drive" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZCLASSEVENTS" BitNumber="2" ExternalAccess="Read/Write"/>
+<Member Name="b_drive_signals_done" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZCLASSEVENTS" BitNumber="3" ExternalAccess="Read/Write"/>
+<Member Name="b_delay_timer_expired" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZCLASSEVENTS" BitNumber="4" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Use="Target" Name="DriveEnable" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[This class controls the enable function of the drive.]]>
+</Description>
+<Members>
+<Member Name="events" DataType="EVENTS_RECEIVED" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="tmr_disable_timer" DataType="FBD_TIMER" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_disable_delay" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The amount of time the drive should remain enabled after a jog is complete before disabling.]]>
+</Description>
+</Member>
+</Members>
+</DataType>
+</DataTypes>
+</Controller>
+</RSLogix5000Content>

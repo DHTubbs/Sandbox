@@ -1,0 +1,118 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("7518624d-ddb4-44b0-8f5e-3316cc5e6ab0",
+	'Divert Stack',
+	5,
+	'DVRTSTK',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("2b82ac0a-d6ca-4236-8fda-624fc9099e2b",
+	"7518624d-ddb4-44b0-8f5e-3316cc5e6ab0");
+INSERT INTO O_BATTR
+	VALUES ("2b82ac0a-d6ca-4236-8fda-624fc9099e2b",
+	"7518624d-ddb4-44b0-8f5e-3316cc5e6ab0");
+INSERT INTO O_ATTR
+	VALUES ("2b82ac0a-d6ca-4236-8fda-624fc9099e2b",
+	"7518624d-ddb4-44b0-8f5e-3316cc5e6ab0",
+	"00000000-0000-0000-0000-000000000000",
+	'stack_type',
+	'',
+	'',
+	'stack_type',
+	0,
+	"e637c9ff-a804-4aef-b8eb-e6854f50cc68",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("e637c9ff-a804-4aef-b8eb-e6854f50cc68",
+	"00000000-0000-0000-0000-000000000000",
+	'Divert Packet',
+	'',
+	'',
+	'../../../../../../../../Intf_Diverter/models/Intf_Diverter/DataTypes/DataTypes.xtuml');
+INSERT INTO O_NBATTR
+	VALUES ("c08e1f90-6670-41ff-a5f8-0587af275a5b",
+	"7518624d-ddb4-44b0-8f5e-3316cc5e6ab0");
+INSERT INTO O_BATTR
+	VALUES ("c08e1f90-6670-41ff-a5f8-0587af275a5b",
+	"7518624d-ddb4-44b0-8f5e-3316cc5e6ab0");
+INSERT INTO O_ATTR
+	VALUES ("c08e1f90-6670-41ff-a5f8-0587af275a5b",
+	"7518624d-ddb4-44b0-8f5e-3316cc5e6ab0",
+	"2b82ac0a-d6ca-4236-8fda-624fc9099e2b",
+	'number_of_sheets',
+	'',
+	'',
+	'number_of_sheets',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("2e8e8ff1-9c55-4e91-9a5c-69848665a7af",
+	"7518624d-ddb4-44b0-8f5e-3316cc5e6ab0");
+INSERT INTO O_BATTR
+	VALUES ("2e8e8ff1-9c55-4e91-9a5c-69848665a7af",
+	"7518624d-ddb4-44b0-8f5e-3316cc5e6ab0");
+INSERT INTO O_ATTR
+	VALUES ("2e8e8ff1-9c55-4e91-9a5c-69848665a7af",
+	"7518624d-ddb4-44b0-8f5e-3316cc5e6ab0",
+	"c08e1f90-6670-41ff-a5f8-0587af275a5b",
+	'stack_thickness',
+	'',
+	'',
+	'stack_thickness',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"7518624d-ddb4-44b0-8f5e-3316cc5e6ab0");
+INSERT INTO O_ID
+	VALUES (1,
+	"7518624d-ddb4-44b0-8f5e-3316cc5e6ab0");
+INSERT INTO O_ID
+	VALUES (2,
+	"7518624d-ddb4-44b0-8f5e-3316cc5e6ab0");
+INSERT INTO PE_PE
+	VALUES ("7518624d-ddb4-44b0-8f5e-3316cc5e6ab0",
+	1,
+	"dc4131cd-6623-4946-bae6-3107b2be2c64",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("dc4131cd-6623-4946-bae6-3107b2be2c64",
+	"00000000-0000-0000-0000-000000000000",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	'Subsys',
+	'The class diagram for the diverter may appear to be more abstract than necessary,
+but there are characteristics of the diverter operation that make the abstraction
+necessary.  
+
+Establishing relationships between the diverted sheets (product) and the actuated 
+components would have been the logical choice.  Thestate machines to control the 
+actuators would have resided within the product.  As the product flows along the 
+board path, it''s state machine would trigger actions on the machine.  This model 
+fails because the actuation time delays of the actuators are configurable and 
+therefore does not guarantee the sequence of events generated.  Using product 
+state machines to control the actuators is non-deterministic.
+
+The approach taken in this model is to use a tracking point class to establish the
+relationship between the product and the actuators.  The tracking points are in 
+no particular order and trigger an action only when the divert sheet reaches a 
+calculated position along the board path.  The tracking points have no 
+understanding of what actions occurred before them or will occur after them.
+
+The key point of this model is the sequence of actions of the diverter is not set
+in a state machine, but is dynamic and therefore easily changed. 
+
+The cross transfer conveyor is different.  It receives a tracking event near the 
+beginning of the divert sequence to stop the conveyor prior to the first divert
+sheet entering the diverter bay.  The conveyor may be moving from a user activity.
+After that point, the cross transfer conveyor actions are driven by the diverter 
+bay and ultimately the diverted stack, whether it is scrap or inspection. ',
+	0,
+	'../Subsys.xtuml');

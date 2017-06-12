@@ -1,0 +1,45 @@
+-- BP 7.1.6 content: InstanceStateMachine syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO SM_ISM
+	VALUES ("914b3545-d069-4fc3-9fc0-6e8269b0e444",
+	"9f6dbe02-e6f1-41f0-aef7-eee6afd06d7a");
+INSERT INTO SM_SM
+	VALUES ("914b3545-d069-4fc3-9fc0-6e8269b0e444",
+	'',
+	0);
+INSERT INTO SM_MOORE
+	VALUES ("914b3545-d069-4fc3-9fc0-6e8269b0e444");
+INSERT INTO GD_MD
+	VALUES ("854cae53-ffa6-41d1-ad05-ea8f6eb307b6",
+	8,
+	"914b3545-d069-4fc3-9fc0-6e8269b0e444",
+	40,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'4.1.17',
+	'Diverter::Design::Model::Diverter::CrossTransferConveyorControl::Motion Inhibited::Instance State Machine');
+INSERT INTO DIM_DIA
+	VALUES ("854cae53-ffa6-41d1-ad05-ea8f6eb307b6",
+	'',
+	1.000000,
+	4000.000000,
+	3000.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_OBJ_PROXY
+	VALUES ("9f6dbe02-e6f1-41f0-aef7-eee6afd06d7a",
+	'Motion Inhibited',
+	12,
+	'MOTINH',
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'../Motion Inhibited.xtuml');

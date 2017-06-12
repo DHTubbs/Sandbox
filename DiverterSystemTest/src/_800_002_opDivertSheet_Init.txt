@@ -1,0 +1,20 @@
+(* Model Identifiers
+     Component (Number): 'Diverter' (800)
+         Class (Number): 'Divert Sheet' (002)
+              Operation: 'Initialize'
+         Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Divert Sheet'
+   
+Description: All actions required to initialize an instance of class 'Divert Sheet'.
+             This subroutine must be called whenever a new instance is created.
+
+Signature: JSR( _800_002_opDivertSheet_Init );
+*)
+
+SBR(  );
+
+(* Clear the global and local event mailbox structures. *)
+CPS(empty_event_struct, _events.event_divert_sheet_800_002.evt_lst, 1);
+CPS(empty_event_struct, _obj.divert_sheet_800_002.events.evt_lst, 1);
+
+(* TODO: Add all initialization code here *)
+

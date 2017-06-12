@@ -1,0 +1,126 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("b34a5ac4-63c2-4c43-b294-61a42293ba6b",
+	"00000000-0000-0000-0000-000000000000",
+	"b6a5fceb-2ea9-495a-9b5b-6b1439da1cae",
+	'Sequences',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("1bae1770-3d26-47e2-a7c7-2c6ea815db8b",
+	112,
+	"b34a5ac4-63c2-4c43-b294-61a42293ba6b",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	200,
+	150,
+	0,
+	'',
+	'Intf_MotorDrive::ClientInterface::Sequences');
+INSERT INTO GD_GE
+	VALUES ("2f5345e3-b6fd-4030-a46a-02cbf2b38791",
+	"1bae1770-3d26-47e2-a7c7-2c6ea815db8b",
+	"dd02b214-f9b5-4e70-b0e2-3f4eb4333764",
+	108,
+	0,
+	'Intf_MotorDrive::ClientInterface::Sequences::Client_JogCommand_UnknownDuration');
+INSERT INTO GD_SHP
+	VALUES ("2f5345e3-b6fd-4030-a46a-02cbf2b38791");
+INSERT INTO GD_NCS
+	VALUES ("2f5345e3-b6fd-4030-a46a-02cbf2b38791");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"2f5345e3-b6fd-4030-a46a-02cbf2b38791");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"2f5345e3-b6fd-4030-a46a-02cbf2b38791",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("2f5345e3-b6fd-4030-a46a-02cbf2b38791",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_GE
+	VALUES ("bf5a7107-3a45-425f-8a04-91fc46e7463b",
+	"1bae1770-3d26-47e2-a7c7-2c6ea815db8b",
+	"a4bf75ed-3b58-4c77-afdb-341bda6f1963",
+	108,
+	0,
+	'Intf_MotorDrive::ClientInterface::Sequences::Client_JogCommand_KnownDuration');
+INSERT INTO GD_SHP
+	VALUES ("bf5a7107-3a45-425f-8a04-91fc46e7463b");
+INSERT INTO GD_NCS
+	VALUES ("bf5a7107-3a45-425f-8a04-91fc46e7463b");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"bf5a7107-3a45-425f-8a04-91fc46e7463b");
+INSERT INTO DIM_GE
+	VALUES (220.000000,
+	0.000000,
+	"bf5a7107-3a45-425f-8a04-91fc46e7463b",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("bf5a7107-3a45-425f-8a04-91fc46e7463b",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_GE
+	VALUES ("1438b5ec-57fd-4d4e-a57d-7cfa5849a592",
+	"1bae1770-3d26-47e2-a7c7-2c6ea815db8b",
+	"1260e269-6fbb-439e-b0fc-3c0d7cdedd83",
+	108,
+	0,
+	'Intf_MotorDrive::ClientInterface::Sequences::Client_JogCommand_KnownDuration-1');
+INSERT INTO GD_SHP
+	VALUES ("1438b5ec-57fd-4d4e-a57d-7cfa5849a592");
+INSERT INTO GD_NCS
+	VALUES ("1438b5ec-57fd-4d4e-a57d-7cfa5849a592");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"1438b5ec-57fd-4d4e-a57d-7cfa5849a592");
+INSERT INTO DIM_GE
+	VALUES (440.000000,
+	0.000000,
+	"1438b5ec-57fd-4d4e-a57d-7cfa5849a592",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("1438b5ec-57fd-4d4e-a57d-7cfa5849a592",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_DIA
+	VALUES ("1bae1770-3d26-47e2-a7c7-2c6ea815db8b",
+	'',
+	1.000000,
+	4000.000000,
+	3000.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO PE_PE
+	VALUES ("b34a5ac4-63c2-4c43-b294-61a42293ba6b",
+	1,
+	"c887db0e-5c3e-479d-979a-81d740ba4ed7",
+	"00000000-0000-0000-0000-000000000000",
+	7);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("c887db0e-5c3e-479d-979a-81d740ba4ed7",
+	"b6a5fceb-2ea9-495a-9b5b-6b1439da1cae",
+	"b6a5fceb-2ea9-495a-9b5b-6b1439da1cae",
+	'ClientInterface',
+	'',
+	0,
+	'../ClientInterface.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("b6a5fceb-2ea9-495a-9b5b-6b1439da1cae",
+	'Intf_MotorDrive',
+	1,
+	'../../Intf_MotorDrive.xtuml');

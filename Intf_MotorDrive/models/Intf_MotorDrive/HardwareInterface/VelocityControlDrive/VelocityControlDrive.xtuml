@@ -1,0 +1,102 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("10a53713-b180-4892-bb73-5b5ec5d3d1a7",
+	"00000000-0000-0000-0000-000000000000",
+	"b6a5fceb-2ea9-495a-9b5b-6b1439da1cae",
+	'VelocityControlDrive',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("b3528b88-b2a6-41ef-99e0-ab562acccf0c",
+	112,
+	"10a53713-b180-4892-bb73-5b5ec5d3d1a7",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	200,
+	150,
+	0,
+	'',
+	'Intf_MotorDrive::HardwareInterface::VelocityControlDrive');
+INSERT INTO GD_GE
+	VALUES ("bee36ad5-368c-4656-83ff-d93138b7996f",
+	"b3528b88-b2a6-41ef-99e0-ab562acccf0c",
+	"486d54bc-ee94-4a64-a1d6-fdf91050f010",
+	96,
+	0,
+	'Intf_MotorDrive::HardwareInterface::VelocityControlDrive::VelocityControlDrive');
+INSERT INTO GD_SHP
+	VALUES ("bee36ad5-368c-4656-83ff-d93138b7996f");
+INSERT INTO GD_NCS
+	VALUES ("bee36ad5-368c-4656-83ff-d93138b7996f");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"bee36ad5-368c-4656-83ff-d93138b7996f");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"bee36ad5-368c-4656-83ff-d93138b7996f",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("bee36ad5-368c-4656-83ff-d93138b7996f",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_GE
+	VALUES ("6cf5dbe8-827a-4623-9b93-0051f96b61fa",
+	"b3528b88-b2a6-41ef-99e0-ab562acccf0c",
+	"f012460a-1054-40cd-9e5d-d13ff3f7334c",
+	108,
+	0,
+	'Intf_MotorDrive::HardwareInterface::VelocityControlDrive::TestComponents');
+INSERT INTO GD_SHP
+	VALUES ("6cf5dbe8-827a-4623-9b93-0051f96b61fa");
+INSERT INTO GD_NCS
+	VALUES ("6cf5dbe8-827a-4623-9b93-0051f96b61fa");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"6cf5dbe8-827a-4623-9b93-0051f96b61fa");
+INSERT INTO DIM_GE
+	VALUES (220.000000,
+	0.000000,
+	"6cf5dbe8-827a-4623-9b93-0051f96b61fa",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("6cf5dbe8-827a-4623-9b93-0051f96b61fa",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_DIA
+	VALUES ("b3528b88-b2a6-41ef-99e0-ab562acccf0c",
+	'',
+	1.000000,
+	4000.000000,
+	3000.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO PE_PE
+	VALUES ("10a53713-b180-4892-bb73-5b5ec5d3d1a7",
+	1,
+	"e4279555-d978-40d2-bdc8-07f6c1a6c63f",
+	"00000000-0000-0000-0000-000000000000",
+	7);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("e4279555-d978-40d2-bdc8-07f6c1a6c63f",
+	"b6a5fceb-2ea9-495a-9b5b-6b1439da1cae",
+	"b6a5fceb-2ea9-495a-9b5b-6b1439da1cae",
+	'HardwareInterface',
+	'',
+	0,
+	'../HardwareInterface.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("b6a5fceb-2ea9-495a-9b5b-6b1439da1cae",
+	'Intf_MotorDrive',
+	1,
+	'../../Intf_MotorDrive.xtuml');

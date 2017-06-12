@@ -1,0 +1,276 @@
+(* Model Identifiers
+     Component (Number): 'Diverter' (800)
+         Class (Number): 'Cross Transfer Conveyor' (007)
+         Qualified Name: 'Diverter::Design::Model::Diverter::CrossTransferConveyorControl::Cross Transfer Conveyor'
+   
+Description: 
+
+Signature: JSR( _800_007_smCrossTransferConveyor );
+*)
+
+SBR(  );
+
+_obj.cross_transfer_conveyor_800_007.ism.b_done := b_FALSE;
+
+while (Not _obj.cross_transfer_conveyor_800_007.ism.b_done) do
+	_obj.cross_transfer_conveyor_800_007.ism.b_done := b_TRUE;
+	case (_obj.cross_transfer_conveyor_800_007.d_current_state) of
+	0:  (* Uninstantiated Instance *)
+	
+		(* Exit Conditions *)
+		if (_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_creation_event) then
+			(* Consume the Event *)
+			_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_creation_event := b_FALSE;
+
+			_obj.cross_transfer_conveyor_800_007.d_current_state := 1;
+			_obj.cross_transfer_conveyor_800_007.ism.b_txn := b_FALSE;
+			_obj.cross_transfer_conveyor_800_007.ism.b_done := b_FALSE;
+		end_if;
+
+	1:  (* State: 'ManualControl' *)
+		(* Entry Action *)
+		if (_obj.cross_transfer_conveyor_800_007.ism.b_txn) then
+			_obj.cross_transfer_conveyor_800_007.ism.b_txn := b_FALSE;
+			
+			(*  Action:
+				
+				// Create the manual sequence
+				create object instance man_seq of MANSEQ;
+				relate man_seq to self across R8;
+				
+				generate XTFRCNVR10:enable_control() to man_seq;
+			*)
+
+			(* TODO: Implement state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_activate) then
+			(* Exit Action *)
+			(*  Action:
+				
+				// Delete the manual sequence
+				select one manual_seq related by self->MANSEQ[R8];
+				unrelate manual_seq from self across R8;
+				delete object instance manual_seq;
+			*)
+
+			(* TODO: Implement event action code here *)
+			
+
+			(* Consume the Event *)
+			_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_activate := b_FALSE;
+
+			_obj.cross_transfer_conveyor_800_007.d_current_state := 2;
+			_obj.cross_transfer_conveyor_800_007.ism.b_txn := b_TRUE;
+			_obj.cross_transfer_conveyor_800_007.ism.b_done := b_FALSE;
+			
+		elsif (_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_automatic_sequence_cmplt) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_discharge) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_sequence_aborted) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		end_if;
+
+	2:  (* State: 'MotionInhibited' *)
+		(* Entry Action *)
+		if (_obj.cross_transfer_conveyor_800_007.ism.b_txn) then
+			_obj.cross_transfer_conveyor_800_007.ism.b_txn := b_FALSE;
+			
+			(*  Action:
+				
+				// Stop the conveyor while sheets are being diverted into the bay.
+				// 
+				
+				
+				// Create the motion inhibited sub-type class
+				create object instance motion_inh of MOTINH;
+				relate motion_inh to self across R8;
+				
+				xtfrcnvr::stop();
+			*)
+
+			(* TODO: Implement state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_discharge) then
+			(* Exit Action *)
+			(*  Action:
+				
+				// Delete the motion inhibited class
+				select one motion_inh related by self->MOTINH[R8];
+				unrelate motion_inh from self across R8;
+				delete object instance motion_inh;
+			*)
+
+			(* TODO: Implement event action code here *)
+			
+
+			(* Consume the Event *)
+			_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_discharge := b_FALSE;
+
+			_obj.cross_transfer_conveyor_800_007.d_current_state := 3;
+			_obj.cross_transfer_conveyor_800_007.ism.b_txn := b_TRUE;
+			_obj.cross_transfer_conveyor_800_007.ism.b_done := b_FALSE;
+			
+		elsif (_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_sequence_aborted) then
+			(* Exit Action *)
+			(*  Action:
+				
+				// Delete the motion inhibited class
+				select one motion_inh related by self->MOTINH[R8];
+				unrelate motion_inh from self across R8;
+				delete object instance motion_inh;
+			*)
+
+			(* TODO: Implement event action code here *)
+			
+
+			(* Consume the Event *)
+			_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_sequence_aborted := b_FALSE;
+
+			_obj.cross_transfer_conveyor_800_007.d_current_state := 1;
+			_obj.cross_transfer_conveyor_800_007.ism.b_txn := b_TRUE;
+			_obj.cross_transfer_conveyor_800_007.ism.b_done := b_FALSE;
+			
+		elsif (_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_automatic_sequence_cmplt) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_activate) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		end_if;
+
+	3:  (* State: 'AutomaticControl' *)
+		(* Entry Action *)
+		if (_obj.cross_transfer_conveyor_800_007.ism.b_txn) then
+			_obj.cross_transfer_conveyor_800_007.ism.b_txn := b_FALSE;
+			
+			(*  Action:
+				
+				// A scrap or inspection divert is starting.  
+				// 
+				
+				
+				
+				// Switch to the AutomaticSequence sub-type
+				
+				// Create the automatic sequence
+				create object instance auto_seq of AUTOSEQ;
+				relate auto_seq to self across R8;
+				
+				// Create the automatic sequence initial sub-type
+				select one xtfr_cnvr related by auto_seq->XTFRCNVR[R8];
+				auto_seq.motor_direction = xtfr_cnvr.GetMotorDirection(machine_side: rcvd_evt.direction);
+				
+				if rcvd_evt.control_alg == Divert_Conv_Discharge_Alg::Dist_x1_Rollout;
+				   // Create the single length rollout jog
+				   create object instance conv_len_rollout of CLX1DCGSEQ;
+				   relate conv_len_rollout to auto_seq across R9;
+				   auto_seq.time_to_run = 90;   
+				   
+				elif rcvd_evt.control_alg == Divert_Conv_Discharge_Alg::Dist_x2_Hesitating_Rollout;
+				   // Create the hesitating rollout jog
+				   create object instance hesitate_rollout of CLX2HRDCGSEQ;
+				   relate hesitate_rollout to auto_seq across R9;
+				   auto_seq.time_to_run = 180;
+				
+				end if;
+				
+				generate AUTOSEQ11:initiate_auto_seq() to auto_seq;
+			*)
+
+			(* TODO: Implement state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_automatic_sequence_cmplt) then
+			(* Exit Action *)
+			(*  Action:
+				
+				// Delete the auto sequence class
+				select one auto_seq related by self->AUTOSEQ[R8];
+				unrelate auto_seq from self across R8;
+				delete object instance auto_seq;
+			*)
+
+			(* TODO: Implement event action code here *)
+			
+
+			(* Consume the Event *)
+			_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_automatic_sequence_cmplt := b_FALSE;
+
+			_obj.cross_transfer_conveyor_800_007.d_current_state := 1;
+			_obj.cross_transfer_conveyor_800_007.ism.b_txn := b_TRUE;
+			_obj.cross_transfer_conveyor_800_007.ism.b_done := b_FALSE;
+			
+		elsif (_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_discharge) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_activate) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_sequence_aborted) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		end_if;
+
+	else (* Invalid State - End of 'case' *)
+		(* The state machine was directed to an invalid state.  Either a programming
+		   error was made or a hardware failure has occurred in the PLC. *)
+		
+		(* TODO: Add a Diagnostic here. *)
+		
+		_obj.cross_transfer_conveyor_800_007.d_current_state := 0;
+		_obj.cross_transfer_conveyor_800_007.ism.b_txn := b_FALSE;
+		_obj.cross_transfer_conveyor_800_007.ism.b_done := b_FALSE;
+	end_case;
+end_while;

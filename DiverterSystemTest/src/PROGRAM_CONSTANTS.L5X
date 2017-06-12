@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="28.00" TargetName="KnifeStackerCellConst" TargetType="DataType" ContainsContext="true" Owner="Ronald Schmidt, Barry-Wehmiller" ExportDate="Wed May 11 10:07:01 2016" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="KnifeStacker">
+<DataTypes Use="Context">
+<DataType Name="MY_CONSTANTS_CONST" Family="NoFamily" Class="User">
+<Members>
+<Member Name="d_FORWARD" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Defined Value: 1
+Don't look back.]]>
+</Description>
+</Member>
+<Member Name="d_REVERSE" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Defined Value: 2
+Opposite of forward.]]>
+</Description>
+</Member>
+</Members>
+</DataType>
+<DataType Name="MOTOR_DIRECTION_ENUM" Family="NoFamily" Class="User">
+<Members>
+<Member Name="d_FORWARD" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_REVERSE" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="SHEET_END_ENUM" Family="NoFamily" Class="User">
+<Members>
+<Member Name="d_LEADING" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The most downstream edge of a sheet.  The edge made by the first cut of the knife.]]>
+</Description>
+</Member>
+<Member Name="d_TRAILING" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The most upstream edge of a sheet.  The edge made by the second cut of the knife.]]>
+</Description>
+</Member>
+</Members>
+</DataType>
+<DataType Name="ACTUATOR_EVENT_TYPE_ENUM" Family="NoFamily" Class="User">
+<Members>
+<Member Name="d_ENGAGE_MATERIAL" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Event type identifies events which cause the actuator to engage with the product
+or material being handled.]]>
+</Description>
+</Member>
+<Member Name="d_DISENGAGE_MATERIAL" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Event type identifies events which cause the actuator to disengage with the product
+or material being handled.]]>
+</Description>
+</Member>
+</Members>
+</DataType>
+<DataType Name="DIVERT_CONV_DISCHARGE_ALG_ENUM" Family="NoFamily" Class="User">
+<Members>
+<Member Name="d_DIST_X1_ROLLOUT" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_DIST_X2_HESITATING_ROLLOUT" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="MACHINE_SIDE_ENUM" Family="NoFamily" Class="User">
+<Members>
+<Member Name="d_OPERATOR" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Identifies the side of the machine the operator uses to control the machine.]]>
+</Description>
+</Member>
+<Member Name="d_DRIVE" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Identifies the side of the machine where the drive cabinets are located.]]>
+</Description>
+</Member>
+</Members>
+</DataType>
+<DataType Name="DIVERT_PACKET_ENUM" Family="NoFamily" Class="User">
+<Members>
+<Member Name="d_SCRAP" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_INSPECTION" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="JOG_SWITCH_POSITION_ENUM" Family="NoFamily" Class="User">
+<Members>
+<Member Name="d_STOP" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_OPERATOR" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_DRIVE" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_IMPOSSIBLE" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Use="Target" Name="PROGRAM_CONSTANTS" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[The constants defined for this program.]]>
+</Description>
+<Members>
+<Member Name="MY_CONSTANTS" DataType="MY_CONSTANTS_CONST" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="MOTOR_DIRECTION_ENUM" DataType="MOTOR_DIRECTION_ENUM" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="SHEET_END_ENUM" DataType="SHEET_END_ENUM" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ACTUATOR_EVENT_TYPE_ENUM" DataType="ACTUATOR_EVENT_TYPE_ENUM" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="DIVERT_CONV_DISCHARGE_ALG_ENUM" DataType="DIVERT_CONV_DISCHARGE_ALG_ENUM" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="MACHINE_SIDE_ENUM" DataType="MACHINE_SIDE_ENUM" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="DIVERT_PACKET_ENUM" DataType="DIVERT_PACKET_ENUM" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="JOG_SWITCH_POSITION_ENUM" DataType="JOG_SWITCH_POSITION_ENUM" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+</DataTypes>
+</Controller>
+</RSLogix5000Content>

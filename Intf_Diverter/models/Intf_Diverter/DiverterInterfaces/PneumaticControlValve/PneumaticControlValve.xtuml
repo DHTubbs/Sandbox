@@ -1,0 +1,21 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("53af1b5f-f2a3-44c3-9e01-551a6dbc7829",
+	"00000000-0000-0000-0000-000000000000",
+	'PneumaticControlValve',
+	'');
+INSERT INTO PE_PE
+	VALUES ("53af1b5f-f2a3-44c3-9e01-551a6dbc7829",
+	1,
+	"554df2db-1a3d-4596-8aca-3a562bf45cb6",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("554df2db-1a3d-4596-8aca-3a562bf45cb6",
+	"5d6861b0-d06b-46b6-b4e1-a463d1fc8b18",
+	"5d6861b0-d06b-46b6-b4e1-a463d1fc8b18",
+	'DiverterInterfaces',
+	'',
+	0,
+	'../DiverterInterfaces.xtuml');

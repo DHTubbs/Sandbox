@@ -1,0 +1,241 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("93d48880-4e93-442f-9b69-3063f5dd25d8",
+	'Divert Packet',
+	1,
+	'DVRTPKT',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("52361941-beb9-427b-8e37-61711145d6c4",
+	"93d48880-4e93-442f-9b69-3063f5dd25d8",
+	'SheetDiverted',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'// Notify the diverter bay that it has received another sheet
+select one diverter_bay related by self->DVRTBAY[R4];
+generate DVRTBAY1:receive_sheet(sheet_caliper: self.web_caliper) to diverter_bay;
+
+// Check to see if there are any more sheets remaining
+select many divert_sheets related by self->DVRTSHT[R2];
+if empty divert_sheets;
+   // This divert packet can be deleted now, perform cleanup
+   unrelate self from diverter_bay across R4;
+   
+   select one divert_sheet related by self->DVRTPKT[R1.''next''];
+   if not_empty divert_sheet;
+      // remove relationship between this instance of divert packet and the next
+      unrelate self from divert_sheet across R1.''next'';
+
+      // establish the new relationship with the diverter bay
+      relate divert_sheet to diverter_bay across R4;
+   end if;
+   
+   // Notify the diverter bay that it has received the last sheet from this divert packet
+   generate DVRTBAY2:divert_packet_received() to diverter_bay;
+   
+   // Remove this divert packet
+   delete object instance self;
+end if;',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("71332c9b-baf4-41ef-81b5-0d120c13224f",
+	"93d48880-4e93-442f-9b69-3063f5dd25d8",
+	'UpdatePosition',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'// Update the position of the divert packet and the divert sheets. 
+if (self.trailing_edge_position < 0);
+   self.leading_edge_position = self.leading_edge_position + param.web_travel_dist;
+   if (self.leading_edge_position > 0);
+      self.leading_edge_position = 0;
+   end if;
+   
+   self.trailing_edge_position = self.trailing_edge_position + param.web_travel_dist;
+   if (self.trailing_edge_position > 0);
+      self.trailing_edge_position = 0;
+   end if;
+end if;
+
+// Update the position of the tracked divert sheets
+select many divert_sheets related by self->DVRTSHT[R2];
+for each divert_sheet in divert_sheets;
+   divert_sheet.UpdatePosition(web_travel_dist: param.web_travel_dist, sheet_travel_dist: param.sheet_travel_dist);
+end for;
+',
+	1,
+	'',
+	"52361941-beb9-427b-8e37-61711145d6c4");
+INSERT INTO O_TPARM
+	VALUES ("4e579f33-8fed-4772-9a7f-d99c04fb0e1b",
+	"71332c9b-baf4-41ef-81b5-0d120c13224f",
+	'web_travel_dist',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("dedc481b-04a9-4bc6-b132-d2675553d3ba",
+	"71332c9b-baf4-41ef-81b5-0d120c13224f",
+	'sheet_travel_dist',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"4e579f33-8fed-4772-9a7f-d99c04fb0e1b",
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("5e407f77-e7e7-4cc6-a1b1-cb0b14ec0160",
+	"93d48880-4e93-442f-9b69-3063f5dd25d8");
+INSERT INTO O_BATTR
+	VALUES ("5e407f77-e7e7-4cc6-a1b1-cb0b14ec0160",
+	"93d48880-4e93-442f-9b69-3063f5dd25d8");
+INSERT INTO O_ATTR
+	VALUES ("5e407f77-e7e7-4cc6-a1b1-cb0b14ec0160",
+	"93d48880-4e93-442f-9b69-3063f5dd25d8",
+	"00000000-0000-0000-0000-000000000000",
+	'Id',
+	'',
+	'',
+	'Id',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("979d0353-7ea9-4958-b9b4-260cee8b87f8",
+	"93d48880-4e93-442f-9b69-3063f5dd25d8");
+INSERT INTO O_BATTR
+	VALUES ("979d0353-7ea9-4958-b9b4-260cee8b87f8",
+	"93d48880-4e93-442f-9b69-3063f5dd25d8");
+INSERT INTO O_ATTR
+	VALUES ("979d0353-7ea9-4958-b9b4-260cee8b87f8",
+	"93d48880-4e93-442f-9b69-3063f5dd25d8",
+	"5e407f77-e7e7-4cc6-a1b1-cb0b14ec0160",
+	'type',
+	'',
+	'',
+	'type',
+	0,
+	"e637c9ff-a804-4aef-b8eb-e6854f50cc68",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("e637c9ff-a804-4aef-b8eb-e6854f50cc68",
+	"00000000-0000-0000-0000-000000000000",
+	'Divert Packet',
+	'',
+	'',
+	'../../../../../../../../Intf_Diverter/models/Intf_Diverter/DataTypes/DataTypes.xtuml');
+INSERT INTO O_NBATTR
+	VALUES ("7953ef51-6fda-4c9d-96c6-d72676ecc19a",
+	"93d48880-4e93-442f-9b69-3063f5dd25d8");
+INSERT INTO O_BATTR
+	VALUES ("7953ef51-6fda-4c9d-96c6-d72676ecc19a",
+	"93d48880-4e93-442f-9b69-3063f5dd25d8");
+INSERT INTO O_ATTR
+	VALUES ("7953ef51-6fda-4c9d-96c6-d72676ecc19a",
+	"93d48880-4e93-442f-9b69-3063f5dd25d8",
+	"979d0353-7ea9-4958-b9b4-260cee8b87f8",
+	'leading_edge_position',
+	'',
+	'',
+	'leading_edge_position',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("8ee6b3d5-9f5f-4c5b-9eec-7bef15e72036",
+	"93d48880-4e93-442f-9b69-3063f5dd25d8");
+INSERT INTO O_BATTR
+	VALUES ("8ee6b3d5-9f5f-4c5b-9eec-7bef15e72036",
+	"93d48880-4e93-442f-9b69-3063f5dd25d8");
+INSERT INTO O_ATTR
+	VALUES ("8ee6b3d5-9f5f-4c5b-9eec-7bef15e72036",
+	"93d48880-4e93-442f-9b69-3063f5dd25d8",
+	"7953ef51-6fda-4c9d-96c6-d72676ecc19a",
+	'trailing_edge_position',
+	'',
+	'',
+	'trailing_edge_position',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("c3c9ecf3-2159-400c-a7b8-9031aca77368",
+	"93d48880-4e93-442f-9b69-3063f5dd25d8");
+INSERT INTO O_BATTR
+	VALUES ("c3c9ecf3-2159-400c-a7b8-9031aca77368",
+	"93d48880-4e93-442f-9b69-3063f5dd25d8");
+INSERT INTO O_ATTR
+	VALUES ("c3c9ecf3-2159-400c-a7b8-9031aca77368",
+	"93d48880-4e93-442f-9b69-3063f5dd25d8",
+	"8ee6b3d5-9f5f-4c5b-9eec-7bef15e72036",
+	'web_caliper',
+	'',
+	'',
+	'web_caliper',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"93d48880-4e93-442f-9b69-3063f5dd25d8");
+INSERT INTO O_OIDA
+	VALUES ("5e407f77-e7e7-4cc6-a1b1-cb0b14ec0160",
+	"93d48880-4e93-442f-9b69-3063f5dd25d8",
+	0,
+	'Id');
+INSERT INTO O_ID
+	VALUES (1,
+	"93d48880-4e93-442f-9b69-3063f5dd25d8");
+INSERT INTO O_ID
+	VALUES (2,
+	"93d48880-4e93-442f-9b69-3063f5dd25d8");
+INSERT INTO PE_PE
+	VALUES ("93d48880-4e93-442f-9b69-3063f5dd25d8",
+	1,
+	"dc4131cd-6623-4946-bae6-3107b2be2c64",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("dc4131cd-6623-4946-bae6-3107b2be2c64",
+	"00000000-0000-0000-0000-000000000000",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	'Subsys',
+	'The class diagram for the diverter may appear to be more abstract than necessary,
+but there are characteristics of the diverter operation that make the abstraction
+necessary.  
+
+Establishing relationships between the diverted sheets (product) and the actuated 
+components would have been the logical choice.  Thestate machines to control the 
+actuators would have resided within the product.  As the product flows along the 
+board path, it''s state machine would trigger actions on the machine.  This model 
+fails because the actuation time delays of the actuators are configurable and 
+therefore does not guarantee the sequence of events generated.  Using product 
+state machines to control the actuators is non-deterministic.
+
+The approach taken in this model is to use a tracking point class to establish the
+relationship between the product and the actuators.  The tracking points are in 
+no particular order and trigger an action only when the divert sheet reaches a 
+calculated position along the board path.  The tracking points have no 
+understanding of what actions occurred before them or will occur after them.
+
+The key point of this model is the sequence of actions of the diverter is not set
+in a state machine, but is dynamic and therefore easily changed. 
+
+The cross transfer conveyor is different.  It receives a tracking event near the 
+beginning of the divert sequence to stop the conveyor prior to the first divert
+sheet entering the diverter bay.  The conveyor may be moving from a user activity.
+After that point, the cross transfer conveyor actions are driven by the diverter 
+bay and ultimately the diverted stack, whether it is scrap or inspection. ',
+	0,
+	'../Subsys.xtuml');

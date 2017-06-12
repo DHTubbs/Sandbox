@@ -1,0 +1,20 @@
+(* Model Identifiers
+     Component (Number): 'Diverter' (800)
+         Class (Number): 'Manual Sequence' (011)
+              Operation: 'Initialize'
+         Qualified Name: 'Diverter::Design::Model::Diverter::CrossTransferConveyorControl::Manual Sequence'
+   
+Description: All actions required to initialize an instance of class 'Manual Sequence'.
+             This subroutine must be called whenever a new instance is created.
+
+Signature: JSR( _800_011_opManualSequence_Init );
+*)
+
+SBR(  );
+
+(* Clear the global and local event mailbox structures. *)
+CPS(empty_event_struct, _events.event_manual_sequence_800_011.evt_lst, 1);
+CPS(empty_event_struct, _obj.manual_sequence_800_011.events.evt_lst, 1);
+
+(* TODO: Add all initialization code here *)
+

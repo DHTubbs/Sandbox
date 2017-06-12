@@ -1,0 +1,79 @@
+-- BP 7.1.6 content: InstanceStateMachine syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO SM_ISM
+	VALUES ("6110756b-f976-4fd3-bf1e-c88222878dbd",
+	"e530f8f2-a9fb-46e0-b7d9-9c46dc77bc67");
+INSERT INTO SM_SM
+	VALUES ("6110756b-f976-4fd3-bf1e-c88222878dbd",
+	'',
+	0);
+INSERT INTO SM_MOORE
+	VALUES ("6110756b-f976-4fd3-bf1e-c88222878dbd");
+INSERT INTO SM_PEVT
+	VALUES ("fe8564b3-1381-4481-8f71-eacda34d89ea",
+	"6110756b-f976-4fd3-bf1e-c88222878dbd",
+	"00000000-0000-0000-0000-000000000000",
+	'Actuator',
+	'ACTR',
+	'activate');
+INSERT INTO SM_EVT
+	VALUES ("fe8564b3-1381-4481-8f71-eacda34d89ea",
+	"6110756b-f976-4fd3-bf1e-c88222878dbd",
+	"00000000-0000-0000-0000-000000000000",
+	1,
+	'activate',
+	0,
+	'',
+	'ACTR1',
+	'');
+INSERT INTO SM_PEVT
+	VALUES ("e0a943d5-8801-47e5-820d-8ee4e98f5f40",
+	"6110756b-f976-4fd3-bf1e-c88222878dbd",
+	"00000000-0000-0000-0000-000000000000",
+	'Actuator',
+	'ACTR',
+	'de_activate');
+INSERT INTO SM_EVT
+	VALUES ("e0a943d5-8801-47e5-820d-8ee4e98f5f40",
+	"6110756b-f976-4fd3-bf1e-c88222878dbd",
+	"00000000-0000-0000-0000-000000000000",
+	2,
+	'de_activate',
+	0,
+	'',
+	'ACTR2',
+	'');
+INSERT INTO GD_MD
+	VALUES ("435d9588-60d0-4b49-8fe2-bcfd15417f61",
+	8,
+	"6110756b-f976-4fd3-bf1e-c88222878dbd",
+	40,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'Diverter::Design::Model::Diverter::Subsys::Actuator::Instance State Machine');
+INSERT INTO DIM_DIA
+	VALUES ("435d9588-60d0-4b49-8fe2-bcfd15417f61",
+	'',
+	1.000000,
+	4000.000000,
+	3000.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_OBJ_PROXY
+	VALUES ("e530f8f2-a9fb-46e0-b7d9-9c46dc77bc67",
+	'Actuator',
+	3,
+	'ACTR',
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'../Actuator.xtuml');

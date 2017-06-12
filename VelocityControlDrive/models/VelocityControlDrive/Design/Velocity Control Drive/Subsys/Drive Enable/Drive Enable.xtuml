@@ -1,0 +1,86 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("24a28ec5-7345-4ca1-8347-b0985012fb96",
+	'Drive Enable',
+	2,
+	'DE',
+	'This class controls the enable function of the drive.',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("944637de-4fd1-49e7-a2bb-ddbf83fdcee0",
+	"24a28ec5-7345-4ca1-8347-b0985012fb96");
+INSERT INTO O_BATTR
+	VALUES ("944637de-4fd1-49e7-a2bb-ddbf83fdcee0",
+	"24a28ec5-7345-4ca1-8347-b0985012fb96");
+INSERT INTO O_ATTR
+	VALUES ("944637de-4fd1-49e7-a2bb-ddbf83fdcee0",
+	"24a28ec5-7345-4ca1-8347-b0985012fb96",
+	"b40034e8-8292-4e21-91ca-411a59def125",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("b40034e8-8292-4e21-91ca-411a59def125",
+	"24a28ec5-7345-4ca1-8347-b0985012fb96");
+INSERT INTO O_BATTR
+	VALUES ("b40034e8-8292-4e21-91ca-411a59def125",
+	"24a28ec5-7345-4ca1-8347-b0985012fb96");
+INSERT INTO O_ATTR
+	VALUES ("b40034e8-8292-4e21-91ca-411a59def125",
+	"24a28ec5-7345-4ca1-8347-b0985012fb96",
+	"45fdaaee-2cfa-4617-8d22-a83b253d5dd8",
+	'disable_timer',
+	'',
+	'',
+	'disable_timer',
+	0,
+	"ba5eda7a-def5-0000-0000-00000000000f",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("45fdaaee-2cfa-4617-8d22-a83b253d5dd8",
+	"24a28ec5-7345-4ca1-8347-b0985012fb96");
+INSERT INTO O_BATTR
+	VALUES ("45fdaaee-2cfa-4617-8d22-a83b253d5dd8",
+	"24a28ec5-7345-4ca1-8347-b0985012fb96");
+INSERT INTO O_ATTR
+	VALUES ("45fdaaee-2cfa-4617-8d22-a83b253d5dd8",
+	"24a28ec5-7345-4ca1-8347-b0985012fb96",
+	"00000000-0000-0000-0000-000000000000",
+	'disable_delay',
+	'The amount of time the drive should remain enabled after a jog is complete before disabling.',
+	'',
+	'disable_delay',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"24a28ec5-7345-4ca1-8347-b0985012fb96");
+INSERT INTO O_ID
+	VALUES (1,
+	"24a28ec5-7345-4ca1-8347-b0985012fb96");
+INSERT INTO O_ID
+	VALUES (2,
+	"24a28ec5-7345-4ca1-8347-b0985012fb96");
+INSERT INTO PE_PE
+	VALUES ("24a28ec5-7345-4ca1-8347-b0985012fb96",
+	1,
+	"c817c574-2133-4f0d-a669-d4ef72db35fd",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("c817c574-2133-4f0d-a669-d4ef72db35fd",
+	"00000000-0000-0000-0000-000000000000",
+	"96493490-05b1-4840-ab78-5af4de985c2e",
+	'Subsys',
+	'',
+	0,
+	'../Subsys.xtuml');

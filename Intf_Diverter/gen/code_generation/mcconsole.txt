@@ -1,0 +1,9 @@
+Enabling detection of empty handles for component(s) *.
+Enabling state transition tracing for component(s) *.
+Analyzing model and making optimizations....
+0 attributes read
+0 attributes written
+translating control statements
+translating other statements
+rolling up statements into action bodies
+done translating statements

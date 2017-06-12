@@ -1,0 +1,20 @@
+(* Model Identifiers
+     Component (Number): 'Velocity Control Drive' (900)
+         Class (Number): 'Drive Enable' (002)
+              Operation: 'Initialize'
+         Qualified Name: 'VelocityControlDrive::Design::Velocity Control Drive::Subsys::Drive Enable'
+   
+Description: All actions required to initialize an instance of class 'Drive Enable'.
+             This subroutine must be called whenever a new instance is created.
+
+Signature: JSR( _900_002_opDriveEnable_Init );
+*)
+
+SBR(  );
+
+(* Clear the global and local event mailbox structures. *)
+CPS(empty_event_struct, _events.event_drive_enable_900_002.evt_lst, 1);
+CPS(empty_event_struct, _obj.drive_enable_900_002.events.evt_lst, 1);
+
+(* TODO: Add all initialization code here *)
+

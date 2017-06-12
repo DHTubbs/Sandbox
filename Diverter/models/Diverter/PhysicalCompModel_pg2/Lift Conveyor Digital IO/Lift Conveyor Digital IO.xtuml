@@ -1,0 +1,45 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("314408e4-9308-46a8-8499-5bb199af20e5",
+	"00000000-0000-0000-0000-000000000000",
+	'Lift Conveyor Digital IO',
+	'');
+INSERT INTO C_EP
+	VALUES ("9288b086-3981-4c11-9110-c688a7d95560",
+	"314408e4-9308-46a8-8499-5bb199af20e5",
+	-1,
+	'StackSensePE',
+	'');
+INSERT INTO C_AS
+	VALUES ("9288b086-3981-4c11-9110-c688a7d95560",
+	'StackSensePE',
+	'',
+	1,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("8d6de180-83ff-4eab-8d2d-56b395f64165",
+	"314408e4-9308-46a8-8499-5bb199af20e5",
+	-1,
+	'EarlyStackRollout',
+	'');
+INSERT INTO C_AS
+	VALUES ("8d6de180-83ff-4eab-8d2d-56b395f64165",
+	'EarlyStackRollout',
+	'',
+	1,
+	"9288b086-3981-4c11-9110-c688a7d95560");
+INSERT INTO PE_PE
+	VALUES ("314408e4-9308-46a8-8499-5bb199af20e5",
+	1,
+	"775c60b7-244d-4a7e-9422-7c65bc89b2a4",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("775c60b7-244d-4a7e-9422-7c65bc89b2a4",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	'PhysicalCompModel_pg2',
+	'',
+	0,
+	'../PhysicalCompModel_pg2.xtuml');

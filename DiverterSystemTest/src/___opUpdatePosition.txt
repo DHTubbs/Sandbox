@@ -1,0 +1,69 @@
+(* Model Identifiers
+     Component (Number):  ()
+         Class (Number): Divert Sheet ()
+              Operation: UpdatePosition
+         Qualified Name: ::UpdatePosition
+   
+Description: 
+
+Signature: JSR( ___opUpdatePosition, 1,  );
+*)
+
+SBR(  );
+
+(*	Action:
+
+	// Update the tracked sheet's position, check if any tracking points have been
+	//    reached, if so fire the events off, remove tracked sheet if it has no more
+	//    tracking points and add it to the stack.
+	// 
+	
+	
+	// Update position of sheet
+	if self.position - self.length < 0;
+	   // This sheet is still part of the web, use distance the web moved
+	   self.position = self.position + param.web_travel_dist;
+	else;
+	   // This sheet has been cut off and is under the control of the sheet handler
+	   self.position = self.position + param.sheet_travel_dist;
+	end if;
+	
+	// Find the tracking points that should be fired
+	select many tracking_points related by self->TRKPT[R3] where 
+	   (selected.edge_to_track == Sheet_End::Leading and 
+	    self.position >= selected.effective_position) or
+	   (selected.edge_to_track == Sheet_End::Trailing and 
+	    self.position - self.length >= selected.effective_position);
+	      
+	for each tracking_point in tracking_points;
+	   // Send the event to the actuator
+	   select one actuator related by tracking_point->ACTR[R3];
+	   if tracking_point.type == Actuator_Event_Type::Engage_Material;
+	      generate ACTR1:activate() to actuator;
+	   else;
+	      generate ACTR2:de_activate() to actuator;
+	   end if;
+	     
+	   // Remove the tracking point
+	   unrelate actuator from self across R3 using tracking_point;
+	   delete object instance tracking_point;
+	end for;
+	
+	// Check to see if this tracked_sheet has any more tracking points, if not,
+	//    it is a candidate for deletion.
+	// 
+	
+	if self.position - self.length >= 0;  // The sheet must be severed from web
+	   select any tracking_point related by self->TRKPT[R3];
+	   if empty tracking_point;
+	      // Inform the Divert Packet this sheet has been diverted
+	      select one divert_packet related by self->DVRTPKT[R2];
+	      divert_packet.SheetDiverted();
+	   
+	      delete object instance self;
+	   end if;
+	end if;
+*)
+
+(* TODO: Implement operation action code here *)
+

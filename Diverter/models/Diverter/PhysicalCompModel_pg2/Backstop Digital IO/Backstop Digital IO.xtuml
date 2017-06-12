@@ -1,0 +1,73 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("2f180720-95aa-41d5-8838-2c7cc9950c86",
+	"00000000-0000-0000-0000-000000000000",
+	'Backstop Digital IO',
+	'');
+INSERT INTO C_EP
+	VALUES ("92a89049-3df3-4619-8866-c5257bd82788",
+	"2f180720-95aa-41d5-8838-2c7cc9950c86",
+	-1,
+	'BackstopJammed',
+	'');
+INSERT INTO C_AS
+	VALUES ("92a89049-3df3-4619-8866-c5257bd82788",
+	'BackstopJammed',
+	'',
+	1,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("6bcc632f-1ff5-4d88-b897-5aaa32368719",
+	"2f180720-95aa-41d5-8838-2c7cc9950c86",
+	-1,
+	'StackHeightSensors',
+	'');
+INSERT INTO C_AS
+	VALUES ("6bcc632f-1ff5-4d88-b897-5aaa32368719",
+	'StackHeightSensors',
+	'',
+	1,
+	"92a89049-3df3-4619-8866-c5257bd82788");
+INSERT INTO C_EP
+	VALUES ("6881a81f-2e59-417c-b99f-3b558502d36d",
+	"2f180720-95aa-41d5-8838-2c7cc9950c86",
+	-1,
+	'UpDownCylinder',
+	'');
+INSERT INTO C_IO
+	VALUES ("6881a81f-2e59-417c-b99f-3b558502d36d",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'UpDownCylinder',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("34bfcd69-1405-44cd-a976-164711063ae2",
+	"2f180720-95aa-41d5-8838-2c7cc9950c86",
+	-1,
+	'BundleOffsetUpDownCylinder',
+	'');
+INSERT INTO C_IO
+	VALUES ("34bfcd69-1405-44cd-a976-164711063ae2",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'BundleOffsetUpDownCylinder',
+	'',
+	0,
+	'',
+	"6881a81f-2e59-417c-b99f-3b558502d36d");
+INSERT INTO PE_PE
+	VALUES ("2f180720-95aa-41d5-8838-2c7cc9950c86",
+	1,
+	"775c60b7-244d-4a7e-9422-7c65bc89b2a4",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("775c60b7-244d-4a7e-9422-7c65bc89b2a4",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	'PhysicalCompModel_pg2',
+	'',
+	0,
+	'../PhysicalCompModel_pg2.xtuml');

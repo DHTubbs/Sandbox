@@ -1,0 +1,153 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	"00000000-0000-0000-0000-000000000000",
+	'Safety System Monitor',
+	'');
+INSERT INTO C_EP
+	VALUES ("626b6de6-afd8-41ae-b754-bf4eb92bfe23",
+	"cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	-1,
+	'UpperLevelInfeedConveyorAccess',
+	'');
+INSERT INTO C_AS
+	VALUES ("626b6de6-afd8-41ae-b754-bf4eb92bfe23",
+	'UpperLevelInfeedConveyorAccess',
+	'',
+	1,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("eb1dcb2e-cbac-4538-a378-9946257c74c0",
+	"cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	-1,
+	'SafetyTripCable',
+	'');
+INSERT INTO C_AS
+	VALUES ("eb1dcb2e-cbac-4538-a378-9946257c74c0",
+	'SafetyTripCable',
+	'',
+	1,
+	"626b6de6-afd8-41ae-b754-bf4eb92bfe23");
+INSERT INTO C_EP
+	VALUES ("0194096b-6253-4d42-8a6d-cae4d70cd609",
+	"cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	-1,
+	'LiftRaiseObstructionPE',
+	'');
+INSERT INTO C_AS
+	VALUES ("0194096b-6253-4d42-8a6d-cae4d70cd609",
+	'LiftRaiseObstructionPE',
+	'',
+	1,
+	"eb1dcb2e-cbac-4538-a378-9946257c74c0");
+INSERT INTO C_EP
+	VALUES ("064eb584-52bf-4e05-95aa-1ccc689ee373",
+	"cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	-1,
+	'SheetHandlingSlidingDoorSw',
+	'');
+INSERT INTO C_AS
+	VALUES ("064eb584-52bf-4e05-95aa-1ccc689ee373",
+	'SheetHandlingSlidingDoorSw',
+	'',
+	1,
+	"0194096b-6253-4d42-8a6d-cae4d70cd609");
+INSERT INTO C_EP
+	VALUES ("1855cd46-82d5-46bf-ac46-af8d5571100e",
+	"cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	-1,
+	'LiftBayScan',
+	'');
+INSERT INTO C_AS
+	VALUES ("1855cd46-82d5-46bf-ac46-af8d5571100e",
+	'LiftBayScan',
+	'',
+	1,
+	"064eb584-52bf-4e05-95aa-1ccc689ee373");
+INSERT INTO C_EP
+	VALUES ("1bc6c789-06a0-4dea-9b9e-9e9653b3728d",
+	"cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	-1,
+	'LiftDownObstructionPE',
+	'');
+INSERT INTO C_AS
+	VALUES ("1bc6c789-06a0-4dea-9b9e-9e9653b3728d",
+	'LiftDownObstructionPE',
+	'',
+	1,
+	"1855cd46-82d5-46bf-ac46-af8d5571100e");
+INSERT INTO C_EP
+	VALUES ("a3f19a01-9db3-4379-98be-6687dda33992",
+	"cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	-1,
+	'LiftMidPointObstructionPE',
+	'');
+INSERT INTO C_AS
+	VALUES ("a3f19a01-9db3-4379-98be-6687dda33992",
+	'LiftMidPointObstructionPE',
+	'',
+	1,
+	"1bc6c789-06a0-4dea-9b9e-9e9653b3728d");
+INSERT INTO C_EP
+	VALUES ("ffe73687-319f-44d1-b92a-bf0c767546f3",
+	"cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	-1,
+	'LiftDownLimitSw',
+	'');
+INSERT INTO C_AS
+	VALUES ("ffe73687-319f-44d1-b92a-bf0c767546f3",
+	'LiftDownLimitSw',
+	'',
+	1,
+	"a3f19a01-9db3-4379-98be-6687dda33992");
+INSERT INTO C_EP
+	VALUES ("5804ae6f-0a48-4df1-b270-2db45f28cdf9",
+	"cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	-1,
+	'PalletInfeedObstructionPE',
+	'');
+INSERT INTO C_AS
+	VALUES ("5804ae6f-0a48-4df1-b270-2db45f28cdf9",
+	'PalletInfeedObstructionPE',
+	'',
+	1,
+	"ffe73687-319f-44d1-b92a-bf0c767546f3");
+INSERT INTO C_EP
+	VALUES ("b4b01433-c43e-48ad-a100-c582fddd3e38",
+	"cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	-1,
+	'LiftTableLiftLocksEngagedProx',
+	'');
+INSERT INTO C_AS
+	VALUES ("b4b01433-c43e-48ad-a100-c582fddd3e38",
+	'LiftTableLiftLocksEngagedProx',
+	'',
+	1,
+	"5804ae6f-0a48-4df1-b270-2db45f28cdf9");
+INSERT INTO C_EP
+	VALUES ("3f773e1b-e71e-476b-91a3-6fc0b5b6942a",
+	"cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	-1,
+	'LiftChainFailureProx',
+	'');
+INSERT INTO C_AS
+	VALUES ("3f773e1b-e71e-476b-91a3-6fc0b5b6942a",
+	'LiftChainFailureProx',
+	'',
+	1,
+	"b4b01433-c43e-48ad-a100-c582fddd3e38");
+INSERT INTO PE_PE
+	VALUES ("cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	1,
+	"775c60b7-244d-4a7e-9422-7c65bc89b2a4",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("775c60b7-244d-4a7e-9422-7c65bc89b2a4",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	'PhysicalCompModel_pg2',
+	'',
+	0,
+	'../PhysicalCompModel_pg2.xtuml');

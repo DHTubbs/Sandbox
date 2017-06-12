@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--I am the class description.-->
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="28.00" TargetName="MotorDrive" TargetType="DataType" ContainsContext="true" Owner="Ronald Schmidt, Barry-Wehmiller" ExportDate="Wed May 11 10:07:01 2016" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="KnifeStacker">
+<DataTypes Use="Context">
+<DataType Name="EVENTS_RECEIVED" Family="NoFamily" Class="User">
+<Members>
+<Member Name="ZZZZZZZZZZCLASSEVENTS" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>      
+<Member Name="b_Stop" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZCLASSEVENTS" BitNumber="1" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[I am a stop event.]]>
+</Description>
+</Member>
+<Member Name="b_Jog" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZCLASSEVENTS" BitNumber="2" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[I am a jog event.]]>
+</Description>
+</Member>
+<Member Name="b_event1" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZCLASSEVENTS" BitNumber="13" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[I am an event.]]>
+</Description>
+</Member>
+</Members>
+</DataType>
+<DataType Use="Target" Name="MotorDrive" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[I am the class description.]]>
+</Description>
+<Members>
+<Member Name="events" DataType="EVENTS_RECEIVED" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ZZZZZZZZZZ_BP_7" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="b_b1" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZ_BP_7" BitNumber="1" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[I am a boolean.]]>
+</Description>
+</Member>
+<Member Name="b_b2" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZ_BP_7" BitNumber="2" ExternalAccess="Read/Write"/>
+<Member Name="str_str" DataType="STRING" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[I am a string.]]>
+</Description>
+</Member>
+<Member Name="r_rl" DataType="REAL" Dimension="0" Radix="Float" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[I am a real.]]>
+</Description>
+</Member>
+<Member Name="d_int" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[I am an integer.]]>
+</Description>
+</Member>
+<Member Name="tmr_timer" DataType="FBD_TIMER" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[I am a timer.]]>
+</Description>
+</Member>
+</Members>
+</DataType>
+</DataTypes>
+</Controller>
+</RSLogix5000Content>

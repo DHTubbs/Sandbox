@@ -1,0 +1,274 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("7acab340-f561-4166-9e38-4cf9ed1dd6f4",
+	'Tracking Point',
+	4,
+	'TRKPT',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("14ff47a4-cfbb-4b5b-8a5a-b708400828dc",
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4");
+INSERT INTO O_BATTR
+	VALUES ("14ff47a4-cfbb-4b5b-8a5a-b708400828dc",
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4");
+INSERT INTO O_ATTR
+	VALUES ("14ff47a4-cfbb-4b5b-8a5a-b708400828dc",
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4",
+	"582be5fa-616c-43e0-b279-56372c57229c",
+	'actual_position',
+	'Units = mm
+The physical position on the machine measured from the knife cut line,
+where the interaction is desired to occur with the divert sheet.',
+	'',
+	'actual_position',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("e8ae9d10-187d-4e5e-9dcf-b3f1a535c957",
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4");
+INSERT INTO O_BATTR
+	VALUES ("e8ae9d10-187d-4e5e-9dcf-b3f1a535c957",
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4");
+INSERT INTO O_ATTR
+	VALUES ("e8ae9d10-187d-4e5e-9dcf-b3f1a535c957",
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4",
+	"377b478c-236d-4b6b-8c77-47e4632bc6c8",
+	'type',
+	'Identity of type of event to fire when tracking point is reached.',
+	'',
+	'type',
+	0,
+	"f961515d-472a-4432-b8cf-b197121dd833",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("f961515d-472a-4432-b8cf-b197121dd833",
+	"00000000-0000-0000-0000-000000000000",
+	'ActuatorEventType',
+	'',
+	'',
+	'../../DataTypes/DataTypes.xtuml');
+INSERT INTO O_NBATTR
+	VALUES ("3f445b9e-0cd9-4c40-a615-2a61f9a65d5b",
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4");
+INSERT INTO O_BATTR
+	VALUES ("3f445b9e-0cd9-4c40-a615-2a61f9a65d5b",
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4");
+INSERT INTO O_ATTR
+	VALUES ("3f445b9e-0cd9-4c40-a615-2a61f9a65d5b",
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4",
+	"14ff47a4-cfbb-4b5b-8a5a-b708400828dc",
+	'offset_time',
+	'Units = mSec
+The actuator''s delay to change position.',
+	'',
+	'offset_time',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("377b478c-236d-4b6b-8c77-47e4632bc6c8",
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4");
+INSERT INTO O_BATTR
+	VALUES ("377b478c-236d-4b6b-8c77-47e4632bc6c8",
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4");
+INSERT INTO O_ATTR
+	VALUES ("377b478c-236d-4b6b-8c77-47e4632bc6c8",
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4",
+	"3f445b9e-0cd9-4c40-a615-2a61f9a65d5b",
+	'effective_position',
+	'Units = mm
+The position of the divert sheet specified edge when the tracking point is reached
+based on the offset_time and speed the divert sheet is traveling.  If the
+offset_time is 0, then the effective_position will be equal to the actual_position.',
+	'',
+	'effective_position',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("582be5fa-616c-43e0-b279-56372c57229c",
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4");
+INSERT INTO O_BATTR
+	VALUES ("582be5fa-616c-43e0-b279-56372c57229c",
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4");
+INSERT INTO O_ATTR
+	VALUES ("582be5fa-616c-43e0-b279-56372c57229c",
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4",
+	"51833501-f903-4b9a-876c-49e5f4e98d71",
+	'edge_to_track',
+	'Defines which edge of the sheet should be used as the comparison reference.',
+	'',
+	'edge_to_track',
+	0,
+	"a4eb2471-acf5-42f0-ad8b-e089fda62049",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("a4eb2471-acf5-42f0-ad8b-e089fda62049",
+	"00000000-0000-0000-0000-000000000000",
+	'SheetEnd',
+	'',
+	'',
+	'../../DataTypes/DataTypes.xtuml');
+INSERT INTO O_REF
+	VALUES ("7acab340-f561-4166-9e38-4cf9ed1dd6f4",
+	"c06f4827-2810-4d7f-9b50-0e5bfeccfdce",
+	0,
+	"9b342614-a038-4953-ba36-4226f490993c",
+	"85cc6b4f-811e-49b6-94a1-12c4143b2d77",
+	"5461d0fc-baac-4973-8411-bfaf929a9617",
+	"1ab2e58f-c742-42a5-ade9-dfb684789073",
+	"6c0a2ae8-9af0-4cad-a576-dcec9972fa92",
+	"b9694276-4d91-426b-88b3-4bb0571c4d81",
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Divert Sheet',
+	'Id',
+	'R3.''responds to position of''');
+INSERT INTO R_RGO_PROXY
+	VALUES ("7acab340-f561-4166-9e38-4cf9ed1dd6f4",
+	"85cc6b4f-811e-49b6-94a1-12c4143b2d77",
+	"5461d0fc-baac-4973-8411-bfaf929a9617",
+	'../Subsys.xtuml');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("9b342614-a038-4953-ba36-4226f490993c",
+	"c06f4827-2810-4d7f-9b50-0e5bfeccfdce",
+	0,
+	"85cc6b4f-811e-49b6-94a1-12c4143b2d77",
+	"1ab2e58f-c742-42a5-ade9-dfb684789073",
+	'../Subsys.xtuml');
+INSERT INTO O_RATTR
+	VALUES ("6c0a2ae8-9af0-4cad-a576-dcec9972fa92",
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4",
+	"9b342614-a038-4953-ba36-4226f490993c",
+	"c06f4827-2810-4d7f-9b50-0e5bfeccfdce",
+	1,
+	'Id');
+INSERT INTO O_BATTR_PROXY
+	VALUES ("9b342614-a038-4953-ba36-4226f490993c",
+	"c06f4827-2810-4d7f-9b50-0e5bfeccfdce",
+	'../Divert Sheet/Divert Sheet.xtuml');
+INSERT INTO O_ATTR
+	VALUES ("6c0a2ae8-9af0-4cad-a576-dcec9972fa92",
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4",
+	"00000000-0000-0000-0000-000000000000",
+	'TRKDVRTSHT_Id',
+	'',
+	'TRKDVRTSHT_',
+	'Id',
+	1,
+	"ba5eda7a-def5-0000-0000-000000000007",
+	'',
+	'');
+INSERT INTO O_REF
+	VALUES ("7acab340-f561-4166-9e38-4cf9ed1dd6f4",
+	"e530f8f2-a9fb-46e0-b7d9-9c46dc77bc67",
+	0,
+	"5be94755-35b2-414e-a4cb-41e5b4d8d00a",
+	"85cc6b4f-811e-49b6-94a1-12c4143b2d77",
+	"5461d0fc-baac-4973-8411-bfaf929a9617",
+	"e0e30026-2c25-474b-b208-e8f5aa386703",
+	"51833501-f903-4b9a-876c-49e5f4e98d71",
+	"859ecd7b-e7f5-4ceb-a18c-4ee02cdda764",
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Actuator',
+	'Id',
+	'R3.''initiates motion on''');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("5be94755-35b2-414e-a4cb-41e5b4d8d00a",
+	"e530f8f2-a9fb-46e0-b7d9-9c46dc77bc67",
+	0,
+	"85cc6b4f-811e-49b6-94a1-12c4143b2d77",
+	"e0e30026-2c25-474b-b208-e8f5aa386703",
+	'../Subsys.xtuml');
+INSERT INTO O_RATTR
+	VALUES ("51833501-f903-4b9a-876c-49e5f4e98d71",
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4",
+	"5be94755-35b2-414e-a4cb-41e5b4d8d00a",
+	"e530f8f2-a9fb-46e0-b7d9-9c46dc77bc67",
+	1,
+	'Id');
+INSERT INTO O_BATTR_PROXY
+	VALUES ("5be94755-35b2-414e-a4cb-41e5b4d8d00a",
+	"e530f8f2-a9fb-46e0-b7d9-9c46dc77bc67",
+	'../Actuator/Actuator.xtuml');
+INSERT INTO O_ATTR
+	VALUES ("51833501-f903-4b9a-876c-49e5f4e98d71",
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4",
+	"6c0a2ae8-9af0-4cad-a576-dcec9972fa92",
+	'ACTR_Id',
+	'',
+	'ACTR_',
+	'Id',
+	1,
+	"ba5eda7a-def5-0000-0000-000000000007",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4");
+INSERT INTO O_OIDA
+	VALUES ("6c0a2ae8-9af0-4cad-a576-dcec9972fa92",
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4",
+	0,
+	'TRKDVRTSHT_Id');
+INSERT INTO O_OIDA
+	VALUES ("51833501-f903-4b9a-876c-49e5f4e98d71",
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4",
+	0,
+	'ACTR_Id');
+INSERT INTO O_ID
+	VALUES (1,
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4");
+INSERT INTO O_ID
+	VALUES (2,
+	"7acab340-f561-4166-9e38-4cf9ed1dd6f4");
+INSERT INTO PE_PE
+	VALUES ("7acab340-f561-4166-9e38-4cf9ed1dd6f4",
+	1,
+	"dc4131cd-6623-4946-bae6-3107b2be2c64",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("dc4131cd-6623-4946-bae6-3107b2be2c64",
+	"00000000-0000-0000-0000-000000000000",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	'Subsys',
+	'The class diagram for the diverter may appear to be more abstract than necessary,
+but there are characteristics of the diverter operation that make the abstraction
+necessary.  
+
+Establishing relationships between the diverted sheets (product) and the actuated 
+components would have been the logical choice.  Thestate machines to control the 
+actuators would have resided within the product.  As the product flows along the 
+board path, it''s state machine would trigger actions on the machine.  This model 
+fails because the actuation time delays of the actuators are configurable and 
+therefore does not guarantee the sequence of events generated.  Using product 
+state machines to control the actuators is non-deterministic.
+
+The approach taken in this model is to use a tracking point class to establish the
+relationship between the product and the actuators.  The tracking points are in 
+no particular order and trigger an action only when the divert sheet reaches a 
+calculated position along the board path.  The tracking points have no 
+understanding of what actions occurred before them or will occur after them.
+
+The key point of this model is the sequence of actions of the diverter is not set
+in a state machine, but is dynamic and therefore easily changed. 
+
+The cross transfer conveyor is different.  It receives a tracking event near the 
+beginning of the divert sequence to stop the conveyor prior to the first divert
+sheet entering the diverter bay.  The conveyor may be moving from a user activity.
+After that point, the cross transfer conveyor actions are driven by the diverter 
+bay and ultimately the diverted stack, whether it is scrap or inspection. ',
+	0,
+	'../Subsys.xtuml');

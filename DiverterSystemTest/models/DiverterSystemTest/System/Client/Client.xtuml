@@ -1,0 +1,321 @@
+-- BP 7.1.6 content: Component syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_C
+	VALUES ("8aebd6fa-0c3b-41d8-b86c-f7f0262ded47",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'Client',
+	'',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'');
+INSERT INTO GD_MD
+	VALUES ("6f3ed314-a2b5-42f1-afdd-363f83c3d090",
+	111,
+	"8aebd6fa-0c3b-41d8-b86c-f7f0262ded47",
+	98,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	200,
+	150,
+	0,
+	'',
+	'DiverterSystemTest::System::Client');
+INSERT INTO GD_GE
+	VALUES ("b742c678-9d0c-4c60-b297-b755b2c2ccbe",
+	"6f3ed314-a2b5-42f1-afdd-363f83c3d090",
+	"8aebd6fa-0c3b-41d8-b86c-f7f0262ded47",
+	103,
+	0,
+	'DiverterSystemTest::System::Client');
+INSERT INTO GD_SHP
+	VALUES ("b742c678-9d0c-4c60-b297-b755b2c2ccbe");
+INSERT INTO GD_CTR
+	VALUES ("b742c678-9d0c-4c60-b297-b755b2c2ccbe");
+INSERT INTO DIM_ND
+	VALUES (1407.000000,
+	452.000000,
+	"b742c678-9d0c-4c60-b297-b755b2c2ccbe");
+INSERT INTO DIM_GE
+	VALUES (4100.000000,
+	3100.000000,
+	"b742c678-9d0c-4c60-b297-b755b2c2ccbe",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("b742c678-9d0c-4c60-b297-b755b2c2ccbe",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_CON
+	VALUES ("afd82355-69d0-40c5-811d-5b1071c79eec",
+	4722.000000,
+	3552.000000,
+	"b742c678-9d0c-4c60-b297-b755b2c2ccbe");
+INSERT INTO GD_GE
+	VALUES ("b427e53d-9da3-4fef-a587-eb5a8bbf8bd7",
+	"6f3ed314-a2b5-42f1-afdd-363f83c3d090",
+	"9b61ea41-1246-449e-bdc1-33450c4b9ab1",
+	93,
+	0,
+	'DiverterSystemTest::System::Client::Port1::DiverterClient');
+INSERT INTO GD_CON
+	VALUES ("b427e53d-9da3-4fef-a587-eb5a8bbf8bd7",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("0e46bc12-9200-4c99-8ce0-80d56188ec3e",
+	"b427e53d-9da3-4fef-a587-eb5a8bbf8bd7",
+	1,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"0e46bc12-9200-4c99-8ce0-80d56188ec3e");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"0e46bc12-9200-4c99-8ce0-80d56188ec3e",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("0e46bc12-9200-4c99-8ce0-80d56188ec3e",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("b254b51c-e74d-4c6b-a60f-feed1a1405fa",
+	"b427e53d-9da3-4fef-a587-eb5a8bbf8bd7",
+	3,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"b254b51c-e74d-4c6b-a60f-feed1a1405fa");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"b254b51c-e74d-4c6b-a60f-feed1a1405fa",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("b254b51c-e74d-4c6b-a60f-feed1a1405fa",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("85fbc077-5cff-48db-88fb-82ba564fa63b",
+	"b427e53d-9da3-4fef-a587-eb5a8bbf8bd7",
+	2,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"85fbc077-5cff-48db-88fb-82ba564fa63b");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"85fbc077-5cff-48db-88fb-82ba564fa63b",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("85fbc077-5cff-48db-88fb-82ba564fa63b",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_LS
+	VALUES ("5c663038-aef3-4ab4-9605-d1a68c589314",
+	"b427e53d-9da3-4fef-a587-eb5a8bbf8bd7",
+	"00000000-0000-0000-0000-000000000000",
+	"4c12768a-5aa4-4499-ae9f-ba3b85ba967f",
+	"68c0133a-35e4-4115-b438-186e7807e0e7");
+INSERT INTO DIM_WAY
+	VALUES ("4c12768a-5aa4-4499-ae9f-ba3b85ba967f",
+	4722.000000,
+	3552.000000,
+	"b427e53d-9da3-4fef-a587-eb5a8bbf8bd7",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_WAY
+	VALUES ("68c0133a-35e4-4115-b438-186e7807e0e7",
+	4722.000000,
+	3624.000000,
+	"b427e53d-9da3-4fef-a587-eb5a8bbf8bd7",
+	"00000000-0000-0000-0000-000000000000",
+	"4c12768a-5aa4-4499-ae9f-ba3b85ba967f");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"b427e53d-9da3-4fef-a587-eb5a8bbf8bd7",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("b427e53d-9da3-4fef-a587-eb5a8bbf8bd7",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ED
+	VALUES ("afd82355-69d0-40c5-811d-5b1071c79eec",
+	"00000000-0000-0000-0000-000000000000",
+	"b427e53d-9da3-4fef-a587-eb5a8bbf8bd7");
+INSERT INTO GD_GE
+	VALUES ("7084d655-4c11-47ba-bed3-206b843c6edd",
+	"6f3ed314-a2b5-42f1-afdd-363f83c3d090",
+	"40c3d968-f16e-40ec-bb04-e4b18d930be1",
+	108,
+	0,
+	'DiverterSystemTest::System::Client::Test');
+INSERT INTO GD_SHP
+	VALUES ("7084d655-4c11-47ba-bed3-206b843c6edd");
+INSERT INTO GD_NCS
+	VALUES ("7084d655-4c11-47ba-bed3-206b843c6edd");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"7084d655-4c11-47ba-bed3-206b843c6edd");
+INSERT INTO DIM_GE
+	VALUES (5295.000000,
+	3100.000000,
+	"7084d655-4c11-47ba-bed3-206b843c6edd",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("7084d655-4c11-47ba-bed3-206b843c6edd",
+	0,
+	"b742c678-9d0c-4c60-b297-b755b2c2ccbe");
+INSERT INTO DIM_DIA
+	VALUES ("6f3ed314-a2b5-42f1-afdd-363f83c3d090",
+	'',
+	1.000000,
+	4000.000000,
+	3000.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PO
+	VALUES ("4d9e0ad1-8225-4292-83b3-90f316770878",
+	"8aebd6fa-0c3b-41d8-b86c-f7f0262ded47",
+	'Port1',
+	0,
+	0);
+INSERT INTO C_IR
+	VALUES ("9b61ea41-1246-449e-bdc1-33450c4b9ab1",
+	"1c4072df-4470-4866-9416-5fa08e4b28be",
+	"00000000-0000-0000-0000-000000000000",
+	"4d9e0ad1-8225-4292-83b3-90f316770878");
+INSERT INTO C_R
+	VALUES ("9b61ea41-1246-449e-bdc1-33450c4b9ab1",
+	'DiverterClient',
+	'',
+	'Unnamed Interface',
+	'Client::Port1::DiverterClient');
+INSERT INTO SPR_REP
+	VALUES ("ba5c8870-db31-45a6-a0b5-99b0ee1bd6e1",
+	"f057388f-df84-4155-94c4-b3fb64b631d2",
+	"9b61ea41-1246-449e-bdc1-33450c4b9ab1");
+INSERT INTO SPR_RS
+	VALUES ("ba5c8870-db31-45a6-a0b5-99b0ee1bd6e1",
+	'divert_pending',
+	'',
+	'',
+	1);
+INSERT INTO C_EP_PROXY
+	VALUES ("f057388f-df84-4155-94c4-b3fb64b631d2",
+	"1c4072df-4470-4866-9416-5fa08e4b28be",
+	-1,
+	'divert_pending',
+	'',
+	'../../../../../Intf_Diverter/models/Intf_Diverter/DiverterInterfaces/DiverterClient/DiverterClient.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("50db6316-5f44-4dfe-b326-40670865cf8c",
+	"75c6ef98-13ed-4d3f-af8e-966a6574358b",
+	"9b61ea41-1246-449e-bdc1-33450c4b9ab1");
+INSERT INTO SPR_RS
+	VALUES ("50db6316-5f44-4dfe-b326-40670865cf8c",
+	'diverter_ready',
+	'',
+	'',
+	1);
+INSERT INTO C_EP_PROXY
+	VALUES ("75c6ef98-13ed-4d3f-af8e-966a6574358b",
+	"1c4072df-4470-4866-9416-5fa08e4b28be",
+	-1,
+	'diverter_ready',
+	'',
+	'../../../../../Intf_Diverter/models/Intf_Diverter/DiverterInterfaces/DiverterClient/DiverterClient.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("81984dc6-c05d-46b4-ab23-b6145c18564a",
+	"ad786695-010d-4e54-86a6-57e572786231",
+	"9b61ea41-1246-449e-bdc1-33450c4b9ab1");
+INSERT INTO SPR_RS
+	VALUES ("81984dc6-c05d-46b4-ab23-b6145c18564a",
+	'xtfr_jog_switch_position_changed',
+	'',
+	'',
+	1);
+INSERT INTO C_EP_PROXY
+	VALUES ("ad786695-010d-4e54-86a6-57e572786231",
+	"1c4072df-4470-4866-9416-5fa08e4b28be",
+	-1,
+	'xtfr_jog_switch_position_changed',
+	'',
+	'../../../../../Intf_Diverter/models/Intf_Diverter/DiverterInterfaces/DiverterClient/DiverterClient.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("731f1ae1-54ee-4538-b87a-9c16ad4eb3c3",
+	"617e5f69-340e-4966-9b58-2ed30ec3c58d",
+	"9b61ea41-1246-449e-bdc1-33450c4b9ab1");
+INSERT INTO SPR_RO
+	VALUES ("731f1ae1-54ee-4538-b87a-9c16ad4eb3c3",
+	'request_status',
+	'True - Diverter Ready, False - Diverter Not Ready
+Operation returns the current state of the diverter system.  
+',
+	'',
+	1);
+INSERT INTO C_EP_PROXY
+	VALUES ("617e5f69-340e-4966-9b58-2ed30ec3c58d",
+	"1c4072df-4470-4866-9416-5fa08e4b28be",
+	-1,
+	'request_status',
+	'True - Diverter Ready, False - Diverter Not Ready
+Operation returns the current state of the diverter system.  
+',
+	'../../../../../Intf_Diverter/models/Intf_Diverter/DiverterInterfaces/DiverterClient/DiverterClient.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("d5498c0e-4c9f-4351-824f-497ae43cad03",
+	"c9114946-3cdf-4418-98be-3c89197a5f21",
+	"9b61ea41-1246-449e-bdc1-33450c4b9ab1");
+INSERT INTO SPR_RO
+	VALUES ("d5498c0e-4c9f-4351-824f-497ae43cad03",
+	'get_xtfr_jog_switch_position',
+	'',
+	'select any jog_switch from instances of JS;
+return jog_switch.position;
+
+//return JogSwitchPosition::Stop;
+',
+	1);
+INSERT INTO C_EP_PROXY
+	VALUES ("c9114946-3cdf-4418-98be-3c89197a5f21",
+	"1c4072df-4470-4866-9416-5fa08e4b28be",
+	-1,
+	'get_xtfr_jog_switch_position',
+	'',
+	'../../../../../Intf_Diverter/models/Intf_Diverter/DiverterInterfaces/DiverterClient/DiverterClient.xtuml');
+INSERT INTO C_I_PROXY
+	VALUES ("1c4072df-4470-4866-9416-5fa08e4b28be",
+	"00000000-0000-0000-0000-000000000000",
+	'DiverterClient',
+	'',
+	'../../../../../Intf_Diverter/models/Intf_Diverter/DiverterInterfaces/DiverterClient/DiverterClient.xtuml');
+INSERT INTO PE_PE
+	VALUES ("8aebd6fa-0c3b-41d8-b86c-f7f0262ded47",
+	1,
+	"167f51c6-7655-4677-8bf1-e8bc4117e64e",
+	"00000000-0000-0000-0000-000000000000",
+	2);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("167f51c6-7655-4677-8bf1-e8bc4117e64e",
+	"4024ccdc-bf32-4565-a289-284f1403b484",
+	"4024ccdc-bf32-4565-a289-284f1403b484",
+	'System',
+	'',
+	0,
+	'../System.xtuml');

@@ -1,0 +1,20 @@
+(* Model Identifiers
+     Component (Number): 'Diverter' (800)
+         Class (Number): 'Fingers' (008)
+              Operation: 'Initialize'
+         Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Fingers'
+   
+Description: All actions required to initialize an instance of class 'Fingers'.
+             This subroutine must be called whenever a new instance is created.
+
+Signature: JSR( _800_008_opFingers_Init );
+*)
+
+SBR(  );
+
+(* Clear the global and local event mailbox structures. *)
+CPS(empty_event_struct, _events.event_fingers_800_008.evt_lst, 1);
+CPS(empty_event_struct, _obj.fingers_800_008.events.evt_lst, 1);
+
+(* TODO: Add all initialization code here *)
+

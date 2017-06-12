@@ -1,0 +1,86 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("c02d1cb3-12e0-4223-a447-70dcaea7913a",
+	'Motion Controller',
+	3,
+	'MC',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("b18005a7-59ba-4f38-bc59-f7a0288150fa",
+	"c02d1cb3-12e0-4223-a447-70dcaea7913a");
+INSERT INTO O_BATTR
+	VALUES ("b18005a7-59ba-4f38-bc59-f7a0288150fa",
+	"c02d1cb3-12e0-4223-a447-70dcaea7913a");
+INSERT INTO O_ATTR
+	VALUES ("b18005a7-59ba-4f38-bc59-f7a0288150fa",
+	"c02d1cb3-12e0-4223-a447-70dcaea7913a",
+	"00000000-0000-0000-0000-000000000000",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("c274b3f2-ed9f-47bb-886d-6476415b6be6",
+	"c02d1cb3-12e0-4223-a447-70dcaea7913a");
+INSERT INTO O_BATTR
+	VALUES ("c274b3f2-ed9f-47bb-886d-6476415b6be6",
+	"c02d1cb3-12e0-4223-a447-70dcaea7913a");
+INSERT INTO O_ATTR
+	VALUES ("c274b3f2-ed9f-47bb-886d-6476415b6be6",
+	"c02d1cb3-12e0-4223-a447-70dcaea7913a",
+	"b18005a7-59ba-4f38-bc59-f7a0288150fa",
+	'move_timer',
+	'',
+	'',
+	'move_timer',
+	0,
+	"ba5eda7a-def5-0000-0000-00000000000f",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("7010a08f-f964-41a3-920b-629dc5b57e18",
+	"c02d1cb3-12e0-4223-a447-70dcaea7913a");
+INSERT INTO O_BATTR
+	VALUES ("7010a08f-f964-41a3-920b-629dc5b57e18",
+	"c02d1cb3-12e0-4223-a447-70dcaea7913a");
+INSERT INTO O_ATTR
+	VALUES ("7010a08f-f964-41a3-920b-629dc5b57e18",
+	"c02d1cb3-12e0-4223-a447-70dcaea7913a",
+	"c274b3f2-ed9f-47bb-886d-6476415b6be6",
+	'move_duration',
+	'',
+	'',
+	'move_duration',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"c02d1cb3-12e0-4223-a447-70dcaea7913a");
+INSERT INTO O_ID
+	VALUES (1,
+	"c02d1cb3-12e0-4223-a447-70dcaea7913a");
+INSERT INTO O_ID
+	VALUES (2,
+	"c02d1cb3-12e0-4223-a447-70dcaea7913a");
+INSERT INTO PE_PE
+	VALUES ("c02d1cb3-12e0-4223-a447-70dcaea7913a",
+	1,
+	"c817c574-2133-4f0d-a669-d4ef72db35fd",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("c817c574-2133-4f0d-a669-d4ef72db35fd",
+	"00000000-0000-0000-0000-000000000000",
+	"96493490-05b1-4840-ab78-5af4de985c2e",
+	'Subsys',
+	'',
+	0,
+	'../Subsys.xtuml');

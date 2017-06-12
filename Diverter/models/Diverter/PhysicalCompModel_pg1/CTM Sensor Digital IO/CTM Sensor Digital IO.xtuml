@@ -1,0 +1,33 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("03fab345-148d-4fe8-a305-1236b83e8a76",
+	"00000000-0000-0000-0000-000000000000",
+	'CTM Sensor Digital IO',
+	'');
+INSERT INTO C_EP
+	VALUES ("1f8d17a5-1c86-4b4a-bfd4-012d19a5ba90",
+	"03fab345-148d-4fe8-a305-1236b83e8a76",
+	-1,
+	'HomeReferenceOverTravelProx',
+	'');
+INSERT INTO C_AS
+	VALUES ("1f8d17a5-1c86-4b4a-bfd4-012d19a5ba90",
+	'HomeReferenceOverTravelProx',
+	'',
+	1,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO PE_PE
+	VALUES ("03fab345-148d-4fe8-a305-1236b83e8a76",
+	1,
+	"c1255101-6ddb-4fec-a7ae-60dd88ec7bb6",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("c1255101-6ddb-4fec-a7ae-60dd88ec7bb6",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	'PhysicalCompModel_pg1',
+	'',
+	0,
+	'../PhysicalCompModel_pg1.xtuml');

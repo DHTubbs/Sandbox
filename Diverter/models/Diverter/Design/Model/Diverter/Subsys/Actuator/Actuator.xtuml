@@ -1,0 +1,92 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("e530f8f2-a9fb-46e0-b7d9-9c46dc77bc67",
+	'Actuator',
+	3,
+	'ACTR',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("a69ddb85-4697-4771-be27-966cef68feda",
+	"e530f8f2-a9fb-46e0-b7d9-9c46dc77bc67");
+INSERT INTO O_BATTR
+	VALUES ("a69ddb85-4697-4771-be27-966cef68feda",
+	"e530f8f2-a9fb-46e0-b7d9-9c46dc77bc67");
+INSERT INTO O_ATTR
+	VALUES ("a69ddb85-4697-4771-be27-966cef68feda",
+	"e530f8f2-a9fb-46e0-b7d9-9c46dc77bc67",
+	"5be94755-35b2-414e-a4cb-41e5b4d8d00a",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("5be94755-35b2-414e-a4cb-41e5b4d8d00a",
+	"e530f8f2-a9fb-46e0-b7d9-9c46dc77bc67");
+INSERT INTO O_BATTR
+	VALUES ("5be94755-35b2-414e-a4cb-41e5b4d8d00a",
+	"e530f8f2-a9fb-46e0-b7d9-9c46dc77bc67");
+INSERT INTO O_ATTR
+	VALUES ("5be94755-35b2-414e-a4cb-41e5b4d8d00a",
+	"e530f8f2-a9fb-46e0-b7d9-9c46dc77bc67",
+	"00000000-0000-0000-0000-000000000000",
+	'Id',
+	'',
+	'',
+	'Id',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"e530f8f2-a9fb-46e0-b7d9-9c46dc77bc67");
+INSERT INTO O_OIDA
+	VALUES ("5be94755-35b2-414e-a4cb-41e5b4d8d00a",
+	"e530f8f2-a9fb-46e0-b7d9-9c46dc77bc67",
+	0,
+	'Id');
+INSERT INTO O_ID
+	VALUES (1,
+	"e530f8f2-a9fb-46e0-b7d9-9c46dc77bc67");
+INSERT INTO O_ID
+	VALUES (2,
+	"e530f8f2-a9fb-46e0-b7d9-9c46dc77bc67");
+INSERT INTO PE_PE
+	VALUES ("e530f8f2-a9fb-46e0-b7d9-9c46dc77bc67",
+	1,
+	"dc4131cd-6623-4946-bae6-3107b2be2c64",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("dc4131cd-6623-4946-bae6-3107b2be2c64",
+	"00000000-0000-0000-0000-000000000000",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	'Subsys',
+	'The class diagram for the diverter may appear to be more abstract than necessary,
+but there are characteristics of the diverter operation that make the abstraction
+necessary.  
+
+Establishing relationships between the diverted sheets and/or divert package 
+(product) and the actuated components would have been the logical choice.  The 
+state machines control the actuators would have resided within the product.  As
+the product flows along the board path the it''s state machine triggers actions on
+the machine.  This model fails because the actuation time delays of the actuators
+does not guarantee the sequence of events generated to the actuators and therefore
+the product state machines become non-deterministic.
+
+The approach taken in this model is to use a tracking point class to establish the
+relationship between the product and the actuators.  The tracking points are in 
+no particular order and trigger an action only when the divert entity reaches a 
+calculated position along the board path.  The tracking points have no 
+understanding of what actions occurred before them or will occur after them.
+
+The key point of this model is the sequence of actions of the diverter is not set
+in a state machine, but is dynamic and therefore easily changed. ',
+	0,
+	'../Subsys.xtuml');

@@ -1,0 +1,30 @@
+(* Model Identifiers
+     Component (Number): 'Diverter' (800)
+         Class (Number): 'Cross Transfer Conveyor' (007)
+              Operation: 'GetMotorDirection'
+         Qualified Name: 'Diverter::Design::Model::Diverter::CrossTransferConveyorControl::Cross Transfer Conveyor'
+   
+Description: Converts a machine side into a motor direction to run the conveyor in the correct
+			 direction.
+
+Signature: JSR( _800_007_opGetMotorDirection, 1, MACHINE_SIDE_ENUM, MOTOR_DIRECTION_ENUM );
+*)
+
+SBR( machine_side );
+
+(*	Action:
+
+	motor_dir = self.drive_side;
+	if param.machine_side == Machine_Side::Operator;
+	   motor_dir = Motor_Direction::Forward;
+	   if self.drive_side == Motor_Direction::Forward;
+	      motor_dir = Motor_Direction::Reverse;
+	   end if;
+	end if;
+	
+	return motor_dir;
+*)
+
+(* TODO: Implement operation action code here *)
+
+RET( (* TODO: Assign Return Value, Type = MOTOR_DIRECTION_ENUM *) );

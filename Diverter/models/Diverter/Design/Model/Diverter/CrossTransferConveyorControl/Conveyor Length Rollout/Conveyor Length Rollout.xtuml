@@ -1,0 +1,106 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("a4692583-c022-4a6a-ab63-a4844989f57c",
+	'Conveyor Length Rollout',
+	15,
+	'CLX1DCGSEQ',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("50deb25c-2ba9-4c15-81e6-7c5388e14b29",
+	"a4692583-c022-4a6a-ab63-a4844989f57c");
+INSERT INTO O_BATTR
+	VALUES ("50deb25c-2ba9-4c15-81e6-7c5388e14b29",
+	"a4692583-c022-4a6a-ab63-a4844989f57c");
+INSERT INTO O_ATTR
+	VALUES ("50deb25c-2ba9-4c15-81e6-7c5388e14b29",
+	"a4692583-c022-4a6a-ab63-a4844989f57c",
+	"1f899b16-5084-45f4-8253-09fe243426a1",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_REF
+	VALUES ("a4692583-c022-4a6a-ab63-a4844989f57c",
+	"fe5c048c-e29b-4151-9315-f458dfaaea1e",
+	0,
+	"be7c7815-8d48-4eaf-891a-9807a7a7fae1",
+	"a3254b7e-9a7f-4822-b458-095dfd530db7",
+	"551d7f42-04e5-4a1f-82da-3523c184fc14",
+	"ccb2eaa9-f01c-4dbd-9d62-4af8c39a7876",
+	"1f899b16-5084-45f4-8253-09fe243426a1",
+	"377298cd-2c0b-42aa-a093-dc0f8b61265a",
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'Automatic Sequence',
+	'Id',
+	'R9');
+INSERT INTO R_RGO_PROXY
+	VALUES ("a4692583-c022-4a6a-ab63-a4844989f57c",
+	"a3254b7e-9a7f-4822-b458-095dfd530db7",
+	"551d7f42-04e5-4a1f-82da-3523c184fc14",
+	'../CrossTransferConveyorControl.xtuml');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("be7c7815-8d48-4eaf-891a-9807a7a7fae1",
+	"fe5c048c-e29b-4151-9315-f458dfaaea1e",
+	0,
+	"a3254b7e-9a7f-4822-b458-095dfd530db7",
+	"ccb2eaa9-f01c-4dbd-9d62-4af8c39a7876",
+	'../CrossTransferConveyorControl.xtuml');
+INSERT INTO O_RATTR
+	VALUES ("1f899b16-5084-45f4-8253-09fe243426a1",
+	"a4692583-c022-4a6a-ab63-a4844989f57c",
+	"b6b14f55-78eb-47f4-81c0-283fbbe875c3",
+	"25a7da66-8d4e-40d2-9e48-725b2461dbe9",
+	1,
+	'Id');
+INSERT INTO O_BATTR_PROXY
+	VALUES ("b6b14f55-78eb-47f4-81c0-283fbbe875c3",
+	"25a7da66-8d4e-40d2-9e48-725b2461dbe9",
+	'../Cross Transfer Conveyor/Cross Transfer Conveyor.xtuml');
+INSERT INTO O_ATTR
+	VALUES ("1f899b16-5084-45f4-8253-09fe243426a1",
+	"a4692583-c022-4a6a-ab63-a4844989f57c",
+	"00000000-0000-0000-0000-000000000000",
+	'Id',
+	'',
+	'',
+	'Id',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000007",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"a4692583-c022-4a6a-ab63-a4844989f57c");
+INSERT INTO O_OIDA
+	VALUES ("1f899b16-5084-45f4-8253-09fe243426a1",
+	"a4692583-c022-4a6a-ab63-a4844989f57c",
+	0,
+	'Id');
+INSERT INTO O_ID
+	VALUES (1,
+	"a4692583-c022-4a6a-ab63-a4844989f57c");
+INSERT INTO O_ID
+	VALUES (2,
+	"a4692583-c022-4a6a-ab63-a4844989f57c");
+INSERT INTO PE_PE
+	VALUES ("a4692583-c022-4a6a-ab63-a4844989f57c",
+	1,
+	"c3d6024b-ab3a-4992-8717-15d3939342da",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("c3d6024b-ab3a-4992-8717-15d3939342da",
+	"00000000-0000-0000-0000-000000000000",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	'CrossTransferConveyorControl',
+	'',
+	0,
+	'../CrossTransferConveyorControl.xtuml');

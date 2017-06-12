@@ -1,0 +1,122 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("52db6895-1faf-4f37-903b-e183212300aa",
+	"00000000-0000-0000-0000-000000000000",
+	'JogMotor',
+	'');
+INSERT INTO C_EP
+	VALUES ("5088c18b-e00f-4dd3-b4a9-4f3e6167a4e1",
+	"52db6895-1faf-4f37-903b-e183212300aa",
+	-1,
+	'jog',
+	'');
+INSERT INTO C_AS
+	VALUES ("5088c18b-e00f-4dd3-b4a9-4f3e6167a4e1",
+	'jog',
+	'',
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("78023594-0cca-4136-94cf-390307f0e11c",
+	"5088c18b-e00f-4dd3-b4a9-4f3e6167a4e1",
+	"10a457d6-e25e-4dbe-a48f-0682e976c4bf",
+	'direction',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_DT_PROXY
+	VALUES ("10a457d6-e25e-4dbe-a48f-0682e976c4bf",
+	"00000000-0000-0000-0000-000000000000",
+	'MotorDirection',
+	'',
+	'',
+	'../../../DataTypes/DataTypes.xtuml');
+INSERT INTO C_PP
+	VALUES ("682d8317-4f82-49f7-9eb7-a604575b632b",
+	"5088c18b-e00f-4dd3-b4a9-4f3e6167a4e1",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'velocity',
+	'',
+	0,
+	'',
+	"78023594-0cca-4136-94cf-390307f0e11c");
+INSERT INTO C_PP
+	VALUES ("c18aafc1-5eb5-4a68-9f6f-0b38927a281d",
+	"5088c18b-e00f-4dd3-b4a9-4f3e6167a4e1",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'acceleration',
+	'',
+	0,
+	'',
+	"682d8317-4f82-49f7-9eb7-a604575b632b");
+INSERT INTO C_PP
+	VALUES ("fda63fab-5fdc-461e-b4af-d3d978cf51e8",
+	"5088c18b-e00f-4dd3-b4a9-4f3e6167a4e1",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'duration',
+	'',
+	0,
+	'',
+	"c18aafc1-5eb5-4a68-9f6f-0b38927a281d");
+INSERT INTO C_EP
+	VALUES ("9241cf5d-2f11-4b22-9139-4bd3137ca986",
+	"52db6895-1faf-4f37-903b-e183212300aa",
+	-1,
+	'stop',
+	'');
+INSERT INTO C_AS
+	VALUES ("9241cf5d-2f11-4b22-9139-4bd3137ca986",
+	'stop',
+	'',
+	0,
+	"5088c18b-e00f-4dd3-b4a9-4f3e6167a4e1");
+INSERT INTO C_EP
+	VALUES ("6959782d-b94d-4525-9720-fcb3ab20776f",
+	"52db6895-1faf-4f37-903b-e183212300aa",
+	-1,
+	'motion_initiated',
+	'This signal is an indicator to the client of the interface that the last motion
+instruction has been executed.  A new motion instruction can now be send from 
+the client.');
+INSERT INTO C_AS
+	VALUES ("6959782d-b94d-4525-9720-fcb3ab20776f",
+	'motion_initiated',
+	'This signal is an indicator to the client of the interface that the last motion
+instruction has been executed.  A new motion instruction can now be send from 
+the client.',
+	1,
+	"9241cf5d-2f11-4b22-9139-4bd3137ca986");
+INSERT INTO C_EP
+	VALUES ("7830f4a2-ff94-4ac8-a5d1-fd897ee6bfaf",
+	"52db6895-1faf-4f37-903b-e183212300aa",
+	-1,
+	'motion_complete',
+	'This signal informs the client that the motor is no longer rotating and the 
+drive is about to be disabled.  This signal will only occur after a stop has
+been issued by the client of the interface or after a timed velocity move is
+finished.');
+INSERT INTO C_AS
+	VALUES ("7830f4a2-ff94-4ac8-a5d1-fd897ee6bfaf",
+	'motion_complete',
+	'This signal informs the client that the motor is no longer rotating and the 
+drive is about to be disabled.  This signal will only occur after a stop has
+been issued by the client of the interface or after a timed velocity move is
+finished.',
+	1,
+	"6959782d-b94d-4525-9720-fcb3ab20776f");
+INSERT INTO PE_PE
+	VALUES ("52db6895-1faf-4f37-903b-e183212300aa",
+	1,
+	"fbb26558-e213-4195-ab70-844bf14561ad",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("fbb26558-e213-4195-ab70-844bf14561ad",
+	"00000000-0000-0000-0000-000000000000",
+	"b6a5fceb-2ea9-495a-9b5b-6b1439da1cae",
+	'JogMotor',
+	'',
+	0,
+	'../JogMotor.xtuml');

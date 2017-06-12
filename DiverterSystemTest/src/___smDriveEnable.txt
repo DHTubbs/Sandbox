@@ -1,0 +1,297 @@
+(* Model Identifiers
+     Component (Number):  ()
+         Class (Number): Drive Enable ()
+         Qualified Name: 
+   
+Description: This class controls the enable function of the drive.
+
+*)
+
+SBR( obj_drive_enable__ );
+
+TONR(obj_drive_enable__.tmr_disable);
+
+obj_drive_enable__.ism.b_done := b_FALSE;
+
+while (Not obj_drive_enable__.ism.b_done) do
+	obj_drive_enable__.ism.b_done := b_TRUE;
+	case (obj_drive_enable__.d_current_state) of
+	0:  (* Uninstantiated Instance *)
+	
+		(* Exit Conditions *)
+		if (obj_drive_enable__.events.b_creation_event) then
+			(* Consume the Event *)
+			obj_drive_enable__.events.b_creation_event := b_FALSE;
+
+			obj_drive_enable__.d_current_state := 1;
+			obj_drive_enable__.ism.b_txn := b_TRUE;
+			obj_drive_enable__.ism.b_done := b_FALSE;
+		end_if;
+
+	1:  (* State: 'Drive Disabled' *)
+		(* Entry Action *)
+		if (obj_drive_enable__.ism.b_txn) then
+			obj_drive_enable__.ism.b_txn := b_FALSE
+			
+			(*  Action:
+				
+				generate MI_A5:drive_disabled() to MI assigner;
+			*)
+
+			(* TODO: Implement state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (obj_drive_enable__.events.b_enable_drive) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			obj_drive_enable__.events.b_enable_drive := b_FALSE;
+
+			obj_drive_enable__.d_current_state := 2;
+			obj_drive_enable__.ism.b_txn := b_TRUE;
+			obj_drive_enable__.ism.b_done := b_FALSE;
+			
+		elsif (obj_drive_enable__.events.b_disable_drive) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (obj_drive_enable__.events.b_delay_timer_expired) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		end_if;
+
+	2:  (* State: 'Initiate Enable' *)
+		(* Entry Action *)
+		if (obj_drive_enable__.ism.b_txn) then
+			obj_drive_enable__.ism.b_txn := b_FALSE
+			
+			(*  Action:
+				
+				// Enable the drive
+				drive::enable_drive(enable: True);
+			*)
+
+			(* TODO: Implement state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (obj_drive_enable__.events.b_drive_signals_done) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			obj_drive_enable__.events.b_drive_signals_done := b_FALSE;
+
+			obj_drive_enable__.d_current_state := 3;
+			obj_drive_enable__.ism.b_txn := b_TRUE;
+			obj_drive_enable__.ism.b_done := b_FALSE;
+			
+		elsif (obj_drive_enable__.events.b_enable_drive) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (obj_drive_enable__.events.b_disable_drive) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (obj_drive_enable__.events.b_delay_timer_expired) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		end_if;
+
+	3:  (* State: 'Drive Enabled' *)
+		(* Entry Action *)
+		if (obj_drive_enable__.ism.b_txn) then
+			obj_drive_enable__.ism.b_txn := b_FALSE
+			
+			(*  Action:
+				
+				generate MI_A2:drive_enabled() to MI assigner;
+			*)
+
+			(* TODO: Implement state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (obj_drive_enable__.events.b_enable_drive) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			obj_drive_enable__.events.b_enable_drive := b_FALSE;
+
+			obj_drive_enable__.d_current_state := 3;
+			obj_drive_enable__.ism.b_txn := b_TRUE;
+			obj_drive_enable__.ism.b_done := b_FALSE;
+			
+		elsif (obj_drive_enable__.events.b_disable_drive) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			obj_drive_enable__.events.b_disable_drive := b_FALSE;
+
+			obj_drive_enable__.d_current_state := 4;
+			obj_drive_enable__.ism.b_txn := b_TRUE;
+			obj_drive_enable__.ism.b_done := b_FALSE;
+			
+		elsif (obj_drive_enable__.events.b_delay_timer_expired) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		end_if;
+
+	4:  (* State: 'Disable Delay' *)
+		(* Entry Action *)
+		if (obj_drive_enable__.ism.b_txn) then
+			obj_drive_enable__.ism.b_txn := b_FALSE
+			
+			(*  Action:
+				
+				// Start a timer to control how long the drive should stay enabled after the move 
+				//    is complete.
+				// 
+				
+				
+				create event instance timer_expired of DE4:delay_timer_expired to self;
+				self.disable_timer = 
+				            TIM::timer_start(microseconds: self.disable_delay * 1000, 
+				                               event_inst: timer_expired);
+			*)
+
+			(* TODO: Implement state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (obj_drive_enable__.events.b_enable_drive) then
+			(* Exit Action *)
+			(*  Action:
+				
+				// If the timer is running stop it.
+				
+				existed = TIM::timer_cancel(timer_inst_ref: self.disable_timer);
+			*)
+
+			(* TODO: Implement event action code here *)
+			
+
+			(* Consume the Event *)
+			obj_drive_enable__.events.b_enable_drive := b_FALSE;
+
+			obj_drive_enable__.d_current_state := 3;
+			obj_drive_enable__.ism.b_txn := b_TRUE;
+			obj_drive_enable__.ism.b_done := b_FALSE;
+			
+		elsif (obj_drive_enable__.events.b_delay_timer_expired) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			obj_drive_enable__.events.b_delay_timer_expired := b_FALSE;
+
+			obj_drive_enable__.d_current_state := 5;
+			obj_drive_enable__.ism.b_txn := b_TRUE;
+			obj_drive_enable__.ism.b_done := b_FALSE;
+			
+		elsif (obj_drive_enable__.events.b_disable_drive) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		end_if;
+
+	5:  (* State: 'Initiate Disable' *)
+		(* Entry Action *)
+		if (obj_drive_enable__.ism.b_txn) then
+			obj_drive_enable__.ism.b_txn := b_FALSE
+			
+			(*  Action:
+				
+				// Disable the drive
+				drive::enable_drive(enable: False);
+				
+				generate MI_A4:drive_disable_lockout() to MI assigner;
+			*)
+
+			(* TODO: Implement state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (obj_drive_enable__.events.b_drive_signals_done) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			obj_drive_enable__.events.b_drive_signals_done := b_FALSE;
+
+			obj_drive_enable__.d_current_state := 1;
+			obj_drive_enable__.ism.b_txn := b_TRUE;
+			obj_drive_enable__.ism.b_done := b_FALSE;
+			
+		elsif (obj_drive_enable__.events.b_enable_drive) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (obj_drive_enable__.events.b_disable_drive) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (obj_drive_enable__.events.b_delay_timer_expired) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		end_if;
+
+	else (* Invalid State - End of 'case' *)
+		(* The state machine was directed to an invalid state.  Either a programming
+		   error was made or a hardware failure has occurred in the PLC. *)
+		
+		(* TODO: Add a Diagnostic here. *)
+		
+		obj_drive_enable__.d_current_state := 0;
+		obj_drive_enable__.ism.b_txn := b_FALSE;
+		obj_drive_enable__.ism.b_done := b_FALSE;
+	end_case;
+end_while;

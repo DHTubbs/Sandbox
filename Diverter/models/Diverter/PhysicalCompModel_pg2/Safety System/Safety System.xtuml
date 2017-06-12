@@ -1,0 +1,519 @@
+-- BP 7.1.6 content: Component syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_C
+	VALUES ("fd08c25b-d066-431f-a27c-aec7e3aa93f7",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'Safety System',
+	'',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'');
+INSERT INTO GD_MD
+	VALUES ("fca5d064-64b7-4b94-bdb5-0ac3aafb3bda",
+	111,
+	"fd08c25b-d066-431f-a27c-aec7e3aa93f7",
+	98,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'Diverter::PhysicalCompModel_pg2::Safety System');
+INSERT INTO GD_GE
+	VALUES ("a20fe2a8-e803-42b2-bfaf-d84ec7ffe6c3",
+	"fca5d064-64b7-4b94-bdb5-0ac3aafb3bda",
+	"fd08c25b-d066-431f-a27c-aec7e3aa93f7",
+	103,
+	0,
+	'Diverter::PhysicalCompModel_pg2::Safety System');
+INSERT INTO GD_SHP
+	VALUES ("a20fe2a8-e803-42b2-bfaf-d84ec7ffe6c3");
+INSERT INTO GD_CTR
+	VALUES ("a20fe2a8-e803-42b2-bfaf-d84ec7ffe6c3");
+INSERT INTO DIM_ND
+	VALUES (1169.000000,
+	511.000000,
+	"a20fe2a8-e803-42b2-bfaf-d84ec7ffe6c3");
+INSERT INTO DIM_GE
+	VALUES (4100.000000,
+	3100.000000,
+	"a20fe2a8-e803-42b2-bfaf-d84ec7ffe6c3",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("a20fe2a8-e803-42b2-bfaf-d84ec7ffe6c3",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_CON
+	VALUES ("18451a63-9bff-425b-804a-afd97474d88a",
+	4650.000000,
+	3100.000000,
+	"a20fe2a8-e803-42b2-bfaf-d84ec7ffe6c3");
+INSERT INTO DIM_CON
+	VALUES ("74a1f199-badb-4111-966b-51d3f5cc9404",
+	4716.000000,
+	3611.000000,
+	"a20fe2a8-e803-42b2-bfaf-d84ec7ffe6c3");
+INSERT INTO GD_GE
+	VALUES ("ec465466-0a29-47d8-a014-bf1366c0b08c",
+	"fca5d064-64b7-4b94-bdb5-0ac3aafb3bda",
+	"6f77fef7-61a1-4196-9f25-7360f0521bd1",
+	94,
+	0,
+	'Diverter::PhysicalCompModel_pg2::Safety System::Port1::Safety System Client');
+INSERT INTO GD_CON
+	VALUES ("ec465466-0a29-47d8-a014-bf1366c0b08c",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("34bef7ac-ddb4-4cbd-b4c8-491c21263da7",
+	"ec465466-0a29-47d8-a014-bf1366c0b08c",
+	1,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"34bef7ac-ddb4-4cbd-b4c8-491c21263da7");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"34bef7ac-ddb4-4cbd-b4c8-491c21263da7",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("34bef7ac-ddb4-4cbd-b4c8-491c21263da7",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("b547151d-4a6a-4c31-a925-0163648eb9c8",
+	"ec465466-0a29-47d8-a014-bf1366c0b08c",
+	3,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"b547151d-4a6a-4c31-a925-0163648eb9c8");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"b547151d-4a6a-4c31-a925-0163648eb9c8",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("b547151d-4a6a-4c31-a925-0163648eb9c8",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("47917e88-eacc-49f3-b806-b98b6d917e06",
+	"ec465466-0a29-47d8-a014-bf1366c0b08c",
+	2,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"47917e88-eacc-49f3-b806-b98b6d917e06");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"47917e88-eacc-49f3-b806-b98b6d917e06",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("47917e88-eacc-49f3-b806-b98b6d917e06",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_LS
+	VALUES ("eb93b31c-7433-4464-af5b-1ca5e7f57013",
+	"ec465466-0a29-47d8-a014-bf1366c0b08c",
+	"00000000-0000-0000-0000-000000000000",
+	"9c475939-1b20-43db-93b2-231edc58fbb7",
+	"b19a07ee-8d43-42dc-b286-9992d558fa15");
+INSERT INTO DIM_WAY
+	VALUES ("9c475939-1b20-43db-93b2-231edc58fbb7",
+	4650.000000,
+	3100.000000,
+	"ec465466-0a29-47d8-a014-bf1366c0b08c",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_WAY
+	VALUES ("b19a07ee-8d43-42dc-b286-9992d558fa15",
+	4650.000000,
+	3030.000000,
+	"ec465466-0a29-47d8-a014-bf1366c0b08c",
+	"00000000-0000-0000-0000-000000000000",
+	"9c475939-1b20-43db-93b2-231edc58fbb7");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"ec465466-0a29-47d8-a014-bf1366c0b08c",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("ec465466-0a29-47d8-a014-bf1366c0b08c",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ED
+	VALUES ("18451a63-9bff-425b-804a-afd97474d88a",
+	"00000000-0000-0000-0000-000000000000",
+	"ec465466-0a29-47d8-a014-bf1366c0b08c");
+INSERT INTO GD_GE
+	VALUES ("a5a37a62-3330-44ed-8d7d-ff2d79af8ca7",
+	"fca5d064-64b7-4b94-bdb5-0ac3aafb3bda",
+	"ace35c11-912f-47d6-b7e8-45f561ded268",
+	93,
+	0,
+	'Diverter::PhysicalCompModel_pg2::Safety System::Port2::Safety System Monitor');
+INSERT INTO GD_CON
+	VALUES ("a5a37a62-3330-44ed-8d7d-ff2d79af8ca7",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("bebce373-9d22-4377-b24d-0fbb5639164d",
+	"a5a37a62-3330-44ed-8d7d-ff2d79af8ca7",
+	1,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"bebce373-9d22-4377-b24d-0fbb5639164d");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"bebce373-9d22-4377-b24d-0fbb5639164d",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("bebce373-9d22-4377-b24d-0fbb5639164d",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("69419d5e-7864-4d79-b00d-90de9d27eda7",
+	"a5a37a62-3330-44ed-8d7d-ff2d79af8ca7",
+	3,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"69419d5e-7864-4d79-b00d-90de9d27eda7");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"69419d5e-7864-4d79-b00d-90de9d27eda7",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("69419d5e-7864-4d79-b00d-90de9d27eda7",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("e7bf419b-a164-4b5d-8afd-ed35c73ae528",
+	"a5a37a62-3330-44ed-8d7d-ff2d79af8ca7",
+	2,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"e7bf419b-a164-4b5d-8afd-ed35c73ae528");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"e7bf419b-a164-4b5d-8afd-ed35c73ae528",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("e7bf419b-a164-4b5d-8afd-ed35c73ae528",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_LS
+	VALUES ("b7ac8dca-695a-4469-bd57-a8e268c7ada9",
+	"a5a37a62-3330-44ed-8d7d-ff2d79af8ca7",
+	"00000000-0000-0000-0000-000000000000",
+	"9ac5c51d-28f0-420a-abc8-b966ad4cf8b7",
+	"af954e30-e277-4502-9faa-7f9083193fc4");
+INSERT INTO DIM_WAY
+	VALUES ("9ac5c51d-28f0-420a-abc8-b966ad4cf8b7",
+	4716.000000,
+	3611.000000,
+	"a5a37a62-3330-44ed-8d7d-ff2d79af8ca7",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_WAY
+	VALUES ("af954e30-e277-4502-9faa-7f9083193fc4",
+	4718.000000,
+	3678.000000,
+	"a5a37a62-3330-44ed-8d7d-ff2d79af8ca7",
+	"00000000-0000-0000-0000-000000000000",
+	"9ac5c51d-28f0-420a-abc8-b966ad4cf8b7");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"a5a37a62-3330-44ed-8d7d-ff2d79af8ca7",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("a5a37a62-3330-44ed-8d7d-ff2d79af8ca7",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ED
+	VALUES ("74a1f199-badb-4111-966b-51d3f5cc9404",
+	"00000000-0000-0000-0000-000000000000",
+	"a5a37a62-3330-44ed-8d7d-ff2d79af8ca7");
+INSERT INTO DIM_DIA
+	VALUES ("fca5d064-64b7-4b94-bdb5-0ac3aafb3bda",
+	'',
+	1.000000,
+	4000.000000,
+	3000.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PO
+	VALUES ("070e2163-abf9-4cd7-9fff-868c04fb72bc",
+	"fd08c25b-d066-431f-a27c-aec7e3aa93f7",
+	'Port1',
+	0,
+	0);
+INSERT INTO C_IR
+	VALUES ("6f77fef7-61a1-4196-9f25-7360f0521bd1",
+	"6b068062-4a26-412a-a612-89251039251d",
+	"00000000-0000-0000-0000-000000000000",
+	"070e2163-abf9-4cd7-9fff-868c04fb72bc");
+INSERT INTO C_P
+	VALUES ("6f77fef7-61a1-4196-9f25-7360f0521bd1",
+	'Safety System Client',
+	'Unnamed Interface',
+	'',
+	'Safety System::Port1::Safety System Client');
+INSERT INTO C_I_PROXY
+	VALUES ("6b068062-4a26-412a-a612-89251039251d",
+	"00000000-0000-0000-0000-000000000000",
+	'Safety System Client',
+	'',
+	'../Safety System Client/Safety System Client.xtuml');
+INSERT INTO C_PO
+	VALUES ("0db11c46-e8f6-460e-acbe-5a2d1f4e4b47",
+	"fd08c25b-d066-431f-a27c-aec7e3aa93f7",
+	'Port2',
+	0,
+	0);
+INSERT INTO C_IR
+	VALUES ("ace35c11-912f-47d6-b7e8-45f561ded268",
+	"cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	"00000000-0000-0000-0000-000000000000",
+	"0db11c46-e8f6-460e-acbe-5a2d1f4e4b47");
+INSERT INTO C_R
+	VALUES ("ace35c11-912f-47d6-b7e8-45f561ded268",
+	'Safety System Monitor',
+	'',
+	'Unnamed Interface',
+	'Safety System::Port2::Safety System Monitor');
+INSERT INTO SPR_REP
+	VALUES ("bbdbc979-290c-4c7d-ae8c-6747cb7c6008",
+	"626b6de6-afd8-41ae-b754-bf4eb92bfe23",
+	"ace35c11-912f-47d6-b7e8-45f561ded268");
+INSERT INTO SPR_RS
+	VALUES ("bbdbc979-290c-4c7d-ae8c-6747cb7c6008",
+	'UpperLevelInfeedConveyorAccess',
+	'',
+	'',
+	3);
+INSERT INTO C_EP_PROXY
+	VALUES ("626b6de6-afd8-41ae-b754-bf4eb92bfe23",
+	"cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	-1,
+	'UpperLevelInfeedConveyorAccess',
+	'',
+	'../Safety System Monitor/Safety System Monitor.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("1cd99c50-5f68-4333-afb3-82580e6aea4f",
+	"eb1dcb2e-cbac-4538-a378-9946257c74c0",
+	"ace35c11-912f-47d6-b7e8-45f561ded268");
+INSERT INTO SPR_RS
+	VALUES ("1cd99c50-5f68-4333-afb3-82580e6aea4f",
+	'SafetyTripCable',
+	'',
+	'',
+	3);
+INSERT INTO C_EP_PROXY
+	VALUES ("eb1dcb2e-cbac-4538-a378-9946257c74c0",
+	"cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	-1,
+	'SafetyTripCable',
+	'',
+	'../Safety System Monitor/Safety System Monitor.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("3f8411ba-6034-48a7-a69b-074dff9082c3",
+	"0194096b-6253-4d42-8a6d-cae4d70cd609",
+	"ace35c11-912f-47d6-b7e8-45f561ded268");
+INSERT INTO SPR_RS
+	VALUES ("3f8411ba-6034-48a7-a69b-074dff9082c3",
+	'LiftRaiseObstructionPE',
+	'',
+	'',
+	3);
+INSERT INTO C_EP_PROXY
+	VALUES ("0194096b-6253-4d42-8a6d-cae4d70cd609",
+	"cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	-1,
+	'LiftRaiseObstructionPE',
+	'',
+	'../Safety System Monitor/Safety System Monitor.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("5ceb97fb-0e2d-44bf-bf99-60da5479199d",
+	"064eb584-52bf-4e05-95aa-1ccc689ee373",
+	"ace35c11-912f-47d6-b7e8-45f561ded268");
+INSERT INTO SPR_RS
+	VALUES ("5ceb97fb-0e2d-44bf-bf99-60da5479199d",
+	'SheetHandlingSlidingDoorSw',
+	'',
+	'',
+	3);
+INSERT INTO C_EP_PROXY
+	VALUES ("064eb584-52bf-4e05-95aa-1ccc689ee373",
+	"cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	-1,
+	'SheetHandlingSlidingDoorSw',
+	'',
+	'../Safety System Monitor/Safety System Monitor.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("5891f313-a4ba-436a-a4fe-3118e2399f27",
+	"1855cd46-82d5-46bf-ac46-af8d5571100e",
+	"ace35c11-912f-47d6-b7e8-45f561ded268");
+INSERT INTO SPR_RS
+	VALUES ("5891f313-a4ba-436a-a4fe-3118e2399f27",
+	'LiftBayScan',
+	'',
+	'',
+	3);
+INSERT INTO C_EP_PROXY
+	VALUES ("1855cd46-82d5-46bf-ac46-af8d5571100e",
+	"cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	-1,
+	'LiftBayScan',
+	'',
+	'../Safety System Monitor/Safety System Monitor.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("e39f6e64-241f-4a18-8532-08e40aadcbcb",
+	"1bc6c789-06a0-4dea-9b9e-9e9653b3728d",
+	"ace35c11-912f-47d6-b7e8-45f561ded268");
+INSERT INTO SPR_RS
+	VALUES ("e39f6e64-241f-4a18-8532-08e40aadcbcb",
+	'LiftDownObstructionPE',
+	'',
+	'',
+	3);
+INSERT INTO C_EP_PROXY
+	VALUES ("1bc6c789-06a0-4dea-9b9e-9e9653b3728d",
+	"cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	-1,
+	'LiftDownObstructionPE',
+	'',
+	'../Safety System Monitor/Safety System Monitor.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("76c87468-e6ee-4816-9999-d5ad221ef1c3",
+	"a3f19a01-9db3-4379-98be-6687dda33992",
+	"ace35c11-912f-47d6-b7e8-45f561ded268");
+INSERT INTO SPR_RS
+	VALUES ("76c87468-e6ee-4816-9999-d5ad221ef1c3",
+	'LiftMidPointObstructionPE',
+	'',
+	'',
+	3);
+INSERT INTO C_EP_PROXY
+	VALUES ("a3f19a01-9db3-4379-98be-6687dda33992",
+	"cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	-1,
+	'LiftMidPointObstructionPE',
+	'',
+	'../Safety System Monitor/Safety System Monitor.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("67853112-fb51-4a37-95dd-9ed8c7262b2f",
+	"ffe73687-319f-44d1-b92a-bf0c767546f3",
+	"ace35c11-912f-47d6-b7e8-45f561ded268");
+INSERT INTO SPR_RS
+	VALUES ("67853112-fb51-4a37-95dd-9ed8c7262b2f",
+	'LiftDownLimitSw',
+	'',
+	'',
+	3);
+INSERT INTO C_EP_PROXY
+	VALUES ("ffe73687-319f-44d1-b92a-bf0c767546f3",
+	"cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	-1,
+	'LiftDownLimitSw',
+	'',
+	'../Safety System Monitor/Safety System Monitor.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("3b05b32c-5cb2-45a9-913d-3b3fb5fabed0",
+	"5804ae6f-0a48-4df1-b270-2db45f28cdf9",
+	"ace35c11-912f-47d6-b7e8-45f561ded268");
+INSERT INTO SPR_RS
+	VALUES ("3b05b32c-5cb2-45a9-913d-3b3fb5fabed0",
+	'PalletInfeedObstructionPE',
+	'',
+	'',
+	3);
+INSERT INTO C_EP_PROXY
+	VALUES ("5804ae6f-0a48-4df1-b270-2db45f28cdf9",
+	"cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	-1,
+	'PalletInfeedObstructionPE',
+	'',
+	'../Safety System Monitor/Safety System Monitor.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("2a413c74-0774-4184-b00f-67a5a6bf8d71",
+	"b4b01433-c43e-48ad-a100-c582fddd3e38",
+	"ace35c11-912f-47d6-b7e8-45f561ded268");
+INSERT INTO SPR_RS
+	VALUES ("2a413c74-0774-4184-b00f-67a5a6bf8d71",
+	'LiftTableLiftLocksEngagedProx',
+	'',
+	'',
+	3);
+INSERT INTO C_EP_PROXY
+	VALUES ("b4b01433-c43e-48ad-a100-c582fddd3e38",
+	"cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	-1,
+	'LiftTableLiftLocksEngagedProx',
+	'',
+	'../Safety System Monitor/Safety System Monitor.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("ea73668a-df29-4444-ba63-86d0b1266826",
+	"3f773e1b-e71e-476b-91a3-6fc0b5b6942a",
+	"ace35c11-912f-47d6-b7e8-45f561ded268");
+INSERT INTO SPR_RS
+	VALUES ("ea73668a-df29-4444-ba63-86d0b1266826",
+	'LiftChainFailureProx',
+	'',
+	'',
+	3);
+INSERT INTO C_EP_PROXY
+	VALUES ("3f773e1b-e71e-476b-91a3-6fc0b5b6942a",
+	"cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	-1,
+	'LiftChainFailureProx',
+	'',
+	'../Safety System Monitor/Safety System Monitor.xtuml');
+INSERT INTO C_I_PROXY
+	VALUES ("cd77b1a3-ea51-469e-bf6f-05a5c293745c",
+	"00000000-0000-0000-0000-000000000000",
+	'Safety System Monitor',
+	'',
+	'../Safety System Monitor/Safety System Monitor.xtuml');
+INSERT INTO PE_PE
+	VALUES ("fd08c25b-d066-431f-a27c-aec7e3aa93f7",
+	1,
+	"775c60b7-244d-4a7e-9422-7c65bc89b2a4",
+	"00000000-0000-0000-0000-000000000000",
+	2);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("775c60b7-244d-4a7e-9422-7c65bc89b2a4",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	'PhysicalCompModel_pg2',
+	'',
+	0,
+	'../PhysicalCompModel_pg2.xtuml');

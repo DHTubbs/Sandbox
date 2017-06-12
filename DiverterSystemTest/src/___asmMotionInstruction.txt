@@ -1,0 +1,369 @@
+(* Model Identifiers
+     Component (Number):  ()
+         Class (Number): Motion Instruction ()
+         Qualified Name: 
+   
+Description: Assigner (class) state machine for class Motion Instruction__
+
+*)
+
+SBR( cls_motion_instruction__ );
+
+cls_motion_instruction__.asm.b_done := b_FALSE;
+
+while (Not cls_motion_instruction__.asm.b_done) do
+	cls_motion_instruction__.asm.b_done := b_TRUE;
+	case (cls_motion_instruction__.d_current_state) of
+	0:  (* Not Created *)
+	
+		(* Exit Conditions *)
+		if (cls_motion_instruction__.events.b_creation_event) then
+			(* Consume the Event *)
+			cls_motion_instruction__.events.b_creation_event := b_FALSE;
+
+			cls_motion_instruction__.d_current_state := 1;
+			cls_motion_instruction__.asm.b_txn := b_FALSE  (* Technically not a state change.  No entry action. *)
+			cls_motion_instruction__.asm.b_done := b_FALSE;
+		end_if;
+
+	1:  (* State: 'WaitingForInstruction' *)
+		(* Entry Action *)
+		if (cls_motion_instruction__.asm.b_txn) then
+			cls_motion_instruction__.asm.b_txn := b_FALSE
+			
+			(*  Action:
+				
+				select any motion_inst from instances of MI;
+				if not_empty motion_inst;
+				   generate MI_A1:jog_instruction_received() to MI assigner;
+				end if;
+			*)
+
+			(* TODO: Implement state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (cls_motion_instruction__.events.b_jog_instruction_received) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			cls_motion_instruction__.events.b_jog_instruction_received := b_FALSE;
+
+			cls_motion_instruction__.d_current_state := 2;
+			cls_motion_instruction__.asm.b_txn := b_TRUE;
+			cls_motion_instruction__.asm.b_done := b_FALSE;
+			
+		elsif (cls_motion_instruction__.events.b_drive_enabled) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (cls_motion_instruction__.events.b_motion_complete) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (cls_motion_instruction__.events.b_drive_disabled) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (cls_motion_instruction__.events.b_drive_disable_lockout) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		end_if;
+
+	2:  (* State: 'EnableDrive' *)
+		(* Entry Action *)
+		if (cls_motion_instruction__.asm.b_txn) then
+			cls_motion_instruction__.asm.b_txn := b_FALSE
+			
+			(*  Action:
+				
+				// Enable the drive, or verify it is already enabled.
+				// 
+				
+				
+				select any drive_enable from instances of DE;
+				generate DE1:enable_drive() to drive_enable;
+			*)
+
+			(* TODO: Implement state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (cls_motion_instruction__.events.b_drive_enabled) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			cls_motion_instruction__.events.b_drive_enabled := b_FALSE;
+
+			cls_motion_instruction__.d_current_state := 3;
+			cls_motion_instruction__.asm.b_txn := b_TRUE;
+			cls_motion_instruction__.asm.b_done := b_FALSE;
+			
+		elsif (cls_motion_instruction__.events.b_jog_instruction_received) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (cls_motion_instruction__.events.b_motion_complete) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (cls_motion_instruction__.events.b_drive_disabled) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (cls_motion_instruction__.events.b_drive_disable_lockout) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		end_if;
+
+	3:  (* State: 'ExecuteInstruction' *)
+		(* Entry Action *)
+		if (cls_motion_instruction__.asm.b_txn) then
+			cls_motion_instruction__.asm.b_txn := b_FALSE
+			
+			(*  Action:
+				
+				// Process the motion instruction. 
+				
+				select any motion_controller from instances of MC;
+				select any motion_inst from instances of MI;
+				generate MC1:jog_cmd(direction: motion_inst.direction,
+				                      velocity: motion_inst.velocity,
+				                  acceleration: motion_inst.acceleration,
+				                      duration: motion_inst.duration) to motion_controller;
+				
+				// Delete the instruction
+				delete object instance motion_inst;
+				
+				// Inform client the motion was initiated.
+				client::motion_initiated();
+			*)
+
+			(* TODO: Implement state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (cls_motion_instruction__.events.b_jog_instruction_received) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			cls_motion_instruction__.events.b_jog_instruction_received := b_FALSE;
+
+			cls_motion_instruction__.d_current_state := 3;
+			cls_motion_instruction__.asm.b_txn := b_TRUE;
+			cls_motion_instruction__.asm.b_done := b_FALSE;
+			
+		elsif (cls_motion_instruction__.events.b_motion_complete) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			cls_motion_instruction__.events.b_motion_complete := b_FALSE;
+
+			cls_motion_instruction__.d_current_state := 4;
+			cls_motion_instruction__.asm.b_txn := b_TRUE;
+			cls_motion_instruction__.asm.b_done := b_FALSE;
+			
+		elsif (cls_motion_instruction__.events.b_drive_enabled) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (cls_motion_instruction__.events.b_drive_disabled) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (cls_motion_instruction__.events.b_drive_disable_lockout) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		end_if;
+
+	4:  (* State: 'InitiateDriveDisable' *)
+		(* Entry Action *)
+		if (cls_motion_instruction__.asm.b_txn) then
+			cls_motion_instruction__.asm.b_txn := b_FALSE
+			
+			(*  Action:
+				
+				// Disable the drive and inform the client.
+				// 
+				
+				
+				select any drive_enable from instances of DE;
+				generate DE2:disable_drive() to drive_enable;
+				
+				// Inform the client the motor is not rotation and the drive is being disabled.
+				client::motion_complete();
+			*)
+
+			(* TODO: Implement state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (cls_motion_instruction__.events.b_jog_instruction_received) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			cls_motion_instruction__.events.b_jog_instruction_received := b_FALSE;
+
+			cls_motion_instruction__.d_current_state := 2;
+			cls_motion_instruction__.asm.b_txn := b_TRUE;
+			cls_motion_instruction__.asm.b_done := b_FALSE;
+			
+		elsif (cls_motion_instruction__.events.b_drive_disable_lockout) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			cls_motion_instruction__.events.b_drive_disable_lockout := b_FALSE;
+
+			cls_motion_instruction__.d_current_state := 5;
+			cls_motion_instruction__.asm.b_txn := b_TRUE;
+			cls_motion_instruction__.asm.b_done := b_FALSE;
+			
+		elsif (cls_motion_instruction__.events.b_drive_enabled) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (cls_motion_instruction__.events.b_motion_complete) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (cls_motion_instruction__.events.b_drive_disabled) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		end_if;
+
+	5:  (* State: 'DriveDisabling' *)
+		(* Entry Action *)
+		if (cls_motion_instruction__.asm.b_txn) then
+			cls_motion_instruction__.asm.b_txn := b_FALSE
+			
+			(*  Action:
+				
+				// Must wait for the drive to become completely disabled before allowing another
+				//    jog instruction to start and re-enable the drive.
+				//
+			*)
+
+			(* TODO: Implement state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (cls_motion_instruction__.events.b_drive_disabled) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			cls_motion_instruction__.events.b_drive_disabled := b_FALSE;
+
+			cls_motion_instruction__.d_current_state := 1;
+			cls_motion_instruction__.asm.b_txn := b_TRUE;
+			cls_motion_instruction__.asm.b_done := b_FALSE;
+			
+		elsif (cls_motion_instruction__.events.b_jog_instruction_received) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (cls_motion_instruction__.events.b_drive_enabled) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (cls_motion_instruction__.events.b_motion_complete) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (cls_motion_instruction__.events.b_drive_disable_lockout) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		end_if;
+
+	else (* Invalid State - End of 'case' *)
+		(* The state machine was directed to an invalid state.  Either a programming
+		   error was made or a hardware failure has occurred in the PLC. *)
+		
+		(* TODO: Add a Diagnostic here. *)
+		
+		cls_motion_instruction__.d_current_state := 1;
+		cls_motion_instruction__.asm.b_txn := b_FALSE;
+		cls_motion_instruction__.asm.b_done := b_FALSE;
+	end_case;
+end_while;

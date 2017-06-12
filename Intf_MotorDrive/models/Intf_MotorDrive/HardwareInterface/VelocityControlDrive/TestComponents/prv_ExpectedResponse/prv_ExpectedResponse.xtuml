@@ -1,0 +1,309 @@
+-- BP 7.1.6 content: Component syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_C
+	VALUES ("be6802c2-c878-446b-8d53-ec36e211385e",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'prv_ExpectedResponse',
+	'',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'');
+INSERT INTO GD_MD
+	VALUES ("fb995b0a-0d0d-49dc-8662-cccbe8c2c1e7",
+	111,
+	"be6802c2-c878-446b-8d53-ec36e211385e",
+	98,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'Intf_MotorDrive::HardwareInterface::VelocityControlDrive::TestComponents::prv_ExpectedResponse');
+INSERT INTO GD_GE
+	VALUES ("10d5eb3e-ad3b-41d5-b28a-51d36976b2b6",
+	"fb995b0a-0d0d-49dc-8662-cccbe8c2c1e7",
+	"be6802c2-c878-446b-8d53-ec36e211385e",
+	103,
+	0,
+	'Intf_MotorDrive::HardwareInterface::VelocityControlDrive::TestComponents::prv_ExpectedResponse');
+INSERT INTO GD_SHP
+	VALUES ("10d5eb3e-ad3b-41d5-b28a-51d36976b2b6");
+INSERT INTO GD_CTR
+	VALUES ("10d5eb3e-ad3b-41d5-b28a-51d36976b2b6");
+INSERT INTO DIM_ND
+	VALUES (1169.000000,
+	452.000000,
+	"10d5eb3e-ad3b-41d5-b28a-51d36976b2b6");
+INSERT INTO DIM_GE
+	VALUES (4100.000000,
+	3100.000000,
+	"10d5eb3e-ad3b-41d5-b28a-51d36976b2b6",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("10d5eb3e-ad3b-41d5-b28a-51d36976b2b6",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_CON
+	VALUES ("56057136-df99-49d1-8022-6df5ee4ba047",
+	4716.000000,
+	3100.000000,
+	"10d5eb3e-ad3b-41d5-b28a-51d36976b2b6");
+INSERT INTO GD_GE
+	VALUES ("1d2179af-490b-47ef-b20f-1d09f9c6ad91",
+	"fb995b0a-0d0d-49dc-8662-cccbe8c2c1e7",
+	"d8746dd3-25f5-4a0e-9cca-e197474e8239",
+	94,
+	0,
+	'Intf_MotorDrive::HardwareInterface::VelocityControlDrive::TestComponents::prv_ExpectedResponse::Port1::VelocityControlDrive');
+INSERT INTO GD_CON
+	VALUES ("1d2179af-490b-47ef-b20f-1d09f9c6ad91",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("c4e62cec-2ec0-49ad-8b4a-2a4fc892042e",
+	"1d2179af-490b-47ef-b20f-1d09f9c6ad91",
+	1,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"c4e62cec-2ec0-49ad-8b4a-2a4fc892042e");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"c4e62cec-2ec0-49ad-8b4a-2a4fc892042e",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("c4e62cec-2ec0-49ad-8b4a-2a4fc892042e",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("63d9a762-5592-439c-b336-dbe42484aba3",
+	"1d2179af-490b-47ef-b20f-1d09f9c6ad91",
+	3,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"63d9a762-5592-439c-b336-dbe42484aba3");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"63d9a762-5592-439c-b336-dbe42484aba3",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("63d9a762-5592-439c-b336-dbe42484aba3",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("6c1c52af-c4f6-4dbc-a4ad-38f6b1bd903b",
+	"1d2179af-490b-47ef-b20f-1d09f9c6ad91",
+	2,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"6c1c52af-c4f6-4dbc-a4ad-38f6b1bd903b");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"6c1c52af-c4f6-4dbc-a4ad-38f6b1bd903b",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("6c1c52af-c4f6-4dbc-a4ad-38f6b1bd903b",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_LS
+	VALUES ("0dbd4a3e-c3aa-47c0-9481-26b39b61f8b9",
+	"1d2179af-490b-47ef-b20f-1d09f9c6ad91",
+	"00000000-0000-0000-0000-000000000000",
+	"633ca940-2873-4cb3-ae48-e68af3d61851",
+	"6c77641f-74da-4c8a-98ae-397ea851b3bf");
+INSERT INTO DIM_WAY
+	VALUES ("633ca940-2873-4cb3-ae48-e68af3d61851",
+	4716.000000,
+	3100.000000,
+	"1d2179af-490b-47ef-b20f-1d09f9c6ad91",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_WAY
+	VALUES ("6c77641f-74da-4c8a-98ae-397ea851b3bf",
+	4718.000000,
+	3030.000000,
+	"1d2179af-490b-47ef-b20f-1d09f9c6ad91",
+	"00000000-0000-0000-0000-000000000000",
+	"633ca940-2873-4cb3-ae48-e68af3d61851");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"1d2179af-490b-47ef-b20f-1d09f9c6ad91",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("1d2179af-490b-47ef-b20f-1d09f9c6ad91",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ED
+	VALUES ("56057136-df99-49d1-8022-6df5ee4ba047",
+	"00000000-0000-0000-0000-000000000000",
+	"1d2179af-490b-47ef-b20f-1d09f9c6ad91");
+INSERT INTO DIM_DIA
+	VALUES ("fb995b0a-0d0d-49dc-8662-cccbe8c2c1e7",
+	'',
+	1.000000,
+	4000.000000,
+	3000.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PO
+	VALUES ("7fab3ceb-8fc2-4de1-9074-2d49fee69a57",
+	"be6802c2-c878-446b-8d53-ec36e211385e",
+	'Port1',
+	0,
+	0);
+INSERT INTO C_IR
+	VALUES ("d8746dd3-25f5-4a0e-9cca-e197474e8239",
+	"486d54bc-ee94-4a64-a1d6-fdf91050f010",
+	"00000000-0000-0000-0000-000000000000",
+	"7fab3ceb-8fc2-4de1-9074-2d49fee69a57");
+INSERT INTO C_P
+	VALUES ("d8746dd3-25f5-4a0e-9cca-e197474e8239",
+	'VelocityControlDrive',
+	'Unnamed Interface',
+	'',
+	'prv_ExpectedResponse::Port1::VelocityControlDrive');
+INSERT INTO SPR_PEP
+	VALUES ("4b281aab-318c-4e7f-9ce7-e435287160b7",
+	"53d569a8-e722-4a0a-aadb-c95aa7042db7",
+	"d8746dd3-25f5-4a0e-9cca-e197474e8239");
+INSERT INTO SPR_PS
+	VALUES ("4b281aab-318c-4e7f-9ce7-e435287160b7",
+	'enable_drive',
+	'',
+	'Port1::done();
+',
+	1);
+INSERT INTO C_EP_PROXY
+	VALUES ("53d569a8-e722-4a0a-aadb-c95aa7042db7",
+	"486d54bc-ee94-4a64-a1d6-fdf91050f010",
+	-1,
+	'enable_drive',
+	'',
+	'../../VelocityControlDrive/VelocityControlDrive.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("65ba1f01-ad53-44ae-873f-0035628fa7f5",
+	"d7bcdc2b-f917-4b82-b213-48faa98c11d9",
+	"d8746dd3-25f5-4a0e-9cca-e197474e8239");
+INSERT INTO SPR_PS
+	VALUES ("65ba1f01-ad53-44ae-873f-0035628fa7f5",
+	'jog_motor',
+	'',
+	'Port1::in_progress();
+',
+	1);
+INSERT INTO C_EP_PROXY
+	VALUES ("d7bcdc2b-f917-4b82-b213-48faa98c11d9",
+	"486d54bc-ee94-4a64-a1d6-fdf91050f010",
+	-1,
+	'jog_motor',
+	'',
+	'../../VelocityControlDrive/VelocityControlDrive.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("6e8865f9-c775-4f32-8bbe-0a4fa7eb9c58",
+	"3c759268-cd74-44ce-a96a-ee9613bd2bf9",
+	"d8746dd3-25f5-4a0e-9cca-e197474e8239");
+INSERT INTO SPR_PS
+	VALUES ("6e8865f9-c775-4f32-8bbe-0a4fa7eb9c58",
+	'stop_motor',
+	'',
+	'Port1::done();
+',
+	1);
+INSERT INTO C_EP_PROXY
+	VALUES ("3c759268-cd74-44ce-a96a-ee9613bd2bf9",
+	"486d54bc-ee94-4a64-a1d6-fdf91050f010",
+	-1,
+	'stop_motor',
+	'',
+	'../../VelocityControlDrive/VelocityControlDrive.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("9f92555b-4457-405a-a40a-89d4b95d949e",
+	"fe662bcf-cad1-44e3-9233-fa69e9673b17",
+	"d8746dd3-25f5-4a0e-9cca-e197474e8239");
+INSERT INTO SPR_PS
+	VALUES ("9f92555b-4457-405a-a40a-89d4b95d949e",
+	'in_progress',
+	'',
+	'',
+	1);
+INSERT INTO C_EP_PROXY
+	VALUES ("fe662bcf-cad1-44e3-9233-fa69e9673b17",
+	"486d54bc-ee94-4a64-a1d6-fdf91050f010",
+	-1,
+	'in_progress',
+	'',
+	'../../VelocityControlDrive/VelocityControlDrive.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("25ae24c3-f625-4297-82b0-4fdecdc85af4",
+	"8f4cc710-e755-4de3-9960-78096a7939cf",
+	"d8746dd3-25f5-4a0e-9cca-e197474e8239");
+INSERT INTO SPR_PS
+	VALUES ("25ae24c3-f625-4297-82b0-4fdecdc85af4",
+	'done',
+	'',
+	'',
+	1);
+INSERT INTO C_EP_PROXY
+	VALUES ("8f4cc710-e755-4de3-9960-78096a7939cf",
+	"486d54bc-ee94-4a64-a1d6-fdf91050f010",
+	-1,
+	'done',
+	'',
+	'../../VelocityControlDrive/VelocityControlDrive.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("82735247-015f-4178-bbb2-0ec593873ba0",
+	"72961ccb-724d-49c4-ab17-022addb14ad9",
+	"d8746dd3-25f5-4a0e-9cca-e197474e8239");
+INSERT INTO SPR_PS
+	VALUES ("82735247-015f-4178-bbb2-0ec593873ba0",
+	'error',
+	'',
+	'',
+	1);
+INSERT INTO C_EP_PROXY
+	VALUES ("72961ccb-724d-49c4-ab17-022addb14ad9",
+	"486d54bc-ee94-4a64-a1d6-fdf91050f010",
+	-1,
+	'error',
+	'',
+	'../../VelocityControlDrive/VelocityControlDrive.xtuml');
+INSERT INTO C_I_PROXY
+	VALUES ("486d54bc-ee94-4a64-a1d6-fdf91050f010",
+	"00000000-0000-0000-0000-000000000000",
+	'VelocityControlDrive',
+	'',
+	'../../VelocityControlDrive/VelocityControlDrive.xtuml');
+INSERT INTO PE_PE
+	VALUES ("be6802c2-c878-446b-8d53-ec36e211385e",
+	1,
+	"f012460a-1054-40cd-9e5d-d13ff3f7334c",
+	"00000000-0000-0000-0000-000000000000",
+	2);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("f012460a-1054-40cd-9e5d-d13ff3f7334c",
+	"00000000-0000-0000-0000-000000000000",
+	"b6a5fceb-2ea9-495a-9b5b-6b1439da1cae",
+	'TestComponents',
+	'',
+	0,
+	'../TestComponents.xtuml');

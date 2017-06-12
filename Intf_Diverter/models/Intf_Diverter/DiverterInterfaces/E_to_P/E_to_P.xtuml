@@ -1,0 +1,44 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("1fa20169-f00d-4a13-968d-9a9af5b26147",
+	"00000000-0000-0000-0000-000000000000",
+	'E_to_P',
+	'');
+INSERT INTO C_EP
+	VALUES ("a3256710-9489-4c24-9168-5be1df87eb29",
+	"1fa20169-f00d-4a13-968d-9a9af5b26147",
+	-1,
+	'set_pressure',
+	'');
+INSERT INTO C_IO
+	VALUES ("a3256710-9489-4c24-9168-5be1df87eb29",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'set_pressure',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("cf3ca878-49db-42f6-8a95-483619ffe717",
+	"a3256710-9489-4c24-9168-5be1df87eb29",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'pressure',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO PE_PE
+	VALUES ("1fa20169-f00d-4a13-968d-9a9af5b26147",
+	1,
+	"554df2db-1a3d-4596-8aca-3a562bf45cb6",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("554df2db-1a3d-4596-8aca-3a562bf45cb6",
+	"5d6861b0-d06b-46b6-b4e1-a463d1fc8b18",
+	"5d6861b0-d06b-46b6-b4e1-a463d1fc8b18",
+	'DiverterInterfaces',
+	'',
+	0,
+	'../DiverterInterfaces.xtuml');

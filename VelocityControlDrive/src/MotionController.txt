@@ -1,0 +1,191 @@
+(* Component: VelocityControlDrive
+       Class: Fault
+   
+
+
+*)
+   
+(* Component: VelocityControlDrive
+       Class: MotionController
+   
+
+
+*)
+   
+sbr(object_MotionController_3);
+
+TONR(object_MotionController_3.tmr_disable);
+
+while (Not ism_MotionController_3.b_done) do
+	ism_MotionController_3.b_done := b_TRUE;
+	case (ism_MotionController_3.d_state) of
+	0:  (* Uninstantiated Instance *)
+		(* Entry Action *)
+		if (ism_MotionController_3.b_txn) then
+			ism_MotionController_3.b_txn := b_FALSE;
+			
+			(* Perhaps add some initialization here... *)
+		end_if;
+		
+		(* Exit Conditions *)
+		if (b_TRUE) then
+			// Exit Action
+			ism_MotionController_3.d_state := 1;
+			ism_MotionController_3.b_txn := b_FALSE;
+			ism_MotionController_3.b_done := b_FALSE;
+		end_if;
+
+	1:  (* State: Idle *)
+		(* Entry Action *)
+		if (ism_MotionController_3.b_txn) then
+			ism_MotionController_3.b_txn := b_FALSE
+			
+			(*
+				Action: generate MI_A3:motion_complete() to MI assigner;
+
+
+			*)
+
+			(* TODO: Add state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (object_MotionController_3.events.b_jog_cmd) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			object_MotionController_3.events.b_jog_cmd := b_FALSE;
+
+			ism_MotionController_3.d_state := 2;
+			ism_MotionController_3.b_txn := b_TRUE;
+			ism_MotionController_3.b_done := b_FALSE;
+		end_if;
+
+	2:  (* State: InitiateMove *)
+		(* Entry Action *)
+		if (ism_MotionController_3.b_txn) then
+			ism_MotionController_3.b_txn := b_FALSE
+			
+			(*
+				Action: // Start the move. 
+// 
+
+
+// Jog the motor
+drive::jog_motor(motor_direction: rcvd_evt.direction,
+                        velocity: rcvd_evt.velocity, 
+                    acceleration: rcvd_evt.acceleration);
+
+self.move_duration = rcvd_evt.duration;
+
+			*)
+
+			(* TODO: Add state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (object_MotionController_3.events.b_drive_in_progress) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			object_MotionController_3.events.b_drive_in_progress := b_FALSE;
+
+			ism_MotionController_3.d_state := 3;
+			ism_MotionController_3.b_txn := b_TRUE;
+			ism_MotionController_3.b_done := b_FALSE;
+		end_if;
+
+	3:  (* State: Moving *)
+		(* Entry Action *)
+		if (ism_MotionController_3.b_txn) then
+			ism_MotionController_3.b_txn := b_FALSE
+			
+			(*
+				Action: // The move has started.  If a duration is set, start a timer to stop the move
+//    after the specified amount of time. 
+
+   
+if self.move_duration > 0;
+   create event instance timer_expired of MC3:end_move() to self;
+   self.move_timer = 
+            TIM::timer_start(microseconds: self.move_duration * 1000, 
+                               event_inst: timer_expired);
+end if;
+
+			*)
+
+			(* TODO: Add state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (object_MotionController_3.events.b_jog_cmd) then
+			(* Exit Action *)
+			(*
+				Action: // If the timer is running stop it.
+
+existed = TIM::timer_cancel(timer_inst_ref: self.move_timer);
+
+			*)
+
+			(* TODO: Add event action code here *)
+			
+
+			(* Consume the Event *)
+			object_MotionController_3.events.b_jog_cmd := b_FALSE;
+
+			ism_MotionController_3.d_state := 2;
+			ism_MotionController_3.b_txn := b_TRUE;
+			ism_MotionController_3.b_done := b_FALSE;
+		elsif (object_MotionController_3.events.b_end_move) then
+			(* Exit Action *)
+			(*
+				Action: // If the timer is running stop it.
+
+existed = TIM::timer_cancel(timer_inst_ref: self.move_timer);
+
+			*)
+
+			(* TODO: Add event action code here *)
+			
+
+			(* Consume the Event *)
+			object_MotionController_3.events.b_end_move := b_FALSE;
+
+			ism_MotionController_3.d_state := 4;
+			ism_MotionController_3.b_txn := b_TRUE;
+			ism_MotionController_3.b_done := b_FALSE;
+		end_if;
+
+	4:  (* State: InitiateStop *)
+		(* Entry Action *)
+		if (ism_MotionController_3.b_txn) then
+			ism_MotionController_3.b_txn := b_FALSE
+			
+			(*
+				Action: // Set the motor speed to zero
+drive::stop_motor();
+
+
+			*)
+
+			(* TODO: Add state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (object_MotionController_3.events.b_drive_done) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			object_MotionController_3.events.b_drive_done := b_FALSE;
+
+			ism_MotionController_3.d_state := 1;
+			ism_MotionController_3.b_txn := b_TRUE;
+			ism_MotionController_3.b_done := b_FALSE;
+		end_if;
+
+	end_case;
+end_while;

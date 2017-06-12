@@ -1,0 +1,21 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("3c1dcdd8-7c74-424e-b1db-a572a6522a07",
+	"00000000-0000-0000-0000-000000000000",
+	'Motor Drive Registration',
+	'');
+INSERT INTO PE_PE
+	VALUES ("3c1dcdd8-7c74-424e-b1db-a572a6522a07",
+	1,
+	"c1255101-6ddb-4fec-a7ae-60dd88ec7bb6",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("c1255101-6ddb-4fec-a7ae-60dd88ec7bb6",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	'PhysicalCompModel_pg1',
+	'',
+	0,
+	'../PhysicalCompModel_pg1.xtuml');

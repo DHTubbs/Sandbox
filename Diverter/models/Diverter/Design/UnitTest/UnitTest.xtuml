@@ -1,0 +1,54 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("9f288296-6f47-4bbd-8e24-6c9d21b52107",
+	"00000000-0000-0000-0000-000000000000",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	'UnitTest',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("b1ecd37b-a935-47d9-bebb-fc61fccaa19e",
+	112,
+	"9f288296-6f47-4bbd-8e24-6c9d21b52107",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'Diverter::Design::UnitTest');
+INSERT INTO DIM_DIA
+	VALUES ("b1ecd37b-a935-47d9-bebb-fc61fccaa19e",
+	'',
+	1.000000,
+	4000.000000,
+	3000.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO PE_PE
+	VALUES ("9f288296-6f47-4bbd-8e24-6c9d21b52107",
+	1,
+	"bf615416-0763-4262-8eb6-10dfd1cee710",
+	"00000000-0000-0000-0000-000000000000",
+	7);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("bf615416-0763-4262-8eb6-10dfd1cee710",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	'Design',
+	'',
+	0,
+	'../Design.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("a4578804-6c2e-4c96-9428-cb3a7061868f",
+	'Diverter',
+	1,
+	'../../Diverter.xtuml');

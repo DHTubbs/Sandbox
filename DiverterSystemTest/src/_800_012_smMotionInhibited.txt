@@ -1,0 +1,30 @@
+(* Model Identifiers
+     Component (Number): Diverter (800)
+         Class (Number): Motion Inhibited (012)
+         Qualified Name: 'Diverter::Design::Model::Diverter::CrossTransferConveyorControl::Motion Inhibited'
+   
+Description: 
+
+*)
+
+SBR( obj_motion_inhibited_800_012 );
+
+obj_motion_inhibited_800_012.ism.b_done := b_FALSE;
+
+while (Not obj_motion_inhibited_800_012.ism.b_done) do
+	obj_motion_inhibited_800_012.ism.b_done := b_TRUE;
+	case (obj_motion_inhibited_800_012.d_current_state) of
+	0:  (* Uninstantiated Instance *)
+	
+		(* Exit Conditions *)
+		if (obj_motion_inhibited_800_012.events.b_creation_event) then
+			(* Consume the Event *)
+			obj_motion_inhibited_800_012.events.b_creation_event := b_FALSE;
+
+			obj_motion_inhibited_800_012.d_current_state := 1;
+			obj_motion_inhibited_800_012.ism.b_txn := b_FALSE;
+			obj_motion_inhibited_800_012.ism.b_done := b_FALSE;
+		end_if;
+
+	end_case;
+end_while;

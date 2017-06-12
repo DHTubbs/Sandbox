@@ -1,0 +1,20 @@
+(* Model Identifiers
+     Component (Number): 'Client' (000)
+         Class (Number): 'xtfr_jog_switch' (001)
+              Operation: 'Initialize'
+         Qualified Name: 'DiverterSystemTest::System::Client::Test::xtfr_jog_switch'
+   
+Description: All actions required to initialize an instance of class 'xtfr_jog_switch'.
+             This subroutine must be called whenever a new instance is created.
+
+Signature: JSR( _000_001_opxtfr_jog_switch_Init );
+*)
+
+SBR(  );
+
+(* Clear the global and local event mailbox structures. *)
+CPS(empty_event_struct, _events.event_xtfr_jog_switch_000_001.evt_lst, 1);
+CPS(empty_event_struct, _obj.xtfr_jog_switch_000_001.events.evt_lst, 1);
+
+(* TODO: Add all initialization code here *)
+

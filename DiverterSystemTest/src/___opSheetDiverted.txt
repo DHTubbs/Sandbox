@@ -1,0 +1,44 @@
+(* Model Identifiers
+     Component (Number):  ()
+         Class (Number): Divert Packet ()
+              Operation: SheetDiverted
+         Qualified Name: ::SheetDiverted
+   
+Description: 
+
+Signature: JSR( ___opSheetDiverted );
+*)
+
+SBR(  );
+
+(*	Action:
+
+	// Notify the diverter bay that it has received another sheet
+	select one diverter_bay related by self->DVRTBAY[R4];
+	generate DVRTBAY1:receive_sheet(sheet_caliper: self.web_caliper) to diverter_bay;
+	
+	// Check to see if there are any more sheets remaining
+	select many divert_sheets related by self->DVRTSHT[R2];
+	if empty divert_sheets;
+	   // This divert packet can be deleted now, perform cleanup
+	   unrelate self from diverter_bay across R4;
+	   
+	   select one divert_sheet related by self->DVRTPKT[R1.'next'];
+	   if not_empty divert_sheet;
+	      // remove relationship between this instance of divert packet and the next
+	      unrelate self from divert_sheet across R1.'next';
+	
+	      // establish the new relationship with the diverter bay
+	      relate divert_sheet to diverter_bay across R4;
+	   end if;
+	   
+	   // Notify the diverter bay that it has received the last sheet from this divert packet
+	   generate DVRTBAY2:divert_packet_received() to diverter_bay;
+	   
+	   // Remove this divert packet
+	   delete object instance self;
+	end if;
+*)
+
+(* TODO: Implement operation action code here *)
+

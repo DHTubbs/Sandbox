@@ -1,0 +1,156 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("25a7da66-8d4e-40d2-9e48-725b2461dbe9",
+	'Cross Transfer Conveyor',
+	7,
+	'XTFRCNVR',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("688972dd-f628-4d10-9d26-640e6ab486aa",
+	"25a7da66-8d4e-40d2-9e48-725b2461dbe9",
+	'GetMotorDirection',
+	'Converts a machine side into a motor direction to run the conveyor in the correct
+direction.  ',
+	"10a457d6-e25e-4dbe-a48f-0682e976c4bf",
+	1,
+	'motor_dir = self.drive_side;
+if param.machine_side == Machine_Side::Operator;
+   motor_dir = Motor_Direction::Forward;
+   if self.drive_side == Motor_Direction::Forward;
+      motor_dir = Motor_Direction::Reverse;
+   end if;
+end if;
+
+return motor_dir;
+
+',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TPARM
+	VALUES ("41e9722c-a510-4e7d-bbf6-d778f8fb5913",
+	"688972dd-f628-4d10-9d26-640e6ab486aa",
+	'machine_side',
+	"0b9c6b49-c1c4-48d3-a888-a76d6461cf1e",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("0b9c6b49-c1c4-48d3-a888-a76d6461cf1e",
+	"00000000-0000-0000-0000-000000000000",
+	'Machine_Side',
+	'',
+	'',
+	'../../../../../../../../Types_Corrugated/models/Types_Corrugated/DataTypes/DataTypes.xtuml');
+INSERT INTO S_DT_PROXY
+	VALUES ("10a457d6-e25e-4dbe-a48f-0682e976c4bf",
+	"00000000-0000-0000-0000-000000000000",
+	'Motor_Direction',
+	'',
+	'',
+	'../../../../../../../../Intf_MotorDrive/models/Intf_MotorDrive/DataTypes/DataTypes.xtuml');
+INSERT INTO O_NBATTR
+	VALUES ("afd5c3ce-e509-41c3-9874-eaf5da2f7323",
+	"25a7da66-8d4e-40d2-9e48-725b2461dbe9");
+INSERT INTO O_BATTR
+	VALUES ("afd5c3ce-e509-41c3-9874-eaf5da2f7323",
+	"25a7da66-8d4e-40d2-9e48-725b2461dbe9");
+INSERT INTO O_ATTR
+	VALUES ("afd5c3ce-e509-41c3-9874-eaf5da2f7323",
+	"25a7da66-8d4e-40d2-9e48-725b2461dbe9",
+	"57e37dd5-1173-4754-bf8f-adcf1b403949",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("e1bbe36a-4341-4c7d-8147-95a403d8ceb6",
+	"25a7da66-8d4e-40d2-9e48-725b2461dbe9");
+INSERT INTO O_BATTR
+	VALUES ("e1bbe36a-4341-4c7d-8147-95a403d8ceb6",
+	"25a7da66-8d4e-40d2-9e48-725b2461dbe9");
+INSERT INTO O_ATTR
+	VALUES ("e1bbe36a-4341-4c7d-8147-95a403d8ceb6",
+	"25a7da66-8d4e-40d2-9e48-725b2461dbe9",
+	"b6b14f55-78eb-47f4-81c0-283fbbe875c3",
+	'stopping_time',
+	'Units = mSec
+Time required for the conveyor to come to a complete stop from its maximum velocity.',
+	'',
+	'stopping_time',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("b6b14f55-78eb-47f4-81c0-283fbbe875c3",
+	"25a7da66-8d4e-40d2-9e48-725b2461dbe9");
+INSERT INTO O_BATTR
+	VALUES ("b6b14f55-78eb-47f4-81c0-283fbbe875c3",
+	"25a7da66-8d4e-40d2-9e48-725b2461dbe9");
+INSERT INTO O_ATTR
+	VALUES ("b6b14f55-78eb-47f4-81c0-283fbbe875c3",
+	"25a7da66-8d4e-40d2-9e48-725b2461dbe9",
+	"00000000-0000-0000-0000-000000000000",
+	'Id',
+	'',
+	'',
+	'Id',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("57e37dd5-1173-4754-bf8f-adcf1b403949",
+	"25a7da66-8d4e-40d2-9e48-725b2461dbe9");
+INSERT INTO O_BATTR
+	VALUES ("57e37dd5-1173-4754-bf8f-adcf1b403949",
+	"25a7da66-8d4e-40d2-9e48-725b2461dbe9");
+INSERT INTO O_ATTR
+	VALUES ("57e37dd5-1173-4754-bf8f-adcf1b403949",
+	"25a7da66-8d4e-40d2-9e48-725b2461dbe9",
+	"e1bbe36a-4341-4c7d-8147-95a403d8ceb6",
+	'drive_side',
+	'This attribute defines the required motor direction for the conveyor to run
+toward the drive side of the machine.',
+	'',
+	'drive_side',
+	0,
+	"10a457d6-e25e-4dbe-a48f-0682e976c4bf",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"25a7da66-8d4e-40d2-9e48-725b2461dbe9");
+INSERT INTO O_OIDA
+	VALUES ("b6b14f55-78eb-47f4-81c0-283fbbe875c3",
+	"25a7da66-8d4e-40d2-9e48-725b2461dbe9",
+	0,
+	'Id');
+INSERT INTO O_ID
+	VALUES (1,
+	"25a7da66-8d4e-40d2-9e48-725b2461dbe9");
+INSERT INTO O_ID
+	VALUES (2,
+	"25a7da66-8d4e-40d2-9e48-725b2461dbe9");
+INSERT INTO PE_PE
+	VALUES ("25a7da66-8d4e-40d2-9e48-725b2461dbe9",
+	1,
+	"c3d6024b-ab3a-4992-8717-15d3939342da",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("c3d6024b-ab3a-4992-8717-15d3939342da",
+	"00000000-0000-0000-0000-000000000000",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	'CrossTransferConveyorControl',
+	'',
+	0,
+	'../CrossTransferConveyorControl.xtuml');

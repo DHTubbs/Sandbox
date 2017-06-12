@@ -1,0 +1,20 @@
+(* Model Identifiers
+     Component (Number): 'Diverter' (800)
+         Class (Number): 'Diverter Pan' (009)
+              Operation: 'Initialize'
+         Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Diverter Pan'
+   
+Description: All actions required to initialize an instance of class 'Diverter Pan'.
+             This subroutine must be called whenever a new instance is created.
+
+Signature: JSR( _800_009_opDiverterPan_Init );
+*)
+
+SBR(  );
+
+(* Clear the global and local event mailbox structures. *)
+CPS(empty_event_struct, _events.event_diverter_pan_800_009.evt_lst, 1);
+CPS(empty_event_struct, _obj.diverter_pan_800_009.events.evt_lst, 1);
+
+(* TODO: Add all initialization code here *)
+

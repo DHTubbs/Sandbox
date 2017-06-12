@@ -1,0 +1,298 @@
+(* Model Identifiers
+     Component (Number): 'Diverter' (800)
+         Class (Number): 'Diverter Bay' (006)
+         Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Diverter Bay'
+   
+Description: 
+
+Signature: JSR( _800_006_smDiverterBay );
+*)
+
+SBR(  );
+
+TONR(_obj.diverter_bay_800_006.tmr_sheet_settling_timer);
+
+_obj.diverter_bay_800_006.ism.b_done := b_FALSE;
+
+while (Not _obj.diverter_bay_800_006.ism.b_done) do
+	_obj.diverter_bay_800_006.ism.b_done := b_TRUE;
+	case (_obj.diverter_bay_800_006.d_current_state) of
+	0:  (* Uninstantiated Instance *)
+	
+		(* Exit Conditions *)
+		if (_obj.diverter_bay_800_006.events.evt_lst.b_creation_event) then
+			(* Consume the Event *)
+			_obj.diverter_bay_800_006.events.evt_lst.b_creation_event := b_FALSE;
+
+			_obj.diverter_bay_800_006.d_current_state := 1;
+			_obj.diverter_bay_800_006.ism.b_txn := b_FALSE;
+			_obj.diverter_bay_800_006.ism.b_done := b_FALSE;
+		end_if;
+
+	1:  (* State: 'Empty' *)
+		(* Entry Action *)
+		if (_obj.diverter_bay_800_006.ism.b_txn) then
+			_obj.diverter_bay_800_006.ism.b_txn := b_FALSE;
+			
+			(*  Action:
+				
+				// The stack has been diverted, remove it!
+				select one divert_stack related by self->DVRTSTK[R6];
+				if not_empty divert_stack;
+				   unrelate self from divert_stack across R6;
+				   delete object instance divert_stack;
+				end if;
+			*)
+
+			(* TODO: Implement state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (_obj.diverter_bay_800_006.events.evt_lst.b_receive_sheet) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			_obj.diverter_bay_800_006.events.evt_lst.b_receive_sheet := b_FALSE;
+
+			_obj.diverter_bay_800_006.d_current_state := 2;
+			_obj.diverter_bay_800_006.ism.b_txn := b_TRUE;
+			_obj.diverter_bay_800_006.ism.b_done := b_FALSE;
+			
+		elsif (_obj.diverter_bay_800_006.events.evt_lst.b_divert_packet_received) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.diverter_bay_800_006.events.evt_lst.b_start_discharge) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.diverter_bay_800_006.events.evt_lst.b_discharge_complete) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		end_if;
+
+	2:  (* State: 'ReceivingSheets' *)
+		(* Entry Action *)
+		if (_obj.diverter_bay_800_006.ism.b_txn) then
+			_obj.diverter_bay_800_006.ism.b_txn := b_FALSE;
+			
+			(*  Action:
+				
+				// Receive sheets from the divert packet.
+				// 
+				
+				
+				select one divert_stack related by self->DVRTSTK[R6];
+				if empty divert_stack;
+				   // divert stack doesn't exist, create it
+				   create object instance divert_stack of DVRTSTK;
+				   relate divert_stack to self across R6;
+				         
+				   // Initialize the stacks attributes
+				   select one divert_packet related by self->DVRTPKT[R4];
+				   divert_stack.stack_type = divert_packet.type;
+				   divert_stack.number_of_sheets = 1;
+				   divert_stack.stack_thickness = rcvd_evt.sheet_caliper;
+				else;
+				   // divert stack exists, update attributes
+				   divert_stack.number_of_sheets = divert_stack.number_of_sheets + 1;
+				   divert_stack.stack_thickness = divert_stack.stack_thickness + rcvd_evt.sheet_caliper;
+				end if;
+			*)
+
+			(* TODO: Implement state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (_obj.diverter_bay_800_006.events.evt_lst.b_divert_packet_received) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			_obj.diverter_bay_800_006.events.evt_lst.b_divert_packet_received := b_FALSE;
+
+			_obj.diverter_bay_800_006.d_current_state := 3;
+			_obj.diverter_bay_800_006.ism.b_txn := b_TRUE;
+			_obj.diverter_bay_800_006.ism.b_done := b_FALSE;
+			
+		elsif (_obj.diverter_bay_800_006.events.evt_lst.b_receive_sheet) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			_obj.diverter_bay_800_006.events.evt_lst.b_receive_sheet := b_FALSE;
+
+			_obj.diverter_bay_800_006.d_current_state := 2;
+			_obj.diverter_bay_800_006.ism.b_txn := b_TRUE;
+			_obj.diverter_bay_800_006.ism.b_done := b_FALSE;
+			
+		elsif (_obj.diverter_bay_800_006.events.evt_lst.b_start_discharge) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.diverter_bay_800_006.events.evt_lst.b_discharge_complete) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		end_if;
+
+	3:  (* State: 'WaitForDischargeWindow' *)
+		(* Entry Action *)
+		if (_obj.diverter_bay_800_006.ism.b_txn) then
+			_obj.diverter_bay_800_006.ism.b_txn := b_FALSE;
+			
+			(*  Action:
+				
+				// If there is another divert packet, determine if there is enough time to 
+				//    discharge this stack before the next sheets arrive.
+				// 
+				
+				
+				
+				// Assuming enough time for now.  Initiate the discharge in 2 seconds to allow
+				//    the sheets time to settle.
+				// 
+				
+				create event instance timer_expired of DVRTBAY3:start_discharge() to self;
+				self.sheet_settling_timer = 
+				            TIM::timer_start(microseconds: 2 * 1000 * 1000, 
+				                               event_inst: timer_expired);
+			*)
+
+			(* TODO: Implement state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (_obj.diverter_bay_800_006.events.evt_lst.b_receive_sheet) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			_obj.diverter_bay_800_006.events.evt_lst.b_receive_sheet := b_FALSE;
+
+			_obj.diverter_bay_800_006.d_current_state := 2;
+			_obj.diverter_bay_800_006.ism.b_txn := b_TRUE;
+			_obj.diverter_bay_800_006.ism.b_done := b_FALSE;
+			
+		elsif (_obj.diverter_bay_800_006.events.evt_lst.b_start_discharge) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			_obj.diverter_bay_800_006.events.evt_lst.b_start_discharge := b_FALSE;
+
+			_obj.diverter_bay_800_006.d_current_state := 4;
+			_obj.diverter_bay_800_006.ism.b_txn := b_TRUE;
+			_obj.diverter_bay_800_006.ism.b_done := b_FALSE;
+			
+		elsif (_obj.diverter_bay_800_006.events.evt_lst.b_divert_packet_received) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.diverter_bay_800_006.events.evt_lst.b_discharge_complete) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		end_if;
+
+	4:  (* State: 'Discharging' *)
+		(* Entry Action *)
+		if (_obj.diverter_bay_800_006.ism.b_txn) then
+			_obj.diverter_bay_800_006.ism.b_txn := b_FALSE;
+			
+			(*  Action:
+				
+				// Instruct the Cross Transfer Conveyor to run this stack out
+				select one divert_stack related by self->DVRTSTK[R6];
+				
+				discharge_dir = Machine_Side::Operator;
+				discharge_alg = Divert_Conv_Discharge_Alg::Dist_x1_Rollout;
+				if divert_stack.stack_type == Divert_Packet::Scrap;
+				   discharge_dir = Machine_Side::Drive;
+				   discharge_alg = Divert_Conv_Discharge_Alg::Dist_x2_Hesitating_Rollout;
+				end if;
+				
+				select one cross_transfer_conveyor related by self->XTFRCNVR[R7];
+				generate XTFRCNVR6:discharge(direction: discharge_dir, control_alg: discharge_alg) to cross_transfer_conveyor;
+			*)
+
+			(* TODO: Implement state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (_obj.diverter_bay_800_006.events.evt_lst.b_discharge_complete) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			_obj.diverter_bay_800_006.events.evt_lst.b_discharge_complete := b_FALSE;
+
+			_obj.diverter_bay_800_006.d_current_state := 1;
+			_obj.diverter_bay_800_006.ism.b_txn := b_TRUE;
+			_obj.diverter_bay_800_006.ism.b_done := b_FALSE;
+			
+		elsif (_obj.diverter_bay_800_006.events.evt_lst.b_divert_packet_received) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.diverter_bay_800_006.events.evt_lst.b_receive_sheet) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.diverter_bay_800_006.events.evt_lst.b_start_discharge) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		end_if;
+
+	else (* Invalid State - End of 'case' *)
+		(* The state machine was directed to an invalid state.  Either a programming
+		   error was made or a hardware failure has occurred in the PLC. *)
+		
+		(* TODO: Add a Diagnostic here. *)
+		
+		_obj.diverter_bay_800_006.d_current_state := 0;
+		_obj.diverter_bay_800_006.ism.b_txn := b_FALSE;
+		_obj.diverter_bay_800_006.ism.b_done := b_FALSE;
+	end_case;
+end_while;

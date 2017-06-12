@@ -1,0 +1,20 @@
+(* Model Identifiers
+     Component (Number): 'Velocity Control Drive' (900)
+         Class (Number): 'Motion Controller' (003)
+              Operation: 'Initialize'
+         Qualified Name: 'VelocityControlDrive::Design::Velocity Control Drive::Subsys::Motion Controller'
+   
+Description: All actions required to initialize an instance of class 'Motion Controller'.
+             This subroutine must be called whenever a new instance is created.
+
+Signature: JSR( _900_003_opMotionController_Init );
+*)
+
+SBR(  );
+
+(* Clear the global and local event mailbox structures. *)
+CPS(empty_event_struct, _events.event_motion_controller_900_003.evt_lst, 1);
+CPS(empty_event_struct, _obj.motion_controller_900_003.events.evt_lst, 1);
+
+(* TODO: Add all initialization code here *)
+

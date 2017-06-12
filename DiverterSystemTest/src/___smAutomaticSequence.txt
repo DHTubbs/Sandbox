@@ -1,0 +1,30 @@
+(* Model Identifiers
+     Component (Number):  ()
+         Class (Number): Automatic Sequence ()
+         Qualified Name: 
+   
+Description: 
+
+*)
+
+SBR( obj_automatic_sequence__ );
+
+obj_automatic_sequence__.ism.b_done := b_FALSE;
+
+while (Not obj_automatic_sequence__.ism.b_done) do
+	obj_automatic_sequence__.ism.b_done := b_TRUE;
+	case (obj_automatic_sequence__.d_current_state) of
+	0:  (* Uninstantiated Instance *)
+	
+		(* Exit Conditions *)
+		if (obj_automatic_sequence__.events.b_creation_event) then
+			(* Consume the Event *)
+			obj_automatic_sequence__.events.b_creation_event := b_FALSE;
+
+			obj_automatic_sequence__.d_current_state := 1;
+			obj_automatic_sequence__.ism.b_txn := b_TRUE;
+			obj_automatic_sequence__.ism.b_done := b_FALSE;
+		end_if;
+
+	end_case;
+end_while;

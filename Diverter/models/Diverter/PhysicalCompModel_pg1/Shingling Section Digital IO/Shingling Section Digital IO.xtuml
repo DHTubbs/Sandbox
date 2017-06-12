@@ -1,0 +1,77 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("0a4e403d-58ba-4877-9a1c-6f7a091c1e44",
+	"00000000-0000-0000-0000-000000000000",
+	'Shingling Section Digital IO',
+	'');
+INSERT INTO C_EP
+	VALUES ("f0811efe-9e0d-4676-bd18-5327d5720b29",
+	"0a4e403d-58ba-4877-9a1c-6f7a091c1e44",
+	-1,
+	'MainDampers',
+	'');
+INSERT INTO C_IO
+	VALUES ("f0811efe-9e0d-4676-bd18-5327d5720b29",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'MainDampers',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("ef82e5ee-2590-4feb-849f-150dcd547098",
+	"0a4e403d-58ba-4877-9a1c-6f7a091c1e44",
+	-1,
+	'ChamberDampers',
+	'');
+INSERT INTO C_IO
+	VALUES ("ef82e5ee-2590-4feb-849f-150dcd547098",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'ChamberDampers',
+	'',
+	0,
+	'',
+	"f0811efe-9e0d-4676-bd18-5327d5720b29");
+INSERT INTO C_EP
+	VALUES ("213f30dc-2c2e-42ed-a750-5a549f103bb7",
+	"0a4e403d-58ba-4877-9a1c-6f7a091c1e44",
+	-1,
+	'SyncVacCylinders',
+	'');
+INSERT INTO C_IO
+	VALUES ("213f30dc-2c2e-42ed-a750-5a549f103bb7",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'SyncVacCylinders',
+	'',
+	0,
+	'',
+	"ef82e5ee-2590-4feb-849f-150dcd547098");
+INSERT INTO C_EP
+	VALUES ("0192e544-c33c-442a-9026-1ede4045397f",
+	"0a4e403d-58ba-4877-9a1c-6f7a091c1e44",
+	-1,
+	'Multi_Flute',
+	'');
+INSERT INTO C_IO
+	VALUES ("0192e544-c33c-442a-9026-1ede4045397f",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'Multi_Flute',
+	'',
+	0,
+	'',
+	"213f30dc-2c2e-42ed-a750-5a549f103bb7");
+INSERT INTO PE_PE
+	VALUES ("0a4e403d-58ba-4877-9a1c-6f7a091c1e44",
+	1,
+	"c1255101-6ddb-4fec-a7ae-60dd88ec7bb6",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("c1255101-6ddb-4fec-a7ae-60dd88ec7bb6",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	'PhysicalCompModel_pg1',
+	'',
+	0,
+	'../PhysicalCompModel_pg1.xtuml');

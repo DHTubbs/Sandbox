@@ -1,0 +1,61 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("6b679645-4f8a-4cf7-976a-56cef790c845",
+	"00000000-0000-0000-0000-000000000000",
+	'Lift Bay Digital IO',
+	'');
+INSERT INTO C_EP
+	VALUES ("c830c960-6bce-4281-9f96-e9fa3a9e1b4e",
+	"6b679645-4f8a-4cf7-976a-56cef790c845",
+	-1,
+	'CounterWeightMaxUpSensor',
+	'');
+INSERT INTO C_AS
+	VALUES ("c830c960-6bce-4281-9f96-e9fa3a9e1b4e",
+	'CounterWeightMaxUpSensor',
+	'',
+	1,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("844d2b83-b098-40de-973b-f11d7d4b72d6",
+	"6b679645-4f8a-4cf7-976a-56cef790c845",
+	-1,
+	'BundleOffsetExtendCylinder',
+	'');
+INSERT INTO C_IO
+	VALUES ("844d2b83-b098-40de-973b-f11d7d4b72d6",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'BundleOffsetExtendCylinder',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("aad193d6-c749-4283-abdd-725fe60d0f4b",
+	"6b679645-4f8a-4cf7-976a-56cef790c845",
+	-1,
+	'BundleOffsetTopSheetHoldCylinder',
+	'');
+INSERT INTO C_IO
+	VALUES ("aad193d6-c749-4283-abdd-725fe60d0f4b",
+	"ba5eda7a-def5-0000-0000-000000000000",
+	'BundleOffsetTopSheetHoldCylinder',
+	'',
+	0,
+	'',
+	"844d2b83-b098-40de-973b-f11d7d4b72d6");
+INSERT INTO PE_PE
+	VALUES ("6b679645-4f8a-4cf7-976a-56cef790c845",
+	1,
+	"775c60b7-244d-4a7e-9422-7c65bc89b2a4",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("775c60b7-244d-4a7e-9422-7c65bc89b2a4",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	'PhysicalCompModel_pg2',
+	'',
+	0,
+	'../PhysicalCompModel_pg2.xtuml');

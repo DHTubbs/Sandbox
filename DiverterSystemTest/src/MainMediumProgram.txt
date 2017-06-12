@@ -1,0 +1,491 @@
+if (_lcl_intfc_program_control.b_first_scan_executed_task_2) then
+
+	_lcl_intfc_program_control.b_disable_task_2 := b_TRUE;
+	_lcl_intfc_program_control.b_initialized_task_2 := b_FALSE;
+	_lcl_intfc_program_control.b_first_scan_executed_task_2 := b_FALSE;
+end_if;
+
+if (_lcl_intfc_program_control.b_disable_task_2 And
+	(Not _lcl_intfc_program_control.b_initialized_task_2) And
+	_lcl_intfc_program_control.b_initialized_task_3) then
+	
+	JSR(_0002_Initialization);
+end_if;
+
+if (_lcl_intfc_program_control.b_initialized_task_1 And
+	_lcl_intfc_program_control.b_initialized_task_2 And
+	_lcl_intfc_program_control.b_initialized_task_3) then
+	
+	_lcl_intfc_program_control.b_disable_task_2 := b_FALSE;
+end_if;
+
+if (_lcl_intfc_program_control.b_initialized_task_1 And
+	_lcl_intfc_program_control.b_initialized_task_2 And
+	_lcl_intfc_program_control.b_initialized_task_3) then
+	
+	(* Assigner state machines are processed first followed by all instance state machines.
+	   Each assigner code module receives events and executes the state machine.  The
+	   instance state machine code modules are split apart so all events for all state
+	   machines are received prior to the execution of any state machine. *)
+
+
+	(*** Assigner (class) State Machines ***)
+
+	(* _800_001_asmDivertPacket
+	   Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Divert Packet' *)
+
+	if (_events.event_divert_packet_800_001_a.evt_lst.b_calc_new_position) then
+
+		(* Receive the events and execute the state machine. *)
+		CPS(_events.event_divert_packet_800_001_a, _obj.divert_packet_800_001_a.events, 1);
+		CPS(empty_event_struct, _events.event_divert_packet_800_001_a.evt_lst, 1);
+		JSR(_800_001_asmDivertPacket);
+	end_if;
+	
+
+	(* _800_004_asmTrackingPoint
+	   Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Tracking Point' *)
+
+	if (_events.event_tracking_point_800_004_a.evt_lst.b_correct_position) then
+
+		(* Receive the events and execute the state machine. *)
+		CPS(_events.event_tracking_point_800_004_a, _obj.tracking_point_800_004_a.events, 1);
+		CPS(empty_event_struct, _events.event_tracking_point_800_004_a.evt_lst, 1);
+		JSR(_800_004_asmTrackingPoint);
+	end_if;
+	
+
+	(* _900_001_asmMotionInstruction
+	   Qualified Name: 'VelocityControlDrive::Design::Velocity Control Drive::Subsys::Motion Instruction' *)
+
+	if (_events.event_motion_instruction_900_001_a.evt_lst.b_jog_instruction_received Or
+		_events.event_motion_instruction_900_001_a.evt_lst.b_drive_enabled Or
+		_events.event_motion_instruction_900_001_a.evt_lst.b_motion_complete Or
+		_events.event_motion_instruction_900_001_a.evt_lst.b_drive_disabled Or
+		_events.event_motion_instruction_900_001_a.evt_lst.b_drive_disable_lockout) then
+
+		(* Receive the events and execute the state machine. *)
+		CPS(_events.event_motion_instruction_900_001_a, _obj.motion_instruction_900_001_a.events, 1);
+		CPS(empty_event_struct, _events.event_motion_instruction_900_001_a.evt_lst, 1);
+		JSR(_900_001_asmMotionInstruction);
+	end_if;
+	
+
+	(*** Instance State Machines ***)
+
+	(*** Receive Events - Move event data from global mailboxes into local event structures. ***)
+
+	(* _800_013_smAutomaticSequence *)   
+	if (_obj.automatic_sequence_800_013.pi_id_r8 <> -1) then
+		CPS(_events.event_automatic_sequence_800_013, _obj.automatic_sequence_800_013.events, 1);
+	end_if;
+
+	(* _800_015_smConveyorLengthRollout *)   
+	if (_obj.conveyor_length_rollout_800_015.pi_id_r9 <> -1) then
+		CPS(_events.event_conveyor_length_rollout_800_015, _obj.conveyor_length_rollout_800_015.events, 1);
+	end_if;
+
+	(* _800_007_smCrossTransferConveyor *)   
+	if (_obj.cross_transfer_conveyor_800_007.pi_id <> -1) then
+		CPS(_events.event_cross_transfer_conveyor_800_007, _obj.cross_transfer_conveyor_800_007.events, 1);
+	end_if;
+
+	(* _800_014_smHesitatingRollout *)   
+	if (_obj.hesitating_rollout_800_014.pi_id_r9 <> -1) then
+		CPS(_events.event_hesitating_rollout_800_014, _obj.hesitating_rollout_800_014.events, 1);
+	end_if;
+
+	(* _800_011_smManualSequence *)   
+	if (_obj.manual_sequence_800_011.pi_id_r8 <> -1) then
+		CPS(_events.event_manual_sequence_800_011, _obj.manual_sequence_800_011.events, 1);
+	end_if;
+
+	(* _800_003_smActuator *)   
+	if (_obj.actuator_800_003.pi_id <> -1) then
+		CPS(_events.event_actuator_800_003, _obj.actuator_800_003.events, 1);
+	end_if;
+
+	(* _800_010_smAirBlast *)   
+	if (_obj.air_blast_800_010.'Class does not have identifying attribute!' <> -1) then
+		CPS(_events.event_air_blast_800_010, _obj.air_blast_800_010.events, 1);
+	end_if;
+
+	(* _800_006_smDiverterBay *)   
+	if (_obj.diverter_bay_800_006.'Class does not have identifying attribute!' <> -1) then
+		CPS(_events.event_diverter_bay_800_006, _obj.diverter_bay_800_006.events, 1);
+	end_if;
+
+	(* _800_009_smDiverterPan *)   
+	if (_obj.diverter_pan_800_009.'Class does not have identifying attribute!' <> -1) then
+		CPS(_events.event_diverter_pan_800_009, _obj.diverter_pan_800_009.events, 1);
+	end_if;
+
+	(* _800_008_smFingers *)   
+	if (_obj.fingers_800_008.'Class does not have identifying attribute!' <> -1) then
+		CPS(_events.event_fingers_800_008, _obj.fingers_800_008.events, 1);
+	end_if;
+
+	(* _900_002_smDriveEnable *)   
+	if (_obj.drive_enable_900_002.'Class does not have identifying attribute!' <> -1) then
+		CPS(_events.event_drive_enable_900_002, _obj.drive_enable_900_002.events, 1);
+	end_if;
+
+	(* _900_003_smMotionController *)   
+	if (_obj.motion_controller_900_003.'Class does not have identifying attribute!' <> -1) then
+		CPS(_events.event_motion_controller_900_003, _obj.motion_controller_900_003.events, 1);
+	end_if;
+
+	(* _900_007_smMotorDrive *)   
+	if (_obj.motor_drive_900_007.'Class does not have identifying attribute!' <> -1) then
+		CPS(_events.event_motor_drive_900_007, _obj.motor_drive_900_007.events, 1);
+	end_if;
+
+
+	(*** Receive Polymorphic Events ***)
+
+	(* Conveyor_Length_Rollout_800_015 *)
+	if (_obj.conveyor_length_rollout_800_015.pi_id_r9 <> -1) then
+		_obj.conveyor_length_rollout_800_015.events.evt_lst.b_initiate_auto_seq := _events.event_automatic_sequence_800_013.evt_lst.b_initiate_auto_seq;
+		_obj.conveyor_length_rollout_800_015.events.evt_lst.b_jog_complete := _events.event_cross_transfer_conveyor_800_007.evt_lst.b_jog_complete;
+		_obj.conveyor_length_rollout_800_015.events.evt_lst.b_motor_stopped := _events.event_cross_transfer_conveyor_800_007.evt_lst.b_motor_stopped;
+	end_if;
+
+	(* Cross_Transfer_Conveyor_800_007 *)
+	if (_obj.cross_transfer_conveyor_800_007.pi_id <> -1) then
+		_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_activate := _events.event_actuator_800_003.evt_lst.b_activate;
+	end_if;
+
+	(* Hesitating_Rollout_800_014 *)
+	if (_obj.hesitating_rollout_800_014.pi_id_r9 <> -1) then
+		_obj.hesitating_rollout_800_014.events.evt_lst.b_initiate_auto_seq_dht := _events.event_automatic_sequence_800_013.evt_lst.b_initiate_auto_seq;
+		_obj.hesitating_rollout_800_014.events.evt_lst.b_jog_complete := _events.event_cross_transfer_conveyor_800_007.evt_lst.b_jog_complete;
+		_obj.hesitating_rollout_800_014.events.evt_lst.b_motor_stopped := _events.event_cross_transfer_conveyor_800_007.evt_lst.b_motor_stopped;
+	end_if;
+
+	(* Manual_Sequence_800_011 *)
+	if (_obj.manual_sequence_800_011.pi_id_r8 <> -1) then
+		_obj.manual_sequence_800_011.events.evt_lst.b_jog := _events.event_cross_transfer_conveyor_800_007.evt_lst.b_jog;
+		_obj.manual_sequence_800_011.events.jog_event_data := _events.event_cross_transfer_conveyor_800_007.jog_event_data;
+		_obj.manual_sequence_800_011.events.evt_lst.b_jog_complete := _events.event_cross_transfer_conveyor_800_007.evt_lst.b_jog_complete;
+		_obj.manual_sequence_800_011.events.evt_lst.b_drive_rdy_for_inst := _events.event_cross_transfer_conveyor_800_007.evt_lst.b_drive_rdy_for_inst;
+		_obj.manual_sequence_800_011.events.evt_lst.b_motor_stopped := _events.event_cross_transfer_conveyor_800_007.evt_lst.b_motor_stopped;
+		_obj.manual_sequence_800_011.events.evt_lst.b_enable_control := _events.event_cross_transfer_conveyor_800_007.evt_lst.b_enable_control;
+	end_if;
+
+	(* Air_Blast_800_010 *)
+	if (_obj.air_blast_800_010.'Class does not have identifying attribute!' <> -1) then
+		_obj.air_blast_800_010.events.evt_lst.b_activate := _events.event_actuator_800_003.evt_lst.b_activate;
+		_obj.air_blast_800_010.events.evt_lst.b_de_activate := _events.event_actuator_800_003.evt_lst.b_de_activate;
+	end_if;
+
+	(* Diverter_Pan_800_009 *)
+	if (_obj.diverter_pan_800_009.'Class does not have identifying attribute!' <> -1) then
+		_obj.diverter_pan_800_009.events.evt_lst.b_de_activate := _events.event_actuator_800_003.evt_lst.b_de_activate;
+		_obj.diverter_pan_800_009.events.evt_lst.b_activate := _events.event_actuator_800_003.evt_lst.b_activate;
+	end_if;
+
+	(* Fingers_800_008 *)
+	if (_obj.fingers_800_008.'Class does not have identifying attribute!' <> -1) then
+		_obj.fingers_800_008.events.evt_lst.b_de_activate := _events.event_actuator_800_003.evt_lst.b_de_activate;
+		_obj.fingers_800_008.events.evt_lst.b_activate := _events.event_actuator_800_003.evt_lst.b_activate;
+	end_if;
+
+
+	(*** Clear Event Mailboxes - Clear event data in global mailbox. ***)
+
+	(* _800_013_smAutomaticSequence *)   
+	if (_obj.automatic_sequence_800_013.pi_id_r8 <> -1) then
+		CPS(empty_event_struct, _events.event_automatic_sequence_800_013.evt_lst, 1);
+	end_if;
+
+	(* _800_015_smConveyorLengthRollout *)   
+	if (_obj.conveyor_length_rollout_800_015.pi_id_r9 <> -1) then
+		CPS(empty_event_struct, _events.event_conveyor_length_rollout_800_015.evt_lst, 1);
+	end_if;
+
+	(* _800_007_smCrossTransferConveyor *)   
+	if (_obj.cross_transfer_conveyor_800_007.pi_id <> -1) then
+		CPS(empty_event_struct, _events.event_cross_transfer_conveyor_800_007.evt_lst, 1);
+	end_if;
+
+	(* _800_014_smHesitatingRollout *)   
+	if (_obj.hesitating_rollout_800_014.pi_id_r9 <> -1) then
+		CPS(empty_event_struct, _events.event_hesitating_rollout_800_014.evt_lst, 1);
+	end_if;
+
+	(* _800_011_smManualSequence *)   
+	if (_obj.manual_sequence_800_011.pi_id_r8 <> -1) then
+		CPS(empty_event_struct, _events.event_manual_sequence_800_011.evt_lst, 1);
+	end_if;
+
+	(* _800_003_smActuator *)   
+	if (_obj.actuator_800_003.pi_id <> -1) then
+		CPS(empty_event_struct, _events.event_actuator_800_003.evt_lst, 1);
+	end_if;
+
+	(* _800_010_smAirBlast *)   
+	if (_obj.air_blast_800_010.'Class does not have identifying attribute!' <> -1) then
+		CPS(empty_event_struct, _events.event_air_blast_800_010.evt_lst, 1);
+	end_if;
+
+	(* _800_006_smDiverterBay *)   
+	if (_obj.diverter_bay_800_006.'Class does not have identifying attribute!' <> -1) then
+		CPS(empty_event_struct, _events.event_diverter_bay_800_006.evt_lst, 1);
+	end_if;
+
+	(* _800_009_smDiverterPan *)   
+	if (_obj.diverter_pan_800_009.'Class does not have identifying attribute!' <> -1) then
+		CPS(empty_event_struct, _events.event_diverter_pan_800_009.evt_lst, 1);
+	end_if;
+
+	(* _800_008_smFingers *)   
+	if (_obj.fingers_800_008.'Class does not have identifying attribute!' <> -1) then
+		CPS(empty_event_struct, _events.event_fingers_800_008.evt_lst, 1);
+	end_if;
+
+	(* _900_002_smDriveEnable *)   
+	if (_obj.drive_enable_900_002.'Class does not have identifying attribute!' <> -1) then
+		CPS(empty_event_struct, _events.event_drive_enable_900_002.evt_lst, 1);
+	end_if;
+
+	(* _900_003_smMotionController *)   
+	if (_obj.motion_controller_900_003.'Class does not have identifying attribute!' <> -1) then
+		CPS(empty_event_struct, _events.event_motion_controller_900_003.evt_lst, 1);
+	end_if;
+
+	(* _900_007_smMotorDrive *)   
+	if (_obj.motor_drive_900_007.'Class does not have identifying attribute!' <> -1) then
+		CPS(empty_event_struct, _events.event_motor_drive_900_007.evt_lst, 1);
+	end_if;
+
+
+	(*** Execute State Machines ***)
+
+	(* _800_015_smConveyorLengthRollout
+	   Qualified Name: 'Diverter::Design::Model::Diverter::CrossTransferConveyorControl::Conveyor Length Rollout' *)
+	   
+	if (_obj.conveyor_length_rollout_800_015.pi_id_r9 <> -1 Or 
+		_obj.conveyor_length_rollout_800_015.events.evt_lst.b_creation_event) then 
+		(* Only execute instance state machine if instance exists or creation event will create it. *)
+
+		if (_obj.conveyor_length_rollout_800_015.events.evt_lst.b_creation_event Or
+			_obj.conveyor_length_rollout_800_015.events.evt_lst.b_jog_time_expired Or
+			_obj.conveyor_length_rollout_800_015.events.evt_lst.b_initiate_auto_seq Or
+			_obj.conveyor_length_rollout_800_015.events.evt_lst.b_jog_complete Or
+			_obj.conveyor_length_rollout_800_015.events.evt_lst.b_motor_stopped) then
+	
+			JSR(_800_015_smConveyorLengthRollout);
+		end_if;
+	end_if;
+
+
+	(* _800_007_smCrossTransferConveyor
+	   Qualified Name: 'Diverter::Design::Model::Diverter::CrossTransferConveyorControl::Cross Transfer Conveyor' *)
+	   
+	if (_obj.cross_transfer_conveyor_800_007.pi_id <> -1 Or 
+		_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_creation_event) then 
+		(* Only execute instance state machine if instance exists or creation event will create it. *)
+
+		if (_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_creation_event Or
+			_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_automatic_sequence_cmplt Or
+			_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_discharge Or
+			_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_activate Or
+			_obj.cross_transfer_conveyor_800_007.events.evt_lst.b_sequence_aborted) then
+	
+			JSR(_800_007_smCrossTransferConveyor);
+		end_if;
+	end_if;
+
+
+	(* _800_014_smHesitatingRollout
+	   Qualified Name: 'Diverter::Design::Model::Diverter::CrossTransferConveyorControl::Hesitating Rollout' *)
+	   
+	if (_obj.hesitating_rollout_800_014.pi_id_r9 <> -1 Or 
+		_obj.hesitating_rollout_800_014.events.evt_lst.b_creation_event) then 
+		(* Only execute instance state machine if instance exists or creation event will create it. *)
+
+		if (_obj.hesitating_rollout_800_014.events.evt_lst.b_creation_event Or
+			_obj.hesitating_rollout_800_014.events.evt_lst.b_jog_time_expired Or
+			_obj.hesitating_rollout_800_014.events.evt_lst.b_initiate_auto_seq_dht Or
+			_obj.hesitating_rollout_800_014.events.evt_lst.b_jog_complete Or
+			_obj.hesitating_rollout_800_014.events.evt_lst.b_motor_stopped) then
+	
+			JSR(_800_014_smHesitatingRollout);
+		end_if;
+	end_if;
+
+
+	(* _800_011_smManualSequence
+	   Qualified Name: 'Diverter::Design::Model::Diverter::CrossTransferConveyorControl::Manual Sequence' *)
+	   
+	if (_obj.manual_sequence_800_011.pi_id_r8 <> -1 Or 
+		_obj.manual_sequence_800_011.events.evt_lst.b_creation_event) then 
+		(* Only execute instance state machine if instance exists or creation event will create it. *)
+
+		if (_obj.manual_sequence_800_011.events.evt_lst.b_creation_event Or
+			_obj.manual_sequence_800_011.events.evt_lst.b_jog Or
+			_obj.manual_sequence_800_011.events.evt_lst.b_jog_complete Or
+			_obj.manual_sequence_800_011.events.evt_lst.b_drive_rdy_for_inst Or
+			_obj.manual_sequence_800_011.events.evt_lst.b_motor_stopped Or
+			_obj.manual_sequence_800_011.events.evt_lst.b_enable_control) then
+	
+			JSR(_800_011_smManualSequence);
+		end_if;
+	end_if;
+
+
+	(* _800_010_smAirBlast
+	   Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Air Blast' *)
+	   
+	if (_obj.air_blast_800_010.'Class does not have identifying attribute!' <> -1 Or 
+		_obj.air_blast_800_010.events.evt_lst.b_creation_event) then 
+		(* Only execute instance state machine if instance exists or creation event will create it. *)
+
+		if (_obj.air_blast_800_010.events.evt_lst.b_creation_event Or
+			_obj.air_blast_800_010.events.evt_lst.b_activate Or
+			_obj.air_blast_800_010.events.evt_lst.b_de_activate) then
+	
+			JSR(_800_010_smAirBlast);
+		end_if;
+	end_if;
+
+
+	(* _800_006_smDiverterBay
+	   Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Diverter Bay' *)
+	   
+	if (_obj.diverter_bay_800_006.'Class does not have identifying attribute!' <> -1 Or 
+		_obj.diverter_bay_800_006.events.evt_lst.b_creation_event) then 
+		(* Only execute instance state machine if instance exists or creation event will create it. *)
+
+		if (_obj.diverter_bay_800_006.tmr_sheet_settling_timer.DN) then
+			_obj.diverter_bay_800_006.events.evt_lst./* TODO: Set appropriate event from timer expiring */ := b_TRUE;
+			_obj.diverter_bay_800_006.tmr_sheet_settling_timer.TimerEnable := b_FALSE;
+		end_if;
+	
+		if (_obj.diverter_bay_800_006.events.evt_lst.b_creation_event Or
+			_obj.diverter_bay_800_006.events.evt_lst.b_divert_packet_received Or
+			_obj.diverter_bay_800_006.events.evt_lst.b_receive_sheet Or
+			_obj.diverter_bay_800_006.events.evt_lst.b_start_discharge Or
+			_obj.diverter_bay_800_006.events.evt_lst.b_discharge_complete) then
+	
+			JSR(_800_006_smDiverterBay);
+		end_if;
+	end_if;
+
+
+	(* _800_009_smDiverterPan
+	   Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Diverter Pan' *)
+	   
+	if (_obj.diverter_pan_800_009.'Class does not have identifying attribute!' <> -1 Or 
+		_obj.diverter_pan_800_009.events.evt_lst.b_creation_event) then 
+		(* Only execute instance state machine if instance exists or creation event will create it. *)
+
+		if (_obj.diverter_pan_800_009.events.evt_lst.b_creation_event Or
+			_obj.diverter_pan_800_009.events.evt_lst.b_de_activate Or
+			_obj.diverter_pan_800_009.events.evt_lst.b_activate Or
+			_obj.diverter_pan_800_009.events.evt_lst.b_LowerPan) then
+	
+			JSR(_800_009_smDiverterPan);
+		end_if;
+	end_if;
+
+
+	(* _800_008_smFingers
+	   Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Fingers' *)
+	   
+	if (_obj.fingers_800_008.'Class does not have identifying attribute!' <> -1 Or 
+		_obj.fingers_800_008.events.evt_lst.b_creation_event) then 
+		(* Only execute instance state machine if instance exists or creation event will create it. *)
+
+		if (_obj.fingers_800_008.events.evt_lst.b_creation_event Or
+			_obj.fingers_800_008.events.evt_lst.b_de_activate Or
+			_obj.fingers_800_008.events.evt_lst.b_activate) then
+	
+			JSR(_800_008_smFingers);
+		end_if;
+	end_if;
+
+
+	(* _900_002_smDriveEnable
+	   Qualified Name: 'VelocityControlDrive::Design::Velocity Control Drive::Subsys::Drive Enable' *)
+	   
+	if (_obj.drive_enable_900_002.'Class does not have identifying attribute!' <> -1 Or 
+		_obj.drive_enable_900_002.events.evt_lst.b_creation_event) then 
+		(* Only execute instance state machine if instance exists or creation event will create it. *)
+
+		if (_obj.drive_enable_900_002.tmr_disable_timer.DN) then
+			_obj.drive_enable_900_002.events.evt_lst./* TODO: Set appropriate event from timer expiring */ := b_TRUE;
+			_obj.drive_enable_900_002.tmr_disable_timer.TimerEnable := b_FALSE;
+		end_if;
+	
+		if (_obj.drive_enable_900_002.events.evt_lst.b_creation_event Or
+			_obj.drive_enable_900_002.events.evt_lst.b_enable_drive Or
+			_obj.drive_enable_900_002.events.evt_lst.b_disable_drive Or
+			_obj.drive_enable_900_002.events.evt_lst.b_drive_signals_done Or
+			_obj.drive_enable_900_002.events.evt_lst.b_delay_timer_expired) then
+	
+			JSR(_900_002_smDriveEnable);
+		end_if;
+	end_if;
+
+
+	(* _900_003_smMotionController
+	   Qualified Name: 'VelocityControlDrive::Design::Velocity Control Drive::Subsys::Motion Controller' *)
+	   
+	if (_obj.motion_controller_900_003.'Class does not have identifying attribute!' <> -1 Or 
+		_obj.motion_controller_900_003.events.evt_lst.b_creation_event) then 
+		(* Only execute instance state machine if instance exists or creation event will create it. *)
+
+		if (_obj.motion_controller_900_003.tmr_move_timer.DN) then
+			_obj.motion_controller_900_003.events.evt_lst./* TODO: Set appropriate event from timer expiring */ := b_TRUE;
+			_obj.motion_controller_900_003.tmr_move_timer.TimerEnable := b_FALSE;
+		end_if;
+	
+		if (_obj.motion_controller_900_003.events.evt_lst.b_creation_event Or
+			_obj.motion_controller_900_003.events.evt_lst.b_jog_cmd Or
+			_obj.motion_controller_900_003.events.evt_lst.b_drive_in_progress Or
+			_obj.motion_controller_900_003.events.evt_lst.b_end_move Or
+			_obj.motion_controller_900_003.events.evt_lst.b_drive_done) then
+	
+			JSR(_900_003_smMotionController);
+		end_if;
+	end_if;
+
+
+	(* _900_007_smMotorDrive
+	   Qualified Name: 'VelocityControlDrive::Design::Velocity Control Drive::Subsys::Motor Drive' *)
+	   
+	if (_obj.motor_drive_900_007.'Class does not have identifying attribute!' <> -1 Or 
+		_obj.motor_drive_900_007.events.evt_lst.b_creation_event) then 
+		(* Only execute instance state machine if instance exists or creation event will create it. *)
+
+		if (_obj.motor_drive_900_007.tmr_timer.DN) then
+			_obj.motor_drive_900_007.events.evt_lst./* TODO: Set appropriate event from timer expiring */ := b_TRUE;
+			_obj.motor_drive_900_007.tmr_timer.TimerEnable := b_FALSE;
+		end_if;
+	
+		if ((_obj.motor_drive_900_007.events.evt_lst.b_creation_event Or
+			 _obj.motor_drive_900_007.events.evt_lst.b_Stop Or
+			 _obj.motor_drive_900_007.events.evt_lst.b_Jog Or
+			 _obj.motor_drive_900_007.events.evt_lst.b_event1 Or
+			 _obj.motor_drive_900_007.events.evt_lst.b_event2 Or
+			 _obj.motor_drive_900_007.events.evt_lst.b_event3 Or
+			 _obj.motor_drive_900_007.events.evt_lst.b_event4) Or
+			(_obj.motor_drive_900_007.events.evt_lst.b_event5 Or
+			 _obj.motor_drive_900_007.events.evt_lst.b_event6 Or
+			 _obj.motor_drive_900_007.events.evt_lst.b_event7 Or
+			 _obj.motor_drive_900_007.events.evt_lst.b_event8 Or
+			 _obj.motor_drive_900_007.events.evt_lst.b_event9 Or
+			 _obj.motor_drive_900_007.events.evt_lst.b_event10 Or
+			 _obj.motor_drive_900_007.events.evt_lst.b_event11) Or
+			(_obj.motor_drive_900_007.events.evt_lst.b_event12 Or
+			 _obj.motor_drive_900_007.events.evt_lst.b_event13 Or
+			 _obj.motor_drive_900_007.events.evt_lst.b_event14 Or
+			 _obj.motor_drive_900_007.events.evt_lst.b_event15 Or
+			 _obj.motor_drive_900_007.events.evt_lst.b_event16)) then
+	
+			JSR(_900_007_smMotorDrive);
+		end_if;
+	end_if;
+
+end_if;

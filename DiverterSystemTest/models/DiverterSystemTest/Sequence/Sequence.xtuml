@@ -1,0 +1,46 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("67e7af0c-c81d-4f22-aa45-c1e9db4b3e5d",
+	"4024ccdc-bf32-4565-a289-284f1403b484",
+	"4024ccdc-bf32-4565-a289-284f1403b484",
+	'Sequence',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("40e86fca-9d92-48d3-a96b-b4231b350fdd",
+	112,
+	"67e7af0c-c81d-4f22-aa45-c1e9db4b3e5d",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'DiverterSystemTest::Sequence');
+INSERT INTO DIM_DIA
+	VALUES ("40e86fca-9d92-48d3-a96b-b4231b350fdd",
+	'',
+	1.000000,
+	4000.000000,
+	3000.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO PE_PE
+	VALUES ("67e7af0c-c81d-4f22-aa45-c1e9db4b3e5d",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	7);
+INSERT INTO S_SYS_PROXY
+	VALUES ("4024ccdc-bf32-4565-a289-284f1403b484",
+	'DiverterSystemTest',
+	1,
+	'../DiverterSystemTest.xtuml');

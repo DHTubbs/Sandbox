@@ -1,0 +1,20 @@
+(* Model Identifiers
+     Component (Number): 'Diverter' (800)
+         Class (Number): 'Air Blast' (010)
+              Operation: 'Initialize'
+         Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Air Blast'
+   
+Description: All actions required to initialize an instance of class 'Air Blast'.
+             This subroutine must be called whenever a new instance is created.
+
+Signature: JSR( _800_010_opAirBlast_Init );
+*)
+
+SBR(  );
+
+(* Clear the global and local event mailbox structures. *)
+CPS(empty_event_struct, _events.event_air_blast_800_010.evt_lst, 1);
+CPS(empty_event_struct, _obj.air_blast_800_010.events.evt_lst, 1);
+
+(* TODO: Add all initialization code here *)
+

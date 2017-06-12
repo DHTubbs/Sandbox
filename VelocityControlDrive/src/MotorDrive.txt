@@ -1,0 +1,123 @@
+(* Component: VelocityControlDrive
+       Class: MotionInstruction
+   
+
+
+*)
+   
+(* Component: VelocityControlDrive
+       Class: MotorDrive
+   
+I am the class description.
+
+*)
+   
+sbr(object_MotorDrive_7);
+
+TONR(object_MotorDrive_7.tmr_disable);
+
+while (Not ism_MotorDrive_7.b_done) do
+	ism_MotorDrive_7.b_done := b_TRUE;
+	case (ism_MotorDrive_7.d_state) of
+	0:  (* Uninstantiated Instance *)
+		(* Entry Action *)
+		if (ism_MotorDrive_7.b_txn) then
+			ism_MotorDrive_7.b_txn := b_FALSE;
+			
+			(* Perhaps add some initialization here... *)
+		end_if;
+		
+		(* Exit Conditions *)
+		if (b_TRUE) then
+			// Exit Action
+			ism_MotorDrive_7.d_state := 1;
+			ism_MotorDrive_7.b_txn := b_FALSE;
+			ism_MotorDrive_7.b_done := b_FALSE;
+		end_if;
+
+	1:  (* State: WaitingForInstruction *)
+		(* Entry Action *)
+		if (ism_MotorDrive_7.b_txn) then
+			ism_MotorDrive_7.b_txn := b_FALSE
+			
+			(*
+				Action: 
+			*)
+
+			(* TODO: Add state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (object_MotorDrive_7.events.b_Jog) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			object_MotorDrive_7.events.b_Jog := b_FALSE;
+
+			ism_MotorDrive_7.d_state := 2;
+			ism_MotorDrive_7.b_txn := b_TRUE;
+			ism_MotorDrive_7.b_done := b_FALSE;
+		end_if;
+
+	2:  (* State: EnableDrive *)
+		(* Entry Action *)
+		if (ism_MotorDrive_7.b_txn) then
+			ism_MotorDrive_7.b_txn := b_FALSE
+			
+			(*
+				Action: 
+			*)
+
+			(* TODO: Add state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (object_MotorDrive_7.events.b_Stop) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			object_MotorDrive_7.events.b_Stop := b_FALSE;
+
+			ism_MotorDrive_7.d_state := 1;
+			ism_MotorDrive_7.b_txn := b_TRUE;
+			ism_MotorDrive_7.b_done := b_FALSE;
+		elsif (object_MotorDrive_7.events.b_event1) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			object_MotorDrive_7.events.b_event1 := b_FALSE;
+
+			ism_MotorDrive_7.d_state := 3;
+			ism_MotorDrive_7.b_txn := b_TRUE;
+			ism_MotorDrive_7.b_done := b_FALSE;
+		end_if;
+
+	3:  (* State: ChangeVelocity *)
+		(* Entry Action *)
+		if (ism_MotorDrive_7.b_txn) then
+			ism_MotorDrive_7.b_txn := b_FALSE
+			
+			(*
+				Action: 
+			*)
+
+			(* TODO: Add state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (object_MotorDrive_7.events.b_Stop) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			object_MotorDrive_7.events.b_Stop := b_FALSE;
+
+			ism_MotorDrive_7.d_state := 1;
+			ism_MotorDrive_7.b_txn := b_TRUE;
+			ism_MotorDrive_7.b_done := b_FALSE;
+		end_if;
+
+	end_case;
+end_while;

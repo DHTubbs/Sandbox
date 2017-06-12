@@ -1,0 +1,20 @@
+(* Model Identifiers
+     Component (Number): 'Diverter' (800)
+         Class (Number): 'Actuator' (003)
+              Operation: 'Initialize'
+         Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Actuator'
+   
+Description: All actions required to initialize an instance of class 'Actuator'.
+             This subroutine must be called whenever a new instance is created.
+
+Signature: JSR( _800_003_opActuator_Init );
+*)
+
+SBR(  );
+
+(* Clear the global and local event mailbox structures. *)
+CPS(empty_event_struct, _events.event_actuator_800_003.evt_lst, 1);
+CPS(empty_event_struct, _obj.actuator_800_003.events.evt_lst, 1);
+
+(* TODO: Add all initialization code here *)
+

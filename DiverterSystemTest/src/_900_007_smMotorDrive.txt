@@ -1,0 +1,533 @@
+(* Model Identifiers
+     Component (Number): 'Velocity Control Drive' (900)
+         Class (Number): 'Motor Drive' (007)
+         Qualified Name: 'VelocityControlDrive::Design::Velocity Control Drive::Subsys::Motor Drive'
+   
+Description: I am the class description.
+
+Signature: JSR( _900_007_smMotorDrive );
+*)
+
+SBR(  );
+
+TONR(_obj.motor_drive_900_007.tmr_timer);
+
+_obj.motor_drive_900_007.ism.b_done := b_FALSE;
+
+while (Not _obj.motor_drive_900_007.ism.b_done) do
+	_obj.motor_drive_900_007.ism.b_done := b_TRUE;
+	case (_obj.motor_drive_900_007.d_current_state) of
+	0:  (* Uninstantiated Instance *)
+	
+		(* Exit Conditions *)
+		if (_obj.motor_drive_900_007.events.evt_lst.b_creation_event) then
+			(* Consume the Event *)
+			_obj.motor_drive_900_007.events.evt_lst.b_creation_event := b_FALSE;
+
+			_obj.motor_drive_900_007.d_current_state := 1;
+			_obj.motor_drive_900_007.ism.b_txn := b_FALSE;
+			_obj.motor_drive_900_007.ism.b_done := b_FALSE;
+		end_if;
+
+	1:  (* State: 'WaitingForInstruction' *)
+		(* Entry Action *)
+		if (_obj.motor_drive_900_007.ism.b_txn) then
+			_obj.motor_drive_900_007.ism.b_txn := b_FALSE;
+			
+			(*  Action:
+				
+				
+			*)
+
+			(* TODO: Implement state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (_obj.motor_drive_900_007.events.evt_lst.b_Jog) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			_obj.motor_drive_900_007.events.evt_lst.b_Jog := b_FALSE;
+
+			_obj.motor_drive_900_007.d_current_state := 2;
+			_obj.motor_drive_900_007.ism.b_txn := b_TRUE;
+			_obj.motor_drive_900_007.ism.b_done := b_FALSE;
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_Stop) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event1) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event2) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event3) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event4) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event5) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event6) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event7) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event8) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event9) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event10) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event11) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event12) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event13) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event14) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event15) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event16) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		end_if;
+
+	2:  (* State: 'EnableDrive' *)
+		(* Entry Action *)
+		if (_obj.motor_drive_900_007.ism.b_txn) then
+			_obj.motor_drive_900_007.ism.b_txn := b_FALSE;
+			
+			(*  Action:
+				
+				
+			*)
+
+			(* TODO: Implement state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (_obj.motor_drive_900_007.events.evt_lst.b_Stop) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			_obj.motor_drive_900_007.events.evt_lst.b_Stop := b_FALSE;
+
+			_obj.motor_drive_900_007.d_current_state := 1;
+			_obj.motor_drive_900_007.ism.b_txn := b_TRUE;
+			_obj.motor_drive_900_007.ism.b_done := b_FALSE;
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event1) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			_obj.motor_drive_900_007.events.evt_lst.b_event1 := b_FALSE;
+
+			_obj.motor_drive_900_007.d_current_state := 3;
+			_obj.motor_drive_900_007.ism.b_txn := b_TRUE;
+			_obj.motor_drive_900_007.ism.b_done := b_FALSE;
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_Jog) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event2) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event3) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event4) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event5) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event6) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event7) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event8) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event9) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event10) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event11) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event12) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event13) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event14) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event15) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event16) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		end_if;
+
+	3:  (* State: 'ChangeVelocity' *)
+		(* Entry Action *)
+		if (_obj.motor_drive_900_007.ism.b_txn) then
+			_obj.motor_drive_900_007.ism.b_txn := b_FALSE;
+			
+			(*  Action:
+				
+				
+			*)
+
+			(* TODO: Implement state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (_obj.motor_drive_900_007.events.evt_lst.b_Stop) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			_obj.motor_drive_900_007.events.evt_lst.b_Stop := b_FALSE;
+
+			_obj.motor_drive_900_007.d_current_state := 1;
+			_obj.motor_drive_900_007.ism.b_txn := b_TRUE;
+			_obj.motor_drive_900_007.ism.b_done := b_FALSE;
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_Jog) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event1) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event2) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event3) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event4) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event5) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event6) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event7) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event8) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event9) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event10) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event11) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event12) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event13) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event14) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event15) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		elsif (_obj.motor_drive_900_007.events.evt_lst.b_event16) then
+			(* Can't Happen - The model indicates this event cannot occur in this state.
+			
+			   Description: 
+			*)
+			
+			(* TODO: Add a diagnostic here. *)
+			
+		end_if;
+
+	else (* Invalid State - End of 'case' *)
+		(* The state machine was directed to an invalid state.  Either a programming
+		   error was made or a hardware failure has occurred in the PLC. *)
+		
+		(* TODO: Add a Diagnostic here. *)
+		
+		_obj.motor_drive_900_007.d_current_state := 0;
+		_obj.motor_drive_900_007.ism.b_txn := b_FALSE;
+		_obj.motor_drive_900_007.ism.b_done := b_FALSE;
+	end_case;
+end_while;

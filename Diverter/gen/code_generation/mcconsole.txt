@@ -1,0 +1,31 @@
+Enabling detection of empty handles for component(s) *.
+Action statement tracing enabled for component Diverter.
+Action statement tracing enabled for component BarConveyor.
+Action statement tracing enabled for component CTMSensor.
+Action statement tracing enabled for component Diverter.
+Action statement tracing enabled for component HighSpeedNip.
+Action statement tracing enabled for component KnifeCylinder.
+Action statement tracing enabled for component Motor_Drive.
+Action statement tracing enabled for component Motor_Drive_Brake.
+Action statement tracing enabled for component Motor_Drive_FB.
+Action statement tracing enabled for component Motor_Drive_Reg.
+Action statement tracing enabled for component PullRoll.
+Action statement tracing enabled for component ShinglingSection.
+Action statement tracing enabled for component Backstop.
+Action statement tracing enabled for component FlatBelts.
+Action statement tracing enabled for component LiftBay.
+Action statement tracing enabled for component LiftConveyor.
+Action statement tracing enabled for component SafetySystem.
+Action statement tracing enabled for component prv_JogMotor_ExpResp.
+Action statement tracing enabled for component rqd_JogMotor_IntfTest.
+Action statement tracing enabled for component prv_ExpectedResponse.
+Enabling state transition tracing for component(s) *.
+Analyzing model and making optimizations....
+Self event queue needed.
+Instance event queue needed.
+27 attributes read
+21 attributes written
+translating control statements
+translating other statements
+rolling up statements into action bodies
+done translating statements

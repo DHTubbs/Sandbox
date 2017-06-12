@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="28.00" TargetName="KnifeStackerCellStructs" TargetType="DataType" ContainsContext="true" Owner="Ronald Schmidt, Barry-Wehmiller" ExportDate="Wed May 11 10:07:01 2016" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="KnifeStacker">
+<DataTypes Use="Context">
+<DataType Name="STATE_MACHINE_TRANSITION_CONTROL" Family="NoFamily" Class="User">
+<Members>
+<Member Name="STATE_MACHINE_TRANSITION_CONTROL_BM" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>      
+<Member Name="b_done" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="STATE_MACHINE_TRANSITION_CONTROL_BM" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Controls when the state machine will exit.  When 'True' the state machine will exit at the conclusion of checking the current state exit conditions.]]>
+</Description>
+</Member>
+<Member Name="b_txn" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="STATE_MACHINE_TRANSITION_CONTROL_BM" BitNumber="1" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Controls execution of entry actions in a state machine state.  When 'True' the state machine entry action will execute.]]>
+</Description>
+</Member>
+</Members>
+</DataType>
+<DataType Name="HESITATING_ROLLOUT_800_014_EVT" Family="NoFamily" Class="User">
+<Members>
+<Member Name="HESITATING_ROLLOUT_800_014_BM" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>      
+<Member Name="b_creation_event" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="HESITATING_ROLLOUT_800_014_BM" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The b_creation_event enables the instance of the class to execute it's state machine.]]>
+</Description>
+</Member>
+<Member Name="b_jog_time_expired" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="HESITATING_ROLLOUT_800_014_BM" BitNumber="2" ExternalAccess="Read/Write"/>
+<Member Name="b_initiate_auto_seq_dht" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="HESITATING_ROLLOUT_800_014_BM" BitNumber="32" ExternalAccess="Read/Write"/>
+<Member Name="b_jog_complete" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="HESITATING_ROLLOUT_800_014_BM" BitNumber="4" ExternalAccess="Read/Write"/>
+<Member Name="b_motor_stopped" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="HESITATING_ROLLOUT_800_014_BM" BitNumber="9" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Use="Target" Name="HESITATING_ROLLOUT_800_014" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'Diverter::Design::Model::Diverter::CrossTransferConveyorControl::Hesitating Rollout'
+]]>
+</Description>
+<Members>
+<Member Name="events" DataType="HESITATING_ROLLOUT_800_014_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ism" DataType="STATE_MACHINE_TRANSITION_CONTROL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_current_state" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_preliminary_move_time" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="p_id_r9" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+</DataTypes>
+</Controller>
+</RSLogix5000Content>

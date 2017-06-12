@@ -1,0 +1,204 @@
+(* Component: VelocityControlDrive
+       Class: Drive Enable
+   
+This class controls the enable function of the drive.
+
+*)
+   
+sbr(object_DriveEnable_2);
+
+TONR(object_DriveEnable_2.tmr_disable);
+
+while (Not ism_DriveEnable_2.b_done) do
+	ism_DriveEnable_2.b_done := b_TRUE;
+	case (ism_DriveEnable_2.d_state) of
+	0:  (* Uninstantiated Instance *)
+		(* Entry Action *)
+		if (ism_DriveEnable_2.b_txn) then
+			ism_DriveEnable_2.b_txn := b_FALSE;
+			
+			(* Perhaps add some initialization here... *)
+		end_if;
+		
+		(* Exit Conditions *)
+		if (b_TRUE) then
+			// Exit Action
+			ism_DriveEnable_2.d_state := 1;
+			ism_DriveEnable_2.b_txn := b_FALSE;
+			ism_DriveEnable_2.b_done := b_FALSE;
+		end_if;
+
+	1:  (* State: DriveDisabled *)
+		(* Entry Action *)
+		if (ism_DriveEnable_2.b_txn) then
+			ism_DriveEnable_2.b_txn := b_FALSE
+			
+			(*
+				Action: generate MI_A5:drive_disabled() to MI assigner;
+
+			*)
+
+			(* TODO: Add state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (object_DriveEnable_2.events.b_enable_drive) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			object_DriveEnable_2.events.b_enable_drive := b_FALSE;
+
+			ism_DriveEnable_2.d_state := 2;
+			ism_DriveEnable_2.b_txn := b_TRUE;
+			ism_DriveEnable_2.b_done := b_FALSE;
+		end_if;
+
+	2:  (* State: InitiateEnable *)
+		(* Entry Action *)
+		if (ism_DriveEnable_2.b_txn) then
+			ism_DriveEnable_2.b_txn := b_FALSE
+			
+			(*
+				Action: // Enable the drive
+drive::enable_drive(enable: True);
+
+			*)
+
+			(* TODO: Add state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (object_DriveEnable_2.events.b_drive_signals_done) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			object_DriveEnable_2.events.b_drive_signals_done := b_FALSE;
+
+			ism_DriveEnable_2.d_state := 3;
+			ism_DriveEnable_2.b_txn := b_TRUE;
+			ism_DriveEnable_2.b_done := b_FALSE;
+		end_if;
+
+	3:  (* State: DriveEnabled *)
+		(* Entry Action *)
+		if (ism_DriveEnable_2.b_txn) then
+			ism_DriveEnable_2.b_txn := b_FALSE
+			
+			(*
+				Action: generate MI_A2:drive_enabled() to MI assigner;
+
+
+			*)
+
+			(* TODO: Add state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (object_DriveEnable_2.events.b_enable_drive) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			object_DriveEnable_2.events.b_enable_drive := b_FALSE;
+
+			ism_DriveEnable_2.d_state := 3;
+			ism_DriveEnable_2.b_txn := b_TRUE;
+			ism_DriveEnable_2.b_done := b_FALSE;
+		elsif (object_DriveEnable_2.events.b_disable_drive) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			object_DriveEnable_2.events.b_disable_drive := b_FALSE;
+
+			ism_DriveEnable_2.d_state := 4;
+			ism_DriveEnable_2.b_txn := b_TRUE;
+			ism_DriveEnable_2.b_done := b_FALSE;
+		end_if;
+
+	4:  (* State: DisableDelay *)
+		(* Entry Action *)
+		if (ism_DriveEnable_2.b_txn) then
+			ism_DriveEnable_2.b_txn := b_FALSE
+			
+			(*
+				Action: // Start a timer to control how long the drive should stay enabled after the move 
+//    is complete.
+// 
+
+
+create event instance timer_expired of DE4:delay_timer_expired to self;
+self.disable_timer = 
+            TIM::timer_start(microseconds: self.disable_delay * 1000, 
+                               event_inst: timer_expired);
+
+
+			*)
+
+			(* TODO: Add state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (object_DriveEnable_2.events.b_enable_drive) then
+			(* Exit Action *)
+			(*
+				Action: // If the timer is running stop it.
+
+existed = TIM::timer_cancel(timer_inst_ref: self.disable_timer);
+
+			*)
+
+			(* TODO: Add event action code here *)
+			
+
+			(* Consume the Event *)
+			object_DriveEnable_2.events.b_enable_drive := b_FALSE;
+
+			ism_DriveEnable_2.d_state := 3;
+			ism_DriveEnable_2.b_txn := b_TRUE;
+			ism_DriveEnable_2.b_done := b_FALSE;
+		elsif (object_DriveEnable_2.events.b_delay_timer_expired) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			object_DriveEnable_2.events.b_delay_timer_expired := b_FALSE;
+
+			ism_DriveEnable_2.d_state := 5;
+			ism_DriveEnable_2.b_txn := b_TRUE;
+			ism_DriveEnable_2.b_done := b_FALSE;
+		end_if;
+
+	5:  (* State: InitiateDisable *)
+		(* Entry Action *)
+		if (ism_DriveEnable_2.b_txn) then
+			ism_DriveEnable_2.b_txn := b_FALSE
+			
+			(*
+				Action: // Disable the drive
+drive::enable_drive(enable: False);
+
+generate MI_A4:drive_disable_lockout() to MI assigner;
+
+
+			*)
+
+			(* TODO: Add state action code here *)
+			
+		end_if;
+		
+		(* Exit Conditions *)
+		if (object_DriveEnable_2.events.b_drive_signals_done) then
+			(* Exit Action *)
+
+			(* Consume the Event *)
+			object_DriveEnable_2.events.b_drive_signals_done := b_FALSE;
+
+			ism_DriveEnable_2.d_state := 1;
+			ism_DriveEnable_2.b_txn := b_TRUE;
+			ism_DriveEnable_2.b_done := b_FALSE;
+		end_if;
+
+	end_case;
+end_while;

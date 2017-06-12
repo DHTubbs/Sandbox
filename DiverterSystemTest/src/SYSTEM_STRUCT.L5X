@@ -1,0 +1,881 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="28.00" TargetName="STATE_MACHINE_TRANSITION_CONTROL" TargetType="DataType" ContainsContext="true" Owner="Ronald Schmidt, Barry-Wehmiller" ExportDate="Wed May 11 10:07:01 2016" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="DiverterSystemTest">
+<DataTypes Use="Context">
+<DataType Use="Target" Name="STATE_MACHINE_TRANSITION_CONTROL" Family="NoFamily" Class="User">
+<Members>
+<Member Name="STATE_MACHINE_TRANSITION_CONTROL_BM" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>      
+<Member Name="b_done" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="STATE_MACHINE_TRANSITION_CONTROL_BM" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Controls when the state machine will exit.  When 'True' the state machine will exit at the conclusion of checking the current state exit conditions.]]>
+</Description>
+</Member>
+<Member Name="b_txn" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="STATE_MACHINE_TRANSITION_CONTROL_BM" BitNumber="1" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Controls execution of entry actions in a state machine state.  When 'True' the state machine entry action will execute.]]>
+</Description>
+</Member>
+</Members>
+</DataType>
+<DataType Name="XTFR_JOG_SWITCH_000_001" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'DiverterSystemTest::System::Client::Test::xtfr_jog_switch'
+]]>
+</Description>
+<Members>
+<Member Name="e_position" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="AUTOMATIC_SEQUENCE_800_013_EL" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Boolean structure for events included in structure 'AUTOMATIC_SEQUENCE_800_013_EVT'.]]>
+</Description>
+<Members>
+<Member Name="AUTOMATIC_SEQUENCE_800_013_BM" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>      
+<Member Name="b_creation_event" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="AUTOMATIC_SEQUENCE_800_013_BM" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The b_creation_event enables the instance of the class to execute it's state machine.]]>
+</Description>
+</Member>
+<Member Name="b_initiate_auto_seq" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="AUTOMATIC_SEQUENCE_800_013_BM" BitNumber="11" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="AUTOMATIC_SEQUENCE_800_013_EVT" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Data structure for all events and event data included in structure 'AUTOMATIC_SEQUENCE_800_013'.]]>
+</Description>
+<Members>
+<Member Name="evt_lst" DataType="AUTOMATIC_SEQUENCE_800_013_EL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="AUTOMATIC_SEQUENCE_800_013" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'Diverter::Design::Model::Diverter::CrossTransferConveyorControl::Automatic Sequence'
+]]>
+</Description>
+<Members>
+<Member Name="events" DataType="AUTOMATIC_SEQUENCE_800_013_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ism" DataType="STATE_MACHINE_TRANSITION_CONTROL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="pi_id_r8" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_time_to_run" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="e_motor_direction" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="CONVEYOR_LENGTH_ROLLOUT_800_015_EL" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Boolean structure for events included in structure 'CONVEYOR_LENGTH_ROLLOUT_800_015_EVT'.]]>
+</Description>
+<Members>
+<Member Name="CONVEYOR_LENGTH_ROLLOUT_800_015_BM" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>      
+<Member Name="b_creation_event" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="CONVEYOR_LENGTH_ROLLOUT_800_015_BM" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The b_creation_event enables the instance of the class to execute it's state machine.]]>
+</Description>
+</Member>
+<Member Name="b_jog_time_expired" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="CONVEYOR_LENGTH_ROLLOUT_800_015_BM" BitNumber="3" ExternalAccess="Read/Write"/>
+<Member Name="b_initiate_auto_seq" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="CONVEYOR_LENGTH_ROLLOUT_800_015_BM" BitNumber="11" ExternalAccess="Read/Write"/>
+<Member Name="b_jog_complete" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="CONVEYOR_LENGTH_ROLLOUT_800_015_BM" BitNumber="4" ExternalAccess="Read/Write"/>
+<Member Name="b_motor_stopped" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="CONVEYOR_LENGTH_ROLLOUT_800_015_BM" BitNumber="9" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="CONVEYOR_LENGTH_ROLLOUT_800_015_EVT" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Data structure for all events and event data included in structure 'CONVEYOR_LENGTH_ROLLOUT_800_015'.]]>
+</Description>
+<Members>
+<Member Name="evt_lst" DataType="CONVEYOR_LENGTH_ROLLOUT_800_015_EL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="CONVEYOR_LENGTH_ROLLOUT_800_015" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'Diverter::Design::Model::Diverter::CrossTransferConveyorControl::Conveyor Length Rollout'
+]]>
+</Description>
+<Members>
+<Member Name="events" DataType="CONVEYOR_LENGTH_ROLLOUT_800_015_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ism" DataType="STATE_MACHINE_TRANSITION_CONTROL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_current_state" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="pi_id_r9" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="CROSS_TRANSFER_CONVEYOR_800_007_EL" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Boolean structure for events included in structure 'CROSS_TRANSFER_CONVEYOR_800_007_EVT'.]]>
+</Description>
+<Members>
+<Member Name="CROSS_TRANSFER_CONVEYOR_800_007_BM" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>      
+<Member Name="b_creation_event" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="CROSS_TRANSFER_CONVEYOR_800_007_BM" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The b_creation_event enables the instance of the class to execute it's state machine.]]>
+</Description>
+</Member>
+<Member Name="b_jog" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="CROSS_TRANSFER_CONVEYOR_800_007_BM" BitNumber="3" ExternalAccess="Read/Write"/>
+<Member Name="b_jog_complete" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="CROSS_TRANSFER_CONVEYOR_800_007_BM" BitNumber="4" ExternalAccess="Read/Write"/>
+<Member Name="b_automatic_sequence_cmplt" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="CROSS_TRANSFER_CONVEYOR_800_007_BM" BitNumber="7" ExternalAccess="Read/Write"/>
+<Member Name="b_discharge" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="CROSS_TRANSFER_CONVEYOR_800_007_BM" BitNumber="6" ExternalAccess="Read/Write"/>
+<Member Name="b_activate" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="CROSS_TRANSFER_CONVEYOR_800_007_BM" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="b_drive_rdy_for_inst" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="CROSS_TRANSFER_CONVEYOR_800_007_BM" BitNumber="5" ExternalAccess="Read/Write"/>
+<Member Name="b_sequence_aborted" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="CROSS_TRANSFER_CONVEYOR_800_007_BM" BitNumber="8" ExternalAccess="Read/Write"/>
+<Member Name="b_motor_stopped" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="CROSS_TRANSFER_CONVEYOR_800_007_BM" BitNumber="9" ExternalAccess="Read/Write"/>
+<Member Name="b_enable_control" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="CROSS_TRANSFER_CONVEYOR_800_007_BM" BitNumber="10" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="CROSS_TRANSFER_CONVEYOR_800_007_ED3" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Event Data structure for event 'jog' included in structure 'CROSS_TRANSFER_CONVEYOR_800_007_EVT'.]]>
+</Description>
+<Members>
+<Member Name="e_direction" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="CROSS_TRANSFER_CONVEYOR_800_007_ED6" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Event Data structure for event 'discharge' included in structure 'CROSS_TRANSFER_CONVEYOR_800_007_EVT'.]]>
+</Description>
+<Members>
+<Member Name="e_direction" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="e_control_alg" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="CROSS_TRANSFER_CONVEYOR_800_007_EVT" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Data structure for all events and event data included in structure 'CROSS_TRANSFER_CONVEYOR_800_007'.]]>
+</Description>
+<Members>
+<Member Name="evt_lst" DataType="CROSS_TRANSFER_CONVEYOR_800_007_EL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="jog_event_data" DataType="CROSS_TRANSFER_CONVEYOR_800_007_ED3" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="discharge_event_data" DataType="CROSS_TRANSFER_CONVEYOR_800_007_ED6" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="CROSS_TRANSFER_CONVEYOR_800_007" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'Diverter::Design::Model::Diverter::CrossTransferConveyorControl::Cross Transfer Conveyor'
+]]>
+</Description>
+<Members>
+<Member Name="events" DataType="CROSS_TRANSFER_CONVEYOR_800_007_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ism" DataType="STATE_MACHINE_TRANSITION_CONTROL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_current_state" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_stopping_time" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Units = mSec
+Time required for the conveyor to come to a complete stop from its maximum velocity.]]>
+</Description>
+</Member>
+<Member Name="pi_id" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="e_drive_side" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[This attribute defines the required motor direction for the conveyor to run
+toward the drive side of the machine.]]>
+</Description>
+</Member>
+</Members>
+</DataType>
+<DataType Name="HESITATING_ROLLOUT_800_014_EL" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Boolean structure for events included in structure 'HESITATING_ROLLOUT_800_014_EVT'.]]>
+</Description>
+<Members>
+<Member Name="HESITATING_ROLLOUT_800_014_BM" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>      
+<Member Name="b_creation_event" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="HESITATING_ROLLOUT_800_014_BM" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The b_creation_event enables the instance of the class to execute it's state machine.]]>
+</Description>
+</Member>
+<Member Name="b_jog_time_expired" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="HESITATING_ROLLOUT_800_014_BM" BitNumber="2" ExternalAccess="Read/Write"/>
+<Member Name="b_initiate_auto_seq_dht" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="HESITATING_ROLLOUT_800_014_BM" BitNumber="32" ExternalAccess="Read/Write"/>
+<Member Name="b_jog_complete" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="HESITATING_ROLLOUT_800_014_BM" BitNumber="4" ExternalAccess="Read/Write"/>
+<Member Name="b_motor_stopped" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="HESITATING_ROLLOUT_800_014_BM" BitNumber="9" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="HESITATING_ROLLOUT_800_014_EVT" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Data structure for all events and event data included in structure 'HESITATING_ROLLOUT_800_014'.]]>
+</Description>
+<Members>
+<Member Name="evt_lst" DataType="HESITATING_ROLLOUT_800_014_EL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="HESITATING_ROLLOUT_800_014" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'Diverter::Design::Model::Diverter::CrossTransferConveyorControl::Hesitating Rollout'
+]]>
+</Description>
+<Members>
+<Member Name="events" DataType="HESITATING_ROLLOUT_800_014_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ism" DataType="STATE_MACHINE_TRANSITION_CONTROL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_current_state" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_preliminary_move_time" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="pi_id_r9" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="MANUAL_SEQUENCE_800_011_EL" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Boolean structure for events included in structure 'MANUAL_SEQUENCE_800_011_EVT'.]]>
+</Description>
+<Members>
+<Member Name="MANUAL_SEQUENCE_800_011_BM" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>      
+<Member Name="b_creation_event" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MANUAL_SEQUENCE_800_011_BM" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The b_creation_event enables the instance of the class to execute it's state machine.]]>
+</Description>
+</Member>
+<Member Name="b_jog" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MANUAL_SEQUENCE_800_011_BM" BitNumber="3" ExternalAccess="Read/Write"/>
+<Member Name="b_jog_complete" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MANUAL_SEQUENCE_800_011_BM" BitNumber="4" ExternalAccess="Read/Write"/>
+<Member Name="b_drive_rdy_for_inst" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MANUAL_SEQUENCE_800_011_BM" BitNumber="10" ExternalAccess="Read/Write"/>
+<Member Name="b_motor_stopped" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MANUAL_SEQUENCE_800_011_BM" BitNumber="9" ExternalAccess="Read/Write"/>
+<Member Name="b_enable_control" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MANUAL_SEQUENCE_800_011_BM" BitNumber="10" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="MANUAL_SEQUENCE_800_011_EVT" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Data structure for all events and event data included in structure 'MANUAL_SEQUENCE_800_011'.]]>
+</Description>
+<Members>
+<Member Name="evt_lst" DataType="MANUAL_SEQUENCE_800_011_EL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="MANUAL_SEQUENCE_800_011" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'Diverter::Design::Model::Diverter::CrossTransferConveyorControl::Manual Sequence'
+]]>
+</Description>
+<Members>
+<Member Name="events" DataType="MANUAL_SEQUENCE_800_011_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ism" DataType="STATE_MACHINE_TRANSITION_CONTROL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_current_state" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="pi_id_r8" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="e_jog_direction" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="MOTION_INHIBITED_800_012" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'Diverter::Design::Model::Diverter::CrossTransferConveyorControl::Motion Inhibited'
+]]>
+</Description>
+<Members>
+<Member Name="pi_id_r8" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="ACTUATOR_800_003_EL" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Boolean structure for events included in structure 'ACTUATOR_800_003_EVT'.]]>
+</Description>
+<Members>
+<Member Name="ACTUATOR_800_003_BM" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>      
+<Member Name="b_creation_event" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ACTUATOR_800_003_BM" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The b_creation_event enables the instance of the class to execute it's state machine.]]>
+</Description>
+</Member>
+<Member Name="b_activate" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ACTUATOR_800_003_BM" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="b_de_activate" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ACTUATOR_800_003_BM" BitNumber="2" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="ACTUATOR_800_003_EVT" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Data structure for all events and event data included in structure 'ACTUATOR_800_003'.]]>
+</Description>
+<Members>
+<Member Name="evt_lst" DataType="ACTUATOR_800_003_EL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="ACTUATOR_800_003" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Actuator'
+]]>
+</Description>
+<Members>
+<Member Name="events" DataType="ACTUATOR_800_003_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ism" DataType="STATE_MACHINE_TRANSITION_CONTROL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="pi_id" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="AIR_BLAST_800_010_EL" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Boolean structure for events included in structure 'AIR_BLAST_800_010_EVT'.]]>
+</Description>
+<Members>
+<Member Name="AIR_BLAST_800_010_BM" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>      
+<Member Name="b_creation_event" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="AIR_BLAST_800_010_BM" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The b_creation_event enables the instance of the class to execute it's state machine.]]>
+</Description>
+</Member>
+<Member Name="b_activate" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="AIR_BLAST_800_010_BM" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="b_de_activate" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="AIR_BLAST_800_010_BM" BitNumber="2" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="AIR_BLAST_800_010_EVT" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Data structure for all events and event data included in structure 'AIR_BLAST_800_010'.]]>
+</Description>
+<Members>
+<Member Name="evt_lst" DataType="AIR_BLAST_800_010_EL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="AIR_BLAST_800_010" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Air Blast'
+]]>
+</Description>
+<Members>
+<Member Name="events" DataType="AIR_BLAST_800_010_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ism" DataType="STATE_MACHINE_TRANSITION_CONTROL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_position" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_current_state" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_blast_duration" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="DIVERT_PACKET_800_001" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Divert Packet'
+]]>
+</Description>
+<Members>
+<Member Name="pi_id" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="e_type" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_leading_edge_position" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_trailing_edge_position" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_web_caliper" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="DIVERT_SHEET_800_002" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Divert Sheet'
+]]>
+</Description>
+<Members>
+<Member Name="d_position" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Units = mm
+The position of a divert sheet is defined as the distance between the leading
+edge of the sheet and the knife cut line.  If the leading edge of the sheet has
+not yet reached the knife cut line the distance will be negative.]]>
+</Description>
+</Member>
+<Member Name="pi_id" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_length" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="DIVERT_STACK_800_005" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Divert Stack'
+]]>
+</Description>
+<Members>
+<Member Name="e_stack_type" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_number_of_sheets" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_stack_thickness" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="DIVERTER_BAY_800_006_EL" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Boolean structure for events included in structure 'DIVERTER_BAY_800_006_EVT'.]]>
+</Description>
+<Members>
+<Member Name="DIVERTER_BAY_800_006_BM" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>      
+<Member Name="b_creation_event" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="DIVERTER_BAY_800_006_BM" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The b_creation_event enables the instance of the class to execute it's state machine.]]>
+</Description>
+</Member>
+<Member Name="b_divert_packet_received" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="DIVERTER_BAY_800_006_BM" BitNumber="2" ExternalAccess="Read/Write"/>
+<Member Name="b_receive_sheet" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="DIVERTER_BAY_800_006_BM" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="b_start_discharge" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="DIVERTER_BAY_800_006_BM" BitNumber="3" ExternalAccess="Read/Write"/>
+<Member Name="b_discharge_complete" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="DIVERTER_BAY_800_006_BM" BitNumber="4" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="DIVERTER_BAY_800_006_ED1" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Event Data structure for event 'receive_sheet' included in structure 'DIVERTER_BAY_800_006_EVT'.]]>
+</Description>
+<Members>
+<Member Name="d_sheet_caliper" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="DIVERTER_BAY_800_006_EVT" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Data structure for all events and event data included in structure 'DIVERTER_BAY_800_006'.]]>
+</Description>
+<Members>
+<Member Name="evt_lst" DataType="DIVERTER_BAY_800_006_EL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="receive_sheet_event_data" DataType="DIVERTER_BAY_800_006_ED1" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="DIVERTER_BAY_800_006" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Diverter Bay'
+]]>
+</Description>
+<Members>
+<Member Name="events" DataType="DIVERTER_BAY_800_006_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ism" DataType="STATE_MACHINE_TRANSITION_CONTROL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_current_state" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="tmr_sheet_settling_timer" DataType="FBD_TIMER" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="DIVERTER_PAN_800_009_EL" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Boolean structure for events included in structure 'DIVERTER_PAN_800_009_EVT'.]]>
+</Description>
+<Members>
+<Member Name="DIVERTER_PAN_800_009_BM" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>      
+<Member Name="b_creation_event" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="DIVERTER_PAN_800_009_BM" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The b_creation_event enables the instance of the class to execute it's state machine.]]>
+</Description>
+</Member>
+<Member Name="b_de_activate" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="DIVERTER_PAN_800_009_BM" BitNumber="2" ExternalAccess="Read/Write"/>
+<Member Name="b_activate" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="DIVERTER_PAN_800_009_BM" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="b_LowerPan" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="DIVERTER_PAN_800_009_BM" BitNumber="3" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="DIVERTER_PAN_800_009_EVT" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Data structure for all events and event data included in structure 'DIVERTER_PAN_800_009'.]]>
+</Description>
+<Members>
+<Member Name="evt_lst" DataType="DIVERTER_PAN_800_009_EL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="DIVERTER_PAN_800_009" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Diverter Pan'
+]]>
+</Description>
+<Members>
+<Member Name="events" DataType="DIVERTER_PAN_800_009_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ism" DataType="STATE_MACHINE_TRANSITION_CONTROL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_position" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_current_state" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="FINGERS_800_008_EL" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Boolean structure for events included in structure 'FINGERS_800_008_EVT'.]]>
+</Description>
+<Members>
+<Member Name="FINGERS_800_008_BM" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>      
+<Member Name="b_creation_event" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="FINGERS_800_008_BM" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The b_creation_event enables the instance of the class to execute it's state machine.]]>
+</Description>
+</Member>
+<Member Name="b_de_activate" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="FINGERS_800_008_BM" BitNumber="2" ExternalAccess="Read/Write"/>
+<Member Name="b_activate" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="FINGERS_800_008_BM" BitNumber="1" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="FINGERS_800_008_EVT" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Data structure for all events and event data included in structure 'FINGERS_800_008'.]]>
+</Description>
+<Members>
+<Member Name="evt_lst" DataType="FINGERS_800_008_EL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="FINGERS_800_008" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Fingers'
+]]>
+</Description>
+<Members>
+<Member Name="events" DataType="FINGERS_800_008_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ism" DataType="STATE_MACHINE_TRANSITION_CONTROL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_position" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Relative to Pivot Point]]>
+</Description>
+</Member>
+<Member Name="d_lower_time" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_raise_time" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_current_state" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="TRACKING_POINT_800_004" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Tracking Point'
+]]>
+</Description>
+<Members>
+<Member Name="d_actual_position" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Units = mm
+The physical position on the machine measured from the knife cut line,
+where the interaction is desired to occur with the divert sheet.]]>
+</Description>
+</Member>
+<Member Name="e_type" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Identity of type of event to fire when tracking point is reached.]]>
+</Description>
+</Member>
+<Member Name="d_offset_time" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Units = mSec
+The actuator's delay to change position.]]>
+</Description>
+</Member>
+<Member Name="d_effective_position" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Units = mm
+The position of the divert sheet specified edge when the tracking point is reached
+based on the offset_time and speed the divert sheet is traveling.  If the
+offset_time is 0, then the effective_position will be equal to the actual_position.]]>
+</Description>
+</Member>
+<Member Name="e_edge_to_track" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Defines which edge of the sheet should be used as the comparison reference.]]>
+</Description>
+</Member>
+<Member Name="pi_trkdvrtsht_id_r3" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="pi_trkdvrtsht_id_r3" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="DRIVE_ENABLE_900_002_EL" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Boolean structure for events included in structure 'DRIVE_ENABLE_900_002_EVT'.]]>
+</Description>
+<Members>
+<Member Name="DRIVE_ENABLE_900_002_BM" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>      
+<Member Name="b_creation_event" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="DRIVE_ENABLE_900_002_BM" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The b_creation_event enables the instance of the class to execute it's state machine.]]>
+</Description>
+</Member>
+<Member Name="b_enable_drive" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="DRIVE_ENABLE_900_002_BM" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="b_disable_drive" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="DRIVE_ENABLE_900_002_BM" BitNumber="2" ExternalAccess="Read/Write"/>
+<Member Name="b_drive_signals_done" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="DRIVE_ENABLE_900_002_BM" BitNumber="3" ExternalAccess="Read/Write"/>
+<Member Name="b_delay_timer_expired" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="DRIVE_ENABLE_900_002_BM" BitNumber="4" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="DRIVE_ENABLE_900_002_EVT" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Data structure for all events and event data included in structure 'DRIVE_ENABLE_900_002'.]]>
+</Description>
+<Members>
+<Member Name="evt_lst" DataType="DRIVE_ENABLE_900_002_EL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="DRIVE_ENABLE_900_002" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'VelocityControlDrive::Design::Velocity Control Drive::Subsys::Drive Enable'
+This class controls the enable function of the drive.]]>
+</Description>
+<Members>
+<Member Name="events" DataType="DRIVE_ENABLE_900_002_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ism" DataType="STATE_MACHINE_TRANSITION_CONTROL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_current_state" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="tmr_disable_timer" DataType="FBD_TIMER" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_disable_delay" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The amount of time the drive should remain enabled after a jog is complete before disabling.]]>
+</Description>
+</Member>
+</Members>
+</DataType>
+<DataType Name="MOTION_CONTROLLER_900_003_EL" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Boolean structure for events included in structure 'MOTION_CONTROLLER_900_003_EVT'.]]>
+</Description>
+<Members>
+<Member Name="MOTION_CONTROLLER_900_003_BM" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>      
+<Member Name="b_creation_event" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTION_CONTROLLER_900_003_BM" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The b_creation_event enables the instance of the class to execute it's state machine.]]>
+</Description>
+</Member>
+<Member Name="b_jog_cmd" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTION_CONTROLLER_900_003_BM" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="b_drive_in_progress" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTION_CONTROLLER_900_003_BM" BitNumber="2" ExternalAccess="Read/Write"/>
+<Member Name="b_end_move" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTION_CONTROLLER_900_003_BM" BitNumber="3" ExternalAccess="Read/Write"/>
+<Member Name="b_drive_done" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTION_CONTROLLER_900_003_BM" BitNumber="4" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="MOTION_CONTROLLER_900_003_ED1" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Event Data structure for event 'jog_cmd' included in structure 'MOTION_CONTROLLER_900_003_EVT'.]]>
+</Description>
+<Members>
+<Member Name="e_direction" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_velocity" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_acceleration" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_duration" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="MOTION_CONTROLLER_900_003_EVT" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Data structure for all events and event data included in structure 'MOTION_CONTROLLER_900_003'.]]>
+</Description>
+<Members>
+<Member Name="evt_lst" DataType="MOTION_CONTROLLER_900_003_EL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="jog_cmd_event_data" DataType="MOTION_CONTROLLER_900_003_ED1" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="MOTION_CONTROLLER_900_003" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'VelocityControlDrive::Design::Velocity Control Drive::Subsys::Motion Controller'
+]]>
+</Description>
+<Members>
+<Member Name="events" DataType="MOTION_CONTROLLER_900_003_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ism" DataType="STATE_MACHINE_TRANSITION_CONTROL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_current_state" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="tmr_move_timer" DataType="FBD_TIMER" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_move_duration" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="MOTION_INSTRUCTION_900_001" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'VelocityControlDrive::Design::Velocity Control Drive::Subsys::Motion Instruction'
+]]>
+</Description>
+<Members>
+<Member Name="MOTION_INSTRUCTION_900_001_B1" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="b_stop1" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTION_INSTRUCTION_900_001_B1" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="e_direction" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_velocity" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_acceleration" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_duration" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="MOTOR_DRIVE_900_007_EL" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Boolean structure for events included in structure 'MOTOR_DRIVE_900_007_EVT'.]]>
+</Description>
+<Members>
+<Member Name="MOTOR_DRIVE_900_007_BM" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>      
+<Member Name="b_creation_event" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTOR_DRIVE_900_007_BM" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The b_creation_event enables the instance of the class to execute it's state machine.]]>
+</Description>
+</Member>
+<Member Name="b_Stop" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTOR_DRIVE_900_007_BM" BitNumber="1" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[I am a stop event.]]>
+</Description>
+</Member>
+<Member Name="b_Jog" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTOR_DRIVE_900_007_BM" BitNumber="2" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[I am a jog event.]]>
+</Description>
+</Member>
+<Member Name="b_event1" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTOR_DRIVE_900_007_BM" BitNumber="3" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[I am an event.]]>
+</Description>
+</Member>
+<Member Name="b_event2" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTOR_DRIVE_900_007_BM" BitNumber="4" ExternalAccess="Read/Write"/>
+<Member Name="b_event3" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTOR_DRIVE_900_007_BM" BitNumber="5" ExternalAccess="Read/Write"/>
+<Member Name="b_event4" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTOR_DRIVE_900_007_BM" BitNumber="6" ExternalAccess="Read/Write"/>
+<Member Name="b_event5" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTOR_DRIVE_900_007_BM" BitNumber="7" ExternalAccess="Read/Write"/>
+<Member Name="b_event6" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTOR_DRIVE_900_007_BM" BitNumber="8" ExternalAccess="Read/Write"/>
+<Member Name="b_event7" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTOR_DRIVE_900_007_BM" BitNumber="9" ExternalAccess="Read/Write"/>
+<Member Name="b_event8" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTOR_DRIVE_900_007_BM" BitNumber="10" ExternalAccess="Read/Write"/>
+<Member Name="b_event9" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTOR_DRIVE_900_007_BM" BitNumber="11" ExternalAccess="Read/Write"/>
+<Member Name="b_event10" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTOR_DRIVE_900_007_BM" BitNumber="12" ExternalAccess="Read/Write"/>
+<Member Name="b_event11" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTOR_DRIVE_900_007_BM" BitNumber="13" ExternalAccess="Read/Write"/>
+<Member Name="b_event12" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTOR_DRIVE_900_007_BM" BitNumber="14" ExternalAccess="Read/Write"/>
+<Member Name="b_event13" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTOR_DRIVE_900_007_BM" BitNumber="15" ExternalAccess="Read/Write"/>
+<Member Name="b_event14" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTOR_DRIVE_900_007_BM" BitNumber="16" ExternalAccess="Read/Write"/>
+<Member Name="b_event15" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTOR_DRIVE_900_007_BM" BitNumber="17" ExternalAccess="Read/Write"/>
+<Member Name="b_event16" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTOR_DRIVE_900_007_BM" BitNumber="18" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="MOTOR_DRIVE_900_007_EVT" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Data structure for all events and event data included in structure 'MOTOR_DRIVE_900_007'.]]>
+</Description>
+<Members>
+<Member Name="evt_lst" DataType="MOTOR_DRIVE_900_007_EL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="MOTOR_DRIVE_900_007" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'VelocityControlDrive::Design::Velocity Control Drive::Subsys::Motor Drive'
+I am the class description.]]>
+</Description>
+<Members>
+<Member Name="events" DataType="MOTOR_DRIVE_900_007_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ism" DataType="STATE_MACHINE_TRANSITION_CONTROL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="MOTOR_DRIVE_900_007_B1" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="b_b1" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTOR_DRIVE_900_007_B1" BitNumber="1" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[I am a boolean.]]>
+</Description>
+</Member>
+<Member Name="b_b2" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTOR_DRIVE_900_007_B1" BitNumber="2" ExternalAccess="Read/Write"/>
+<Member Name="d_current_state" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="str_str" DataType="STRING" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[I am a string.]]>
+</Description>
+</Member>
+<Member Name="r_rl" DataType="REAL" Dimension="0" Radix="Float" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[I am a real.]]>
+</Description>
+</Member>
+<Member Name="d_int" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[I am an integer.]]>
+</Description>
+</Member>
+<Member Name="tmr_timer" DataType="FBD_TIMER" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[I am a timer.]]>
+</Description>
+</Member>
+</Members>
+</DataType>
+<DataType Name="DIVERT_PACKET_800_001_A_EL" Family="NoFamily" Class="User">
+<Members>
+<Member Name="DIVERT_PACKET_800_001_A_BM" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>      
+<Member Name="b_creation_event" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="DIVERT_PACKET_800_001_A_BM" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The b_creation_event creates the assigner so it can start to execute it's state machine.]]>
+</Description>
+</Member>
+<Member Name="b_calc_new_position" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="DIVERT_PACKET_800_001_A_BM" BitNumber="1" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="DIVERT_PACKET_800_001_A_EVT" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Data structure for all events and event data included in structure 'DIVERT_PACKET_800_001_A'.]]>
+</Description>
+<Members>
+<Member Name="evt_lst" DataType="DIVERT_PACKET_800_001_A_EL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="DIVERT_PACKET_800_001_A" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Divert Packet'
+'Divert Packet' Assigner State Model]]>
+</Description>
+<Members>
+<Member Name="events" DataType="DIVERT_PACKET_800_001_A_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="asm" DataType="STATE_MACHINE_TRANSITION_CONTROL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_current_state" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="TRACKING_POINT_800_004_A_EL" Family="NoFamily" Class="User">
+<Members>
+<Member Name="TRACKING_POINT_800_004_A_BM" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>      
+<Member Name="b_creation_event" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="TRACKING_POINT_800_004_A_BM" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The b_creation_event creates the assigner so it can start to execute it's state machine.]]>
+</Description>
+</Member>
+<Member Name="b_correct_position" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="TRACKING_POINT_800_004_A_BM" BitNumber="1" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="TRACKING_POINT_800_004_A_EVT" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Data structure for all events and event data included in structure 'TRACKING_POINT_800_004_A'.]]>
+</Description>
+<Members>
+<Member Name="evt_lst" DataType="TRACKING_POINT_800_004_A_EL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="TRACKING_POINT_800_004_A" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'Diverter::Design::Model::Diverter::Subsys::Tracking Point'
+'Tracking Point' Assigner State Model]]>
+</Description>
+<Members>
+<Member Name="events" DataType="TRACKING_POINT_800_004_A_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="asm" DataType="STATE_MACHINE_TRANSITION_CONTROL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_current_state" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="MOTION_INSTRUCTION_900_001_A_EL" Family="NoFamily" Class="User">
+<Members>
+<Member Name="MOTION_INSTRUCTION_900_001_A_BM" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>      
+<Member Name="b_creation_event" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTION_INSTRUCTION_900_001_A_BM" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The b_creation_event creates the assigner so it can start to execute it's state machine.]]>
+</Description>
+</Member>
+<Member Name="b_jog_instruction_received" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTION_INSTRUCTION_900_001_A_BM" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="b_drive_enabled" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTION_INSTRUCTION_900_001_A_BM" BitNumber="2" ExternalAccess="Read/Write"/>
+<Member Name="b_motion_complete" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTION_INSTRUCTION_900_001_A_BM" BitNumber="3" ExternalAccess="Read/Write"/>
+<Member Name="b_drive_disabled" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTION_INSTRUCTION_900_001_A_BM" BitNumber="5" ExternalAccess="Read/Write"/>
+<Member Name="b_drive_disable_lockout" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="MOTION_INSTRUCTION_900_001_A_BM" BitNumber="4" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="MOTION_INSTRUCTION_900_001_A_EVT" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Data structure for all events and event data included in structure 'MOTION_INSTRUCTION_900_001_A'.]]>
+</Description>
+<Members>
+<Member Name="evt_lst" DataType="MOTION_INSTRUCTION_900_001_A_EL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="MOTION_INSTRUCTION_900_001_A" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Qualified Name: 'VelocityControlDrive::Design::Velocity Control Drive::Subsys::Motion Instruction'
+'Motion Instruction' Assigner State Model]]>
+</Description>
+<Members>
+<Member Name="events" DataType="MOTION_INSTRUCTION_900_001_A_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="asm" DataType="STATE_MACHINE_TRANSITION_CONTROL" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="d_current_state" DataType="DINT" Dimension="0" Radix="decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="KSC_SYSTEM_DATA" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Structure includes all object structures in the program.]]>
+</Description>
+<Members>
+<Member Name="xtfr_jog_switch_000_001" DataType="XTFR_JOG_SWITCH_000_001" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="automatic_sequence_800_013" DataType="AUTOMATIC_SEQUENCE_800_013" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="conveyor_length_rollout_800_015" DataType="CONVEYOR_LENGTH_ROLLOUT_800_015" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="cross_transfer_conveyor_800_007" DataType="CROSS_TRANSFER_CONVEYOR_800_007" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="hesitating_rollout_800_014" DataType="HESITATING_ROLLOUT_800_014" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="manual_sequence_800_011" DataType="MANUAL_SEQUENCE_800_011" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="motion_inhibited_800_012" DataType="MOTION_INHIBITED_800_012" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="actuator_800_003" DataType="ACTUATOR_800_003" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="air_blast_800_010" DataType="AIR_BLAST_800_010" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="divert_packet_800_001" DataType="DIVERT_PACKET_800_001" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="divert_packet_800_001_a" DataType="DIVERT_PACKET_800_001_A" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="divert_sheet_800_002" DataType="DIVERT_SHEET_800_002" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="divert_stack_800_005" DataType="DIVERT_STACK_800_005" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="diverter_bay_800_006" DataType="DIVERTER_BAY_800_006" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="diverter_pan_800_009" DataType="DIVERTER_PAN_800_009" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="fingers_800_008" DataType="FINGERS_800_008" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="tracking_point_800_004" DataType="TRACKING_POINT_800_004" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="tracking_point_800_004_a" DataType="TRACKING_POINT_800_004_A" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="drive_enable_900_002" DataType="DRIVE_ENABLE_900_002" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="motion_controller_900_003" DataType="MOTION_CONTROLLER_900_003" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="motion_instruction_900_001" DataType="MOTION_INSTRUCTION_900_001" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="motion_instruction_900_001_a" DataType="MOTION_INSTRUCTION_900_001_A" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="motor_drive_900_007" DataType="MOTOR_DRIVE_900_007" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="EVENT_MAILBOX" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Structure includes all event structures in the program.]]>
+</Description>
+<Members>
+<Member Name="event_automatic_sequence_800_013" DataType="AUTOMATIC_SEQUENCE_800_013_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="event_conveyor_length_rollout_800_015" DataType="CONVEYOR_LENGTH_ROLLOUT_800_015_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="event_cross_transfer_conveyor_800_007" DataType="CROSS_TRANSFER_CONVEYOR_800_007_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="event_hesitating_rollout_800_014" DataType="HESITATING_ROLLOUT_800_014_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="event_manual_sequence_800_011" DataType="MANUAL_SEQUENCE_800_011_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+
+<Member Name="event_actuator_800_003" DataType="ACTUATOR_800_003_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="event_air_blast_800_010" DataType="AIR_BLAST_800_010_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="event_divert_packet_800_001_a" DataType="DIVERT_PACKET_800_001_A_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="event_diverter_bay_800_006" DataType="DIVERTER_BAY_800_006_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="event_diverter_pan_800_009" DataType="DIVERTER_PAN_800_009_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="event_fingers_800_008" DataType="FINGERS_800_008_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="event_tracking_point_800_004_a" DataType="TRACKING_POINT_800_004_A_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="event_drive_enable_900_002" DataType="DRIVE_ENABLE_900_002_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="event_motion_controller_900_003" DataType="MOTION_CONTROLLER_900_003_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="event_motion_instruction_900_001_a" DataType="MOTION_INSTRUCTION_900_001_A_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="event_motor_drive_900_007" DataType="MOTOR_DRIVE_900_007_EVT" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+</DataTypes>
+</Controller>
+</RSLogix5000Content>

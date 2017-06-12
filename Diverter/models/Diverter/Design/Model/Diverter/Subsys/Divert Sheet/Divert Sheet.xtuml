@@ -1,0 +1,196 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("c06f4827-2810-4d7f-9b50-0e5bfeccfdce",
+	'Divert Sheet',
+	2,
+	'DVRTSHT',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("cd13520f-3b43-4661-9ff9-94812cad1e8a",
+	"c06f4827-2810-4d7f-9b50-0e5bfeccfdce",
+	'UpdatePosition',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'/* Update the tracked sheet''s position, check if any tracking points have been
+   reached, if so fire the events off, remove tracked sheet if it has no more
+   tracking points and add it to the stack.
+*/
+
+// Update position of sheet
+if self.position - self.length < 0;
+   // This sheet is still part of the web, use distance the web moved
+   self.position = self.position + param.web_travel_dist;
+else;
+   // This sheet has been cut off and is under the control of the sheet handler
+   self.position = self.position + param.sheet_travel_dist;
+end if;
+
+// Find the tracking points that should be fired
+select many tracking_points related by self->TRKPT[R3] where 
+   (selected.edge_to_track == Sheet_End::Leading and 
+    self.position >= selected.effective_position) or
+   (selected.edge_to_track == Sheet_End::Trailing and 
+    self.position - self.length >= selected.effective_position);
+      
+for each tracking_point in tracking_points;
+   // Send the event to the actuator
+   select one actuator related by tracking_point->ACTR[R3];
+   if tracking_point.type == Actuator_Event_Type::Engage_Material;
+      generate ACTR1:activate() to actuator;
+   else;
+      generate ACTR2:de_activate() to actuator;
+   end if;
+     
+   // Remove the tracking point
+   unrelate actuator from self across R3 using tracking_point;
+   delete object instance tracking_point;
+end for;
+
+/* Check to see if this tracked_sheet has any more tracking points, if not,
+   it is a candidate for deletion.
+*/
+if self.position - self.length >= 0;  // The sheet must be severed from web
+   select any tracking_point related by self->TRKPT[R3];
+   if empty tracking_point;
+      // Inform the Divert Packet this sheet has been diverted
+      select one divert_packet related by self->DVRTPKT[R2];
+      divert_packet.SheetDiverted();
+   
+      delete object instance self;
+   end if;
+end if;
+',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TPARM
+	VALUES ("84a6e125-e9a5-4a69-bf97-3c97c01a2a3a",
+	"cd13520f-3b43-4661-9ff9-94812cad1e8a",
+	'web_travel_dist',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("35510c81-39c9-41b2-bbb1-1b9b2bae7386",
+	"cd13520f-3b43-4661-9ff9-94812cad1e8a",
+	'sheet_travel_dist',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"84a6e125-e9a5-4a69-bf97-3c97c01a2a3a",
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("0a7a02b2-0810-4b8d-ad46-2c29fa1cb803",
+	"c06f4827-2810-4d7f-9b50-0e5bfeccfdce");
+INSERT INTO O_BATTR
+	VALUES ("0a7a02b2-0810-4b8d-ad46-2c29fa1cb803",
+	"c06f4827-2810-4d7f-9b50-0e5bfeccfdce");
+INSERT INTO O_ATTR
+	VALUES ("0a7a02b2-0810-4b8d-ad46-2c29fa1cb803",
+	"c06f4827-2810-4d7f-9b50-0e5bfeccfdce",
+	"9b342614-a038-4953-ba36-4226f490993c",
+	'position',
+	'Units = mm
+The position of a divert sheet is defined as the distance between the leading
+edge of the sheet and the knife cut line.  If the leading edge of the sheet has
+not yet reached the knife cut line the distance will be negative.',
+	'',
+	'position',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("9b342614-a038-4953-ba36-4226f490993c",
+	"c06f4827-2810-4d7f-9b50-0e5bfeccfdce");
+INSERT INTO O_BATTR
+	VALUES ("9b342614-a038-4953-ba36-4226f490993c",
+	"c06f4827-2810-4d7f-9b50-0e5bfeccfdce");
+INSERT INTO O_ATTR
+	VALUES ("9b342614-a038-4953-ba36-4226f490993c",
+	"c06f4827-2810-4d7f-9b50-0e5bfeccfdce",
+	"00000000-0000-0000-0000-000000000000",
+	'Id',
+	'',
+	'',
+	'Id',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("d576eaad-c7c6-4fc5-9902-c3503c2b0391",
+	"c06f4827-2810-4d7f-9b50-0e5bfeccfdce");
+INSERT INTO O_BATTR
+	VALUES ("d576eaad-c7c6-4fc5-9902-c3503c2b0391",
+	"c06f4827-2810-4d7f-9b50-0e5bfeccfdce");
+INSERT INTO O_ATTR
+	VALUES ("d576eaad-c7c6-4fc5-9902-c3503c2b0391",
+	"c06f4827-2810-4d7f-9b50-0e5bfeccfdce",
+	"0a7a02b2-0810-4b8d-ad46-2c29fa1cb803",
+	'length',
+	'',
+	'',
+	'length',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"c06f4827-2810-4d7f-9b50-0e5bfeccfdce");
+INSERT INTO O_OIDA
+	VALUES ("9b342614-a038-4953-ba36-4226f490993c",
+	"c06f4827-2810-4d7f-9b50-0e5bfeccfdce",
+	0,
+	'Id');
+INSERT INTO O_ID
+	VALUES (1,
+	"c06f4827-2810-4d7f-9b50-0e5bfeccfdce");
+INSERT INTO O_ID
+	VALUES (2,
+	"c06f4827-2810-4d7f-9b50-0e5bfeccfdce");
+INSERT INTO PE_PE
+	VALUES ("c06f4827-2810-4d7f-9b50-0e5bfeccfdce",
+	1,
+	"dc4131cd-6623-4946-bae6-3107b2be2c64",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("dc4131cd-6623-4946-bae6-3107b2be2c64",
+	"00000000-0000-0000-0000-000000000000",
+	"a4578804-6c2e-4c96-9428-cb3a7061868f",
+	'Subsys',
+	'The class diagram for the diverter may appear to be more abstract than necessary,
+but there are characteristics of the diverter operation that make the abstraction
+necessary.  
+
+Establishing relationships between the diverted sheets (product) and the actuated 
+components would have been the logical choice.  Thestate machines to control the 
+actuators would have resided within the product.  As the product flows along the 
+board path, it''s state machine would trigger actions on the machine.  This model 
+fails because the actuation time delays of the actuators are configurable and 
+therefore does not guarantee the sequence of events generated.  Using product 
+state machines to control the actuators is non-deterministic.
+
+The approach taken in this model is to use a tracking point class to establish the
+relationship between the product and the actuators.  The tracking points are in 
+no particular order and trigger an action only when the divert sheet reaches a 
+calculated position along the board path.  The tracking points have no 
+understanding of what actions occurred before them or will occur after them.
+
+The key point of this model is the sequence of actions of the diverter is not set
+in a state machine, but is dynamic and therefore easily changed. 
+
+The cross transfer conveyor is different.  It receives a tracking event near the 
+beginning of the divert sequence to stop the conveyor prior to the first divert
+sheet entering the diverter bay.  The conveyor may be moving from a user activity.
+After that point, the cross transfer conveyor actions are driven by the diverter 
+bay and ultimately the diverted stack, whether it is scrap or inspection. ',
+	0,
+	'../Subsys.xtuml');

@@ -1,0 +1,555 @@
+-- root-types-contained: SystemModel_c,PackageableElement_c,DataType_c,CoreDataType_c,UserDataType_c
+-- BP 7.1 content: StreamData syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO S_SYS
+	VALUES (1,
+	'Intf_Diverter',
+	1);
+INSERT INTO EP_PKG
+	VALUES (2,
+	1,
+	1,
+	'DataTypes',
+	'',
+	0);
+INSERT INTO PE_PE
+	VALUES (3,
+	1,
+	2,
+	0,
+	3);
+INSERT INTO S_DT
+	VALUES (3,
+	0,
+	'Divert_Packet',
+	'',
+	'');
+INSERT INTO S_EDT
+	VALUES (3);
+INSERT INTO S_ENUM
+	VALUES (4,
+	'Scrap',
+	'',
+	3,
+	0);
+INSERT INTO S_ENUM
+	VALUES (5,
+	'Inspection',
+	'',
+	3,
+	4);
+INSERT INTO PE_PE
+	VALUES (6,
+	1,
+	2,
+	0,
+	3);
+INSERT INTO S_DT
+	VALUES (6,
+	0,
+	'Jog_Switch_Position',
+	'',
+	'');
+INSERT INTO S_EDT
+	VALUES (6);
+INSERT INTO S_ENUM
+	VALUES (7,
+	'Stop',
+	'',
+	6,
+	0);
+INSERT INTO S_ENUM
+	VALUES (8,
+	'Operator',
+	'',
+	6,
+	7);
+INSERT INTO S_ENUM
+	VALUES (9,
+	'Drive',
+	'',
+	6,
+	8);
+INSERT INTO S_ENUM
+	VALUES (10,
+	'Impossible',
+	'',
+	6,
+	9);
+INSERT INTO EP_PKG
+	VALUES (11,
+	1,
+	1,
+	'DiverterInterfaces',
+	'',
+	0);
+INSERT INTO PE_PE
+	VALUES (12,
+	1,
+	11,
+	0,
+	6);
+INSERT INTO C_I
+	VALUES (12,
+	0,
+	'DivertMotor',
+	'');
+INSERT INTO PE_PE
+	VALUES (13,
+	1,
+	11,
+	0,
+	6);
+INSERT INTO C_I
+	VALUES (13,
+	0,
+	'DiverterClient',
+	'');
+INSERT INTO C_EP
+	VALUES (14,
+	13,
+	-1,
+	'divert_pending',
+	'');
+INSERT INTO C_AS
+	VALUES (14,
+	'divert_pending',
+	'',
+	0,
+	0);
+INSERT INTO C_PP
+	VALUES (15,
+	14,
+	3,
+	'divert_type',
+	'',
+	0,
+	'',
+	0);
+INSERT INTO C_PP
+	VALUES (16,
+	14,
+	17,
+	'packet_start_position',
+	'',
+	0,
+	'',
+	15);
+INSERT INTO C_PP
+	VALUES (18,
+	14,
+	17,
+	'sheet_length',
+	'',
+	0,
+	'',
+	16);
+INSERT INTO C_PP
+	VALUES (19,
+	14,
+	17,
+	'number_of_sheets',
+	'',
+	0,
+	'',
+	18);
+INSERT INTO C_EP
+	VALUES (20,
+	13,
+	-1,
+	'diverter_ready',
+	'');
+INSERT INTO C_AS
+	VALUES (20,
+	'diverter_ready',
+	'',
+	1,
+	14);
+INSERT INTO C_PP
+	VALUES (21,
+	20,
+	22,
+	'ready',
+	'',
+	0,
+	'',
+	0);
+INSERT INTO C_EP
+	VALUES (23,
+	13,
+	-1,
+	'request_status',
+	'True - Diverter Ready, False - Diverter Not Ready
+Operation returns the current state of the diverter system.  
+');
+INSERT INTO C_IO
+	VALUES (23,
+	22,
+	'request_status',
+	'True - Diverter Ready, False - Diverter Not Ready
+Operation returns the current state of the diverter system.  
+',
+	0,
+	'',
+	0);
+INSERT INTO C_EP
+	VALUES (24,
+	13,
+	-1,
+	'get_xtfr_jog_switch_position',
+	'');
+INSERT INTO C_IO
+	VALUES (24,
+	6,
+	'get_xtfr_jog_switch_position',
+	'',
+	1,
+	'',
+	23);
+INSERT INTO C_EP
+	VALUES (25,
+	13,
+	-1,
+	'xtfr_jog_switch_position_changed',
+	'');
+INSERT INTO C_AS
+	VALUES (25,
+	'xtfr_jog_switch_position_changed',
+	'',
+	0,
+	20);
+INSERT INTO C_PP
+	VALUES (26,
+	25,
+	6,
+	'new_position',
+	'',
+	0,
+	'',
+	0);
+INSERT INTO PE_PE
+	VALUES (27,
+	1,
+	11,
+	0,
+	6);
+INSERT INTO C_I
+	VALUES (27,
+	0,
+	'E_to_P',
+	'');
+INSERT INTO C_EP
+	VALUES (28,
+	27,
+	-1,
+	'set_pressure',
+	'');
+INSERT INTO C_IO
+	VALUES (28,
+	29,
+	'set_pressure',
+	'',
+	0,
+	'',
+	0);
+INSERT INTO C_PP
+	VALUES (30,
+	28,
+	17,
+	'pressure',
+	'',
+	0,
+	'',
+	0);
+INSERT INTO PE_PE
+	VALUES (31,
+	1,
+	11,
+	0,
+	6);
+INSERT INTO C_I
+	VALUES (31,
+	0,
+	'PneumaticControlValve',
+	'');
+INSERT INTO PE_PE
+	VALUES (32,
+	1,
+	11,
+	0,
+	6);
+INSERT INTO C_I
+	VALUES (32,
+	0,
+	'SpeedSignal',
+	'');
+INSERT INTO C_EP
+	VALUES (33,
+	32,
+	-1,
+	'CutPulse',
+	'');
+INSERT INTO C_AS
+	VALUES (33,
+	'CutPulse',
+	'',
+	1,
+	0);
+INSERT INTO PE_PE
+	VALUES (29,
+	1,
+	0,
+	0,
+	3);
+INSERT INTO S_DT
+	VALUES (29,
+	0,
+	'void',
+	'',
+	'');
+INSERT INTO S_CDT
+	VALUES (29,
+	0);
+INSERT INTO PE_PE
+	VALUES (22,
+	1,
+	0,
+	0,
+	3);
+INSERT INTO S_DT
+	VALUES (22,
+	0,
+	'boolean',
+	'',
+	'');
+INSERT INTO S_CDT
+	VALUES (22,
+	1);
+INSERT INTO PE_PE
+	VALUES (17,
+	1,
+	0,
+	0,
+	3);
+INSERT INTO S_DT
+	VALUES (17,
+	0,
+	'integer',
+	'',
+	'');
+INSERT INTO S_CDT
+	VALUES (17,
+	2);
+INSERT INTO PE_PE
+	VALUES (34,
+	1,
+	0,
+	0,
+	3);
+INSERT INTO S_DT
+	VALUES (34,
+	0,
+	'real',
+	'',
+	'');
+INSERT INTO S_CDT
+	VALUES (34,
+	3);
+INSERT INTO PE_PE
+	VALUES (35,
+	1,
+	0,
+	0,
+	3);
+INSERT INTO S_DT
+	VALUES (35,
+	0,
+	'string',
+	'',
+	'');
+INSERT INTO S_CDT
+	VALUES (35,
+	4);
+INSERT INTO PE_PE
+	VALUES (36,
+	1,
+	0,
+	0,
+	3);
+INSERT INTO S_DT
+	VALUES (36,
+	0,
+	'unique_id',
+	'',
+	'');
+INSERT INTO S_CDT
+	VALUES (36,
+	5);
+INSERT INTO PE_PE
+	VALUES (37,
+	1,
+	0,
+	0,
+	3);
+INSERT INTO S_DT
+	VALUES (37,
+	0,
+	'state<State_Model>',
+	'',
+	'');
+INSERT INTO S_CDT
+	VALUES (37,
+	6);
+INSERT INTO PE_PE
+	VALUES (38,
+	1,
+	0,
+	0,
+	3);
+INSERT INTO S_DT
+	VALUES (38,
+	0,
+	'same_as<Base_Attribute>',
+	'',
+	'');
+INSERT INTO S_CDT
+	VALUES (38,
+	7);
+INSERT INTO PE_PE
+	VALUES (39,
+	1,
+	0,
+	0,
+	3);
+INSERT INTO S_DT
+	VALUES (39,
+	0,
+	'inst_ref<Object>',
+	'',
+	'');
+INSERT INTO S_CDT
+	VALUES (39,
+	8);
+INSERT INTO PE_PE
+	VALUES (40,
+	1,
+	0,
+	0,
+	3);
+INSERT INTO S_DT
+	VALUES (40,
+	0,
+	'inst_ref_set<Object>',
+	'',
+	'');
+INSERT INTO S_CDT
+	VALUES (40,
+	9);
+INSERT INTO PE_PE
+	VALUES (41,
+	1,
+	0,
+	0,
+	3);
+INSERT INTO S_DT
+	VALUES (41,
+	0,
+	'inst<Event>',
+	'',
+	'');
+INSERT INTO S_CDT
+	VALUES (41,
+	10);
+INSERT INTO PE_PE
+	VALUES (42,
+	1,
+	0,
+	0,
+	3);
+INSERT INTO S_DT
+	VALUES (42,
+	0,
+	'inst<Mapping>',
+	'',
+	'');
+INSERT INTO S_CDT
+	VALUES (42,
+	11);
+INSERT INTO PE_PE
+	VALUES (43,
+	1,
+	0,
+	0,
+	3);
+INSERT INTO S_DT
+	VALUES (43,
+	0,
+	'inst_ref<Mapping>',
+	'',
+	'');
+INSERT INTO S_CDT
+	VALUES (43,
+	12);
+INSERT INTO PE_PE
+	VALUES (44,
+	1,
+	0,
+	0,
+	3);
+INSERT INTO S_DT
+	VALUES (44,
+	0,
+	'component_ref',
+	'',
+	'');
+INSERT INTO S_CDT
+	VALUES (44,
+	13);
+INSERT INTO PE_PE
+	VALUES (45,
+	1,
+	0,
+	0,
+	3);
+INSERT INTO S_DT
+	VALUES (45,
+	0,
+	'date',
+	'',
+	'');
+INSERT INTO S_UDT
+	VALUES (45,
+	42,
+	1);
+INSERT INTO PE_PE
+	VALUES (46,
+	1,
+	0,
+	0,
+	3);
+INSERT INTO S_DT
+	VALUES (46,
+	0,
+	'inst_ref<Timer>',
+	'',
+	'');
+INSERT INTO S_UDT
+	VALUES (46,
+	43,
+	3);
+INSERT INTO PE_PE
+	VALUES (47,
+	1,
+	0,
+	0,
+	3);
+INSERT INTO S_DT
+	VALUES (47,
+	0,
+	'timestamp',
+	'',
+	'');
+INSERT INTO S_UDT
+	VALUES (47,
+	42,
+	2);

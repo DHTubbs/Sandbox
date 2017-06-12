@@ -1,0 +1,136 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("486d54bc-ee94-4a64-a1d6-fdf91050f010",
+	"00000000-0000-0000-0000-000000000000",
+	'VelocityControlDrive',
+	'');
+INSERT INTO C_EP
+	VALUES ("53d569a8-e722-4a0a-aadb-c95aa7042db7",
+	"486d54bc-ee94-4a64-a1d6-fdf91050f010",
+	-1,
+	'enable_drive',
+	'');
+INSERT INTO C_AS
+	VALUES ("53d569a8-e722-4a0a-aadb-c95aa7042db7",
+	'enable_drive',
+	'',
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("702178d7-e797-4e6e-9d25-fe3cb6843475",
+	"53d569a8-e722-4a0a-aadb-c95aa7042db7",
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'enable',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("d7bcdc2b-f917-4b82-b213-48faa98c11d9",
+	"486d54bc-ee94-4a64-a1d6-fdf91050f010",
+	-1,
+	'jog_motor',
+	'');
+INSERT INTO C_AS
+	VALUES ("d7bcdc2b-f917-4b82-b213-48faa98c11d9",
+	'jog_motor',
+	'',
+	0,
+	"53d569a8-e722-4a0a-aadb-c95aa7042db7");
+INSERT INTO C_PP
+	VALUES ("ba969aac-5f63-4bc4-a11b-8d041d33147d",
+	"d7bcdc2b-f917-4b82-b213-48faa98c11d9",
+	"10a457d6-e25e-4dbe-a48f-0682e976c4bf",
+	'motor_direction',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_DT_PROXY
+	VALUES ("10a457d6-e25e-4dbe-a48f-0682e976c4bf",
+	"00000000-0000-0000-0000-000000000000",
+	'MotorDirection',
+	'',
+	'',
+	'../../../DataTypes/DataTypes.xtuml');
+INSERT INTO C_PP
+	VALUES ("afc1cc48-75da-4073-9931-d618f8cbe043",
+	"d7bcdc2b-f917-4b82-b213-48faa98c11d9",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'velocity',
+	'',
+	0,
+	'',
+	"ba969aac-5f63-4bc4-a11b-8d041d33147d");
+INSERT INTO C_PP
+	VALUES ("2adf2521-a53f-42c4-9a4a-7901b887fe88",
+	"d7bcdc2b-f917-4b82-b213-48faa98c11d9",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'acceleration',
+	'',
+	0,
+	'',
+	"afc1cc48-75da-4073-9931-d618f8cbe043");
+INSERT INTO C_EP
+	VALUES ("3c759268-cd74-44ce-a96a-ee9613bd2bf9",
+	"486d54bc-ee94-4a64-a1d6-fdf91050f010",
+	-1,
+	'stop_motor',
+	'');
+INSERT INTO C_AS
+	VALUES ("3c759268-cd74-44ce-a96a-ee9613bd2bf9",
+	'stop_motor',
+	'',
+	0,
+	"d7bcdc2b-f917-4b82-b213-48faa98c11d9");
+INSERT INTO C_EP
+	VALUES ("fe662bcf-cad1-44e3-9233-fa69e9673b17",
+	"486d54bc-ee94-4a64-a1d6-fdf91050f010",
+	-1,
+	'in_progress',
+	'');
+INSERT INTO C_AS
+	VALUES ("fe662bcf-cad1-44e3-9233-fa69e9673b17",
+	'in_progress',
+	'',
+	1,
+	"3c759268-cd74-44ce-a96a-ee9613bd2bf9");
+INSERT INTO C_EP
+	VALUES ("8f4cc710-e755-4de3-9960-78096a7939cf",
+	"486d54bc-ee94-4a64-a1d6-fdf91050f010",
+	-1,
+	'done',
+	'');
+INSERT INTO C_AS
+	VALUES ("8f4cc710-e755-4de3-9960-78096a7939cf",
+	'done',
+	'',
+	1,
+	"fe662bcf-cad1-44e3-9233-fa69e9673b17");
+INSERT INTO C_EP
+	VALUES ("72961ccb-724d-49c4-ab17-022addb14ad9",
+	"486d54bc-ee94-4a64-a1d6-fdf91050f010",
+	-1,
+	'error',
+	'');
+INSERT INTO C_AS
+	VALUES ("72961ccb-724d-49c4-ab17-022addb14ad9",
+	'error',
+	'',
+	1,
+	"8f4cc710-e755-4de3-9960-78096a7939cf");
+INSERT INTO PE_PE
+	VALUES ("486d54bc-ee94-4a64-a1d6-fdf91050f010",
+	1,
+	"10a53713-b180-4892-bb73-5b5ec5d3d1a7",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("10a53713-b180-4892-bb73-5b5ec5d3d1a7",
+	"00000000-0000-0000-0000-000000000000",
+	"b6a5fceb-2ea9-495a-9b5b-6b1439da1cae",
+	'VelocityControlDrive',
+	'',
+	0,
+	'../VelocityControlDrive.xtuml');

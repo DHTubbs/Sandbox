@@ -1,0 +1,30 @@
+(* Model Identifiers
+     Component (Number):  ()
+         Class (Number): Cross Transfer Conveyor ()
+              Operation: GetMotorDirection
+         Qualified Name: ::GetMotorDirection
+   
+Description: Converts a machine side into a motor direction to run the conveyor in the correct
+			 direction.
+
+Signature: JSR( ___opGetMotorDirection, 1, , (* TODO: Return Type: Motor_Direction *) );
+*)
+
+SBR(  );
+
+(*	Action:
+
+	motor_dir = self.drive_side;
+	if param.machine_side == Machine_Side::Operator;
+	   motor_dir = Motor_Direction::Forward;
+	   if self.drive_side == Motor_Direction::Forward;
+	      motor_dir = Motor_Direction::Reverse;
+	   end if;
+	end if;
+	
+	return motor_dir;
+*)
+
+(* TODO: Implement operation action code here *)
+
+RET( (* TODO: Return Type: Motor_Direction *) );

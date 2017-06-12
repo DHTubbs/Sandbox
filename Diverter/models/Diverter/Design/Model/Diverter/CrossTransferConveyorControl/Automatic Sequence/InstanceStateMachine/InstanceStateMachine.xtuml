@@ -1,0 +1,62 @@
+-- BP 7.1.6 content: InstanceStateMachine syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO SM_ISM
+	VALUES ("3885572d-7ef9-4b8f-b1a1-4aee8b0d092d",
+	"fe5c048c-e29b-4151-9315-f458dfaaea1e");
+INSERT INTO SM_SM
+	VALUES ("3885572d-7ef9-4b8f-b1a1-4aee8b0d092d",
+	'',
+	0);
+INSERT INTO SM_MOORE
+	VALUES ("3885572d-7ef9-4b8f-b1a1-4aee8b0d092d");
+INSERT INTO SM_PEVT
+	VALUES ("3357b94a-c8eb-49a3-a7f0-e8dc85ede7c4",
+	"3885572d-7ef9-4b8f-b1a1-4aee8b0d092d",
+	"00000000-0000-0000-0000-000000000000",
+	'Automatic Sequence',
+	'AUTOSEQ',
+	'initiate_auto_seq');
+INSERT INTO SM_EVT
+	VALUES ("3357b94a-c8eb-49a3-a7f0-e8dc85ede7c4",
+	"3885572d-7ef9-4b8f-b1a1-4aee8b0d092d",
+	"00000000-0000-0000-0000-000000000000",
+	11,
+	'initiate_auto_seq',
+	0,
+	'',
+	'AUTOSEQ11',
+	'');
+INSERT INTO GD_MD
+	VALUES ("b80a29a9-ac5e-4d47-bf3b-2811bc0642f7",
+	8,
+	"3885572d-7ef9-4b8f-b1a1-4aee8b0d092d",
+	40,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'4.1.17',
+	'Diverter::Design::Model::Diverter::CrossTransferConveyorControl::Automatic Sequence::Instance State Machine');
+INSERT INTO DIM_DIA
+	VALUES ("b80a29a9-ac5e-4d47-bf3b-2811bc0642f7",
+	'',
+	1.000000,
+	4000.000000,
+	3000.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_OBJ_PROXY
+	VALUES ("fe5c048c-e29b-4151-9315-f458dfaaea1e",
+	'Automatic Sequence',
+	13,
+	'AUTOSEQ',
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'../Automatic Sequence.xtuml');

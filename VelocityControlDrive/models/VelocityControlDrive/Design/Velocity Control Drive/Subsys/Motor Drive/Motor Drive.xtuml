@@ -1,0 +1,158 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("af004aa1-2914-423c-b3bb-1c83f0cb3c8f",
+	'Motor Drive',
+	7,
+	'MTRDRV',
+	'I am the class description.',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("8172c112-b822-4ac6-a1d3-8ef616253c05",
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f");
+INSERT INTO O_BATTR
+	VALUES ("8172c112-b822-4ac6-a1d3-8ef616253c05",
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f");
+INSERT INTO O_ATTR
+	VALUES ("8172c112-b822-4ac6-a1d3-8ef616253c05",
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f",
+	"00000000-0000-0000-0000-000000000000",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("3d46b6a4-8c0d-4c9f-8981-2c0e15fd557f",
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f");
+INSERT INTO O_BATTR
+	VALUES ("3d46b6a4-8c0d-4c9f-8981-2c0e15fd557f",
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f");
+INSERT INTO O_ATTR
+	VALUES ("3d46b6a4-8c0d-4c9f-8981-2c0e15fd557f",
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f",
+	"8172c112-b822-4ac6-a1d3-8ef616253c05",
+	'str',
+	'I am a string.',
+	'',
+	'str',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("7caf6226-172f-4bf1-a650-245c0ae24eb9",
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f");
+INSERT INTO O_BATTR
+	VALUES ("7caf6226-172f-4bf1-a650-245c0ae24eb9",
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f");
+INSERT INTO O_ATTR
+	VALUES ("7caf6226-172f-4bf1-a650-245c0ae24eb9",
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f",
+	"3d46b6a4-8c0d-4c9f-8981-2c0e15fd557f",
+	'rl',
+	'I am a real.',
+	'',
+	'rl',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("8fd6f487-ff79-4454-9e0a-b0498806121b",
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f");
+INSERT INTO O_BATTR
+	VALUES ("8fd6f487-ff79-4454-9e0a-b0498806121b",
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f");
+INSERT INTO O_ATTR
+	VALUES ("8fd6f487-ff79-4454-9e0a-b0498806121b",
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f",
+	"7caf6226-172f-4bf1-a650-245c0ae24eb9",
+	'b1',
+	'I am a boolean.',
+	'',
+	'b1',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("dc9f55dd-61cd-4c9a-bf67-69783418bf14",
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f");
+INSERT INTO O_BATTR
+	VALUES ("dc9f55dd-61cd-4c9a-bf67-69783418bf14",
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f");
+INSERT INTO O_ATTR
+	VALUES ("dc9f55dd-61cd-4c9a-bf67-69783418bf14",
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f",
+	"8fd6f487-ff79-4454-9e0a-b0498806121b",
+	'b2',
+	'',
+	'',
+	'b2',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("ad6bbd05-256f-4dba-9588-5e272f82c17e",
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f");
+INSERT INTO O_BATTR
+	VALUES ("ad6bbd05-256f-4dba-9588-5e272f82c17e",
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f");
+INSERT INTO O_ATTR
+	VALUES ("ad6bbd05-256f-4dba-9588-5e272f82c17e",
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f",
+	"dc9f55dd-61cd-4c9a-bf67-69783418bf14",
+	'int',
+	'I am an integer.',
+	'',
+	'int',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("373774ef-32f9-4d0b-80a2-3e371e0ffb8e",
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f");
+INSERT INTO O_BATTR
+	VALUES ("373774ef-32f9-4d0b-80a2-3e371e0ffb8e",
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f");
+INSERT INTO O_ATTR
+	VALUES ("373774ef-32f9-4d0b-80a2-3e371e0ffb8e",
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f",
+	"ad6bbd05-256f-4dba-9588-5e272f82c17e",
+	'timer',
+	'I am a timer.',
+	'',
+	'timer',
+	0,
+	"ba5eda7a-def5-0000-0000-00000000000f",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f");
+INSERT INTO O_ID
+	VALUES (1,
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f");
+INSERT INTO O_ID
+	VALUES (2,
+	"af004aa1-2914-423c-b3bb-1c83f0cb3c8f");
+INSERT INTO PE_PE
+	VALUES ("af004aa1-2914-423c-b3bb-1c83f0cb3c8f",
+	1,
+	"c817c574-2133-4f0d-a669-d4ef72db35fd",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("c817c574-2133-4f0d-a669-d4ef72db35fd",
+	"00000000-0000-0000-0000-000000000000",
+	"96493490-05b1-4840-ab78-5af4de985c2e",
+	'Subsys',
+	'',
+	0,
+	'../Subsys.xtuml');

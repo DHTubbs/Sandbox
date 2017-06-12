@@ -1,0 +1,89 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("fa3692b4-8fcc-4dad-8796-b0ce0b8c24a2",
+	"00000000-0000-0000-0000-000000000000",
+	"96493490-05b1-4840-ab78-5af4de985c2e",
+	'Test',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("04cd9eb2-ac29-44e4-a46b-f098873bda19",
+	112,
+	"fa3692b4-8fcc-4dad-8796-b0ce0b8c24a2",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'VelocityControlDrive::UnitTest::Client::Test');
+INSERT INTO DIM_DIA
+	VALUES ("04cd9eb2-ac29-44e4-a46b-f098873bda19",
+	'',
+	1.000000,
+	4000.000000,
+	3000.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_SYNC
+	VALUES ("658a27a4-fea6-484b-b402-1cd11de0f816",
+	"00000000-0000-0000-0000-000000000000",
+	'Jog_1',
+	'',
+	'Port1::jog(direction: Motor_Direction::Forward, velocity: 42, acceleration: 2, duration: 5000);
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'');
+INSERT INTO PE_PE
+	VALUES ("658a27a4-fea6-484b-b402-1cd11de0f816",
+	1,
+	"fa3692b4-8fcc-4dad-8796-b0ce0b8c24a2",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("b6ed17b6-3de7-454c-b09e-24f7dcbf1436",
+	"00000000-0000-0000-0000-000000000000",
+	'Stop',
+	'',
+	'Port1::stop();
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'');
+INSERT INTO PE_PE
+	VALUES ("b6ed17b6-3de7-454c-b09e-24f7dcbf1436",
+	1,
+	"fa3692b4-8fcc-4dad-8796-b0ce0b8c24a2",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO PE_PE
+	VALUES ("fa3692b4-8fcc-4dad-8796-b0ce0b8c24a2",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"c07b32b7-fca4-408e-8b95-1d8346d6d939",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("c07b32b7-fca4-408e-8b95-1d8346d6d939",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'Client',
+	'',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'../Client.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("96493490-05b1-4840-ab78-5af4de985c2e",
+	'VelocityControlDrive',
+	1,
+	'../../../VelocityControlDrive.xtuml');

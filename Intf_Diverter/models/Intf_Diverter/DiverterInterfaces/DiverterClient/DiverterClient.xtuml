@@ -1,0 +1,157 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("1c4072df-4470-4866-9416-5fa08e4b28be",
+	"00000000-0000-0000-0000-000000000000",
+	'DiverterClient',
+	'');
+INSERT INTO C_EP
+	VALUES ("f057388f-df84-4155-94c4-b3fb64b631d2",
+	"1c4072df-4470-4866-9416-5fa08e4b28be",
+	-1,
+	'divert_pending',
+	'');
+INSERT INTO C_AS
+	VALUES ("f057388f-df84-4155-94c4-b3fb64b631d2",
+	'divert_pending',
+	'',
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("a1d04f96-6866-452c-b1c0-01fc438b7c4c",
+	"f057388f-df84-4155-94c4-b3fb64b631d2",
+	"e637c9ff-a804-4aef-b8eb-e6854f50cc68",
+	'divert_type',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_DT_PROXY
+	VALUES ("e637c9ff-a804-4aef-b8eb-e6854f50cc68",
+	"00000000-0000-0000-0000-000000000000",
+	'Divert Packet',
+	'',
+	'',
+	'../../DataTypes/DataTypes.xtuml');
+INSERT INTO C_PP
+	VALUES ("7dbd1f14-2ca8-4481-879b-039ebdef131f",
+	"f057388f-df84-4155-94c4-b3fb64b631d2",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'packet_start_position',
+	'',
+	0,
+	'',
+	"a1d04f96-6866-452c-b1c0-01fc438b7c4c");
+INSERT INTO C_PP
+	VALUES ("891e5c83-c654-415c-bf46-9141a327aeb9",
+	"f057388f-df84-4155-94c4-b3fb64b631d2",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'sheet_length',
+	'',
+	0,
+	'',
+	"7dbd1f14-2ca8-4481-879b-039ebdef131f");
+INSERT INTO C_PP
+	VALUES ("024af0b9-5d13-4fca-bfec-7c530938e4f6",
+	"f057388f-df84-4155-94c4-b3fb64b631d2",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'number_of_sheets',
+	'',
+	0,
+	'',
+	"891e5c83-c654-415c-bf46-9141a327aeb9");
+INSERT INTO C_EP
+	VALUES ("75c6ef98-13ed-4d3f-af8e-966a6574358b",
+	"1c4072df-4470-4866-9416-5fa08e4b28be",
+	-1,
+	'diverter_ready',
+	'');
+INSERT INTO C_AS
+	VALUES ("75c6ef98-13ed-4d3f-af8e-966a6574358b",
+	'diverter_ready',
+	'',
+	1,
+	"f057388f-df84-4155-94c4-b3fb64b631d2");
+INSERT INTO C_PP
+	VALUES ("739dd604-8245-439f-8c0e-559e9487c05d",
+	"75c6ef98-13ed-4d3f-af8e-966a6574358b",
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'ready',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("617e5f69-340e-4966-9b58-2ed30ec3c58d",
+	"1c4072df-4470-4866-9416-5fa08e4b28be",
+	-1,
+	'request_status',
+	'True - Diverter Ready, False - Diverter Not Ready
+Operation returns the current state of the diverter system.  
+');
+INSERT INTO C_IO
+	VALUES ("617e5f69-340e-4966-9b58-2ed30ec3c58d",
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'request_status',
+	'True - Diverter Ready, False - Diverter Not Ready
+Operation returns the current state of the diverter system.  
+',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("c9114946-3cdf-4418-98be-3c89197a5f21",
+	"1c4072df-4470-4866-9416-5fa08e4b28be",
+	-1,
+	'get_xtfr_jog_switch_position',
+	'');
+INSERT INTO C_IO
+	VALUES ("c9114946-3cdf-4418-98be-3c89197a5f21",
+	"f69263cd-bbf1-4447-ab8c-6ca928791356",
+	'get_xtfr_jog_switch_position',
+	'',
+	1,
+	'',
+	"617e5f69-340e-4966-9b58-2ed30ec3c58d");
+INSERT INTO S_DT_PROXY
+	VALUES ("f69263cd-bbf1-4447-ab8c-6ca928791356",
+	"00000000-0000-0000-0000-000000000000",
+	'Jog Switch Position',
+	'',
+	'',
+	'../../DataTypes/DataTypes.xtuml');
+INSERT INTO C_EP
+	VALUES ("ad786695-010d-4e54-86a6-57e572786231",
+	"1c4072df-4470-4866-9416-5fa08e4b28be",
+	-1,
+	'xtfr_jog_switch_position_changed',
+	'');
+INSERT INTO C_AS
+	VALUES ("ad786695-010d-4e54-86a6-57e572786231",
+	'xtfr_jog_switch_position_changed',
+	'',
+	0,
+	"75c6ef98-13ed-4d3f-af8e-966a6574358b");
+INSERT INTO C_PP
+	VALUES ("08bf01d4-2033-48cc-a3d4-ee8bb4eb9520",
+	"ad786695-010d-4e54-86a6-57e572786231",
+	"f69263cd-bbf1-4447-ab8c-6ca928791356",
+	'new_position',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO PE_PE
+	VALUES ("1c4072df-4470-4866-9416-5fa08e4b28be",
+	1,
+	"554df2db-1a3d-4596-8aca-3a562bf45cb6",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("554df2db-1a3d-4596-8aca-3a562bf45cb6",
+	"5d6861b0-d06b-46b6-b4e1-a463d1fc8b18",
+	"5d6861b0-d06b-46b6-b4e1-a463d1fc8b18",
+	'DiverterInterfaces',
+	'',
+	0,
+	'../DiverterInterfaces.xtuml');

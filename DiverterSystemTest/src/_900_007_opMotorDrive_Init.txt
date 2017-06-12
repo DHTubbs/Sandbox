@@ -1,0 +1,20 @@
+(* Model Identifiers
+     Component (Number): 'Velocity Control Drive' (900)
+         Class (Number): 'Motor Drive' (007)
+              Operation: 'Initialize'
+         Qualified Name: 'VelocityControlDrive::Design::Velocity Control Drive::Subsys::Motor Drive'
+   
+Description: All actions required to initialize an instance of class 'Motor Drive'.
+             This subroutine must be called whenever a new instance is created.
+
+Signature: JSR( _900_007_opMotorDrive_Init );
+*)
+
+SBR(  );
+
+(* Clear the global and local event mailbox structures. *)
+CPS(empty_event_struct, _events.event_motor_drive_900_007.evt_lst, 1);
+CPS(empty_event_struct, _obj.motor_drive_900_007.events.evt_lst, 1);
+
+(* TODO: Add all initialization code here *)
+

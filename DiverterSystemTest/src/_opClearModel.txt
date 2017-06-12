@@ -1,0 +1,97 @@
+(* 
+Description: All actions required to initialize the program to an empty model state.
+             This subroutine should be called once at the beginning of the program
+             and never again!
+
+Signature: JSR( _opClearModel );
+*)
+
+SBR(  );
+
+(* xtfr_jog_switch_000_001 *)
+  
+(* automatic_sequence_800_013 *)
+_obj.automatic_sequence_800_013.pi_id_r8 := -1; 
+  
+(* conveyor_length_rollout_800_015 *)
+_obj.conveyor_length_rollout_800_015.pi_id_r9 := -1; 
+_obj.conveyor_length_rollout_800_015.d_current_state := 0;
+CPS(empty_event_struct, _events.event_conveyor_length_rollout_800_015.evt_lst, 1);
+  
+(* cross_transfer_conveyor_800_007 *)
+_obj.cross_transfer_conveyor_800_007.pi_id := -1; 
+_obj.cross_transfer_conveyor_800_007.d_current_state := 0;
+CPS(empty_event_struct, _events.event_cross_transfer_conveyor_800_007.evt_lst, 1);
+  
+(* hesitating_rollout_800_014 *)
+_obj.hesitating_rollout_800_014.pi_id_r9 := -1; 
+_obj.hesitating_rollout_800_014.d_current_state := 0;
+CPS(empty_event_struct, _events.event_hesitating_rollout_800_014.evt_lst, 1);
+  
+(* manual_sequence_800_011 *)
+_obj.manual_sequence_800_011.pi_id_r8 := -1; 
+_obj.manual_sequence_800_011.d_current_state := 0;
+CPS(empty_event_struct, _events.event_manual_sequence_800_011.evt_lst, 1);
+  
+(* motion_inhibited_800_012 *)
+_obj.motion_inhibited_800_012.pi_id_r8 := -1; 
+  
+(* actuator_800_003 *)
+_obj.actuator_800_003.pi_id := -1; 
+  
+(* air_blast_800_010 *)
+_obj.air_blast_800_010.d_current_state := 0;
+CPS(empty_event_struct, _events.event_air_blast_800_010.evt_lst, 1);
+  
+(* divert_packet_800_001 *)
+_obj.divert_packet_800_001.pi_id := -1; 
+
+(* divert_packet_800_001_a *)
+_obj.divert_packet_800_001_a.d_current_state := 0;
+CPS(empty_event_struct, _events.event_divert_packet_800_001_a.evt_lst, 1);
+  
+(* divert_sheet_800_002 *)
+_obj.divert_sheet_800_002.pi_id := -1; 
+  
+(* divert_stack_800_005 *)
+  
+(* diverter_bay_800_006 *)
+_obj.diverter_bay_800_006.d_current_state := 0;
+CPS(empty_event_struct, _events.event_diverter_bay_800_006.evt_lst, 1);
+  
+(* diverter_pan_800_009 *)
+_obj.diverter_pan_800_009.d_current_state := 0;
+CPS(empty_event_struct, _events.event_diverter_pan_800_009.evt_lst, 1);
+  
+(* fingers_800_008 *)
+_obj.fingers_800_008.d_current_state := 0;
+CPS(empty_event_struct, _events.event_fingers_800_008.evt_lst, 1);
+  
+(* tracking_point_800_004 *)
+_obj.tracking_point_800_004.pi_trkdvrtsht_id_r3 := -1; 
+_obj.tracking_point_800_004.pi_trkdvrtsht_id_r3 := -1; 
+
+(* tracking_point_800_004_a *)
+_obj.tracking_point_800_004_a.d_current_state := 0;
+CPS(empty_event_struct, _events.event_tracking_point_800_004_a.evt_lst, 1);
+  
+(* drive_enable_900_002 *)
+_obj.drive_enable_900_002.d_current_state := 0;
+CPS(empty_event_struct, _events.event_drive_enable_900_002.evt_lst, 1);
+  
+(* fault_900_006 *)
+  
+(* motion_controller_900_003 *)
+_obj.motion_controller_900_003.d_current_state := 0;
+CPS(empty_event_struct, _events.event_motion_controller_900_003.evt_lst, 1);
+  
+(* motion_instruction_900_001 *)
+
+(* motion_instruction_900_001_a *)
+_obj.motion_instruction_900_001_a.d_current_state := 0;
+CPS(empty_event_struct, _events.event_motion_instruction_900_001_a.evt_lst, 1);
+  
+(* motor_drive_900_007 *)
+_obj.motor_drive_900_007.d_current_state := 0;
+CPS(empty_event_struct, _events.event_motor_drive_900_007.evt_lst, 1);
+  
